@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       006-程序的基本要素 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标识符"><span class="post-toc-number">1.</span> <span class="post-toc-text">标识符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#程序中变量、类型、函数和标号的名称统称-标识符。"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">程序中变量、类型、函数和标号的名称统称 标识符。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统已有的标识符称为关键字。"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">系统已有的标识符称为关键字。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见关键字"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">常见关键字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自己给变量、函数起的名字称为自定义标识符"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">自己给变量、函数起的名字称为自定义标识符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义标识符的命名规则"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">自定义标识符的命名规则</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标识符举例"><span class="post-toc-number">2.</span> <span class="post-toc-text">标识符举例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量和常量"><span class="post-toc-number">3.</span> <span class="post-toc-text">变量和常量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表示数据可以改变的符号，称为变量。"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">表示数据可以改变的符号，称为变量。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#直接写出的数据以及表示的数据不能改变的符号是常量。"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">直接写出的数据以及表示的数据不能改变的符号是常量。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运算符和表达式"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">运算符和表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运算符"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">运算符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表示运算的式子，就是表达式"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">表示运算的式子，就是表达式</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语句"><span class="post-toc-number">4.</span> <span class="post-toc-text">语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入和输出"><span class="post-toc-number">5.</span> <span class="post-toc-text">输入和输出</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">6.</span> <span class="post-toc-text">函数</span></a></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            006-程序的基本要素
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-08-31T13:52:11.000Z" itemprop="datePublished">
+            2019-08-31
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">6</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">6</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">6</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2></blockquote>
+<ol>
+<li><h3 id="程序中变量、类型、函数和标号的名称统称-标识符。"><a href="#程序中变量、类型、函数和标号的名称统称-标识符。" class="headerlink" title="程序中变量、类型、函数和标号的名称统称 标识符。"></a>程序中变量、类型、函数和标号的名称统称 <font color="red">标识符</font>。</h3><ul>
+<li>如a，b，name，int，char，main，void等。</li>
+</ul>
+</li>
+<li><h3 id="系统已有的标识符称为关键字。"><a href="#系统已有的标识符称为关键字。" class="headerlink" title="系统已有的标识符称为关键字。"></a>系统已有的标识符称为<font color="red">关键字</font>。</h3></li>
+<li><h3 id="常见关键字"><a href="#常见关键字" class="headerlink" title="常见关键字"></a>常见关键字</h3><ul>
+<li><p>using，namespace，void，return</p>
+</li>
+<li><p>int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof</p>
+</li>
+<li><p>if，else，for，do，while，switch，case，continue，break</p>
+</li>
+<li><p>class，struct，private，public，this，new，delete</p>
+</li>
+</ul>
+</li>
+<li><h3 id="自己给变量、函数起的名字称为自定义标识符"><a href="#自己给变量、函数起的名字称为自定义标识符" class="headerlink" title="自己给变量、函数起的名字称为自定义标识符"></a>自己给变量、函数起的名字称为<font color="red">自定义标识符</font></h3></li>
+<li><h3 id="自定义标识符的命名规则"><a href="#自定义标识符的命名规则" class="headerlink" title="自定义标识符的命名规则"></a>自定义标识符的命名规则</h3><ul>
+<li><p>由字母、数字和下划线组成。</p>
+</li>
+<li><p>第1个符号不能是数字。</p>
+</li>
+<li><p>标识符的长度：不同编译器规定的不同，但至少识别前6个字符，有的长度可达32个字符，甚至更长。</p>
+</li>
+<li><p>区分大小写（大小写敏感）。</p>
+</li>
+<li><p>int a,A;这里a和A是2个不同的变量。</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<h2 id="标识符举例"><a href="#标识符举例" class="headerlink" title="标识符举例"></a>标识符举例</h2></blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="keyword">int</span> A,B,C;</span><br><span class="line"><span class="keyword">double</span> a1,b2,c3;</span><br><span class="line"><span class="keyword">double</span> table_width,table_height;</span><br><span class="line"><span class="keyword">char</span>  name[<span class="number">40</span>],_address[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> <span class="number">1</span>a,<span class="number">2b</span>,<span class="number">3</span>c;<span class="comment">//不合法的标识符,会出现以下报错信息</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="red">[Error] invalid suffix ‘“a” on integer constant</font></strong><br><strong><font color="red">好习惯</font>：标识符的命名应有意义，或与数学公式中的习惯使用的符号一致</strong></p>
+<blockquote>
+<h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2></blockquote>
+<ol>
+<li><h3 id="表示数据可以改变的符号，称为变量。"><a href="#表示数据可以改变的符号，称为变量。" class="headerlink" title="表示数据可以改变的符号，称为变量。"></a>表示数据可以改变的符号，称为变量。</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;<span class="comment">//a表示整数</span></span><br><span class="line"><span class="keyword">char</span> name[<span class="number">40</span>];<span class="comment">//不超过40个字符的字符数组</span></span><br><span class="line">a=<span class="number">5</span>;<span class="comment">//赋值语句，表示a为5</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;ae&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示出a为5</span></span><br><span class="line">a=a+<span class="number">5</span>;<span class="comment">//重新赋值，a为10；</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示a为10</span></span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;name;<span class="comment">//输入值存储到name变量</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;name&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示name的值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="直接写出的数据以及表示的数据不能改变的符号是常量。"><a href="#直接写出的数据以及表示的数据不能改变的符号是常量。" class="headerlink" title="直接写出的数据以及表示的数据不能改变的符号是常量。"></a>直接写出的数据以及表示的数据不能改变的符号是常量。</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//"Hello World"是常量</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="number">5</span>+<span class="number">3</span>&lt;&lt;end;<span class="comment">//5和3是常量，endl也是常量，表示换行符</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以自己定义符号常量。</li>
+</ul>
+</li>
+<li><h3 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h3><ol>
+<li><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><ul>
+<li>表示运算的符号。</li>
+<li>+，-，*，/，%   算数运算符。</li>
+<li>&gt; ，&lt;，&gt;=，&lt;=  比较运算符。</li>
+</ul>
+</li>
+<li><h4 id="表示运算的式子，就是表达式"><a href="#表示运算的式子，就是表达式" class="headerlink" title="表示运算的式子，就是表达式"></a>表示运算的式子，就是表达式</h4><ul>
+<li><p><strong>可以是一个变量、一个常量：</strong><br>a，b，5</p>
+</li>
+<li><p><strong>也可以是用运算符将变量、常量连接起来：</strong><br>3+5，a+b，a-b，a<em>b，a&gt;b，a&lt;b，a&gt;=b，a&lt;=b等</em></p>
+</li>
+<li><p><strong>还可以是用运算符将表达式连接起来的式子：</strong><br>(a+b)*(a-b)<br>用圆括号改变运算的优先级，括号内有限运算符</p>
+</li>
+<li><p><strong>等号运算符</strong></p>
+<ol>
+<li><p><strong>等号也是运算符</strong></p>
+</li>
+<li><p><strong>等号连接起来的式子是表达式，如：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c=a+b</span><br><span class="line">如果a=<span class="number">5</span>;b=<span class="number">6</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;(c=a+b)&lt;,<span class="built_in">endl</span>;<span class="comment">//这里输出显示的值是11</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><strong><font color="red">等号的左边必须是变量</font></strong></p>
+<p> 5=3，a+b=c+d  —&gt;  这两个表达式是<font color="red">错误</font>的，会出现以下错误提示：<br> <strong><font color="red">[Error] lvalue required as left operand of assignment</font></strong></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2></blockquote>
+<ul>
+<li><p>语句是一个表达完整的命令。</p>
+</li>
+<li><p>C++中，语句的标志就是分号“;”。</p>
+</li>
+<li><p>一个式子后面写上分号，就是一条语句。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;<span class="comment">//这是一个声明语句，说明用a，b，c表示整数</span></span><br><span class="line">a=<span class="number">5</span>;<span class="comment">//赋值语句</span></span><br><span class="line">b=<span class="number">10</span>;</span><br><span class="line">c=a+b;</span><br><span class="line">a+b;<span class="comment">//表达式语句，在程序中没多大作用</span></span><br><span class="line">a;<span class="comment">//表达式语句，在程序中没多大作用</span></span><br><span class="line">;;;<span class="comment">//空语句，什么也没做，对程序功能无任何影响</span></span><br><span class="line">c=a+b<span class="comment">//无分号，那么不是语句，单独占行是不正确的</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><font color="red">每行的末尾必须有分号，才能构成语句</font></strong></p>
+</li>
+</ul>
+<blockquote>
+<h2 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h2></blockquote>
+<ul>
+<li><p>输入cin</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cin</span>&gt;&gt;v1&gt;&gt;v2&gt;&gt;v3&gt;&gt;v4;<span class="comment">//cin是输入流对象&gt;&gt;提取运算符</span></span><br><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;b;</span><br><span class="line"><span class="built_in">cin</span>&gt;.c;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出cout</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;v1&lt;&lt;v2&lt;,v3&lt;&lt;v4;<span class="comment">//输出流对象&lt;&lt;插入运算符</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"  "</span>&lt;&lt;b&lt;&lt;<span class="string">"  "</span>&lt;c&lt;&lt;<span class="string">"sum:"</span>&lt;&lt;a+b+c&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2></blockquote>
+<ul>
+<li><p><strong>能完成一定功能的有名字的程序序列</strong></p>
+</li>
+<li><p><strong>main函数：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">	<span class="built_in">cout</span>&lt;,a+b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>系统函数：</strong></p>
+<p>sin(x),cos(x),exp(x),sqrt(x)</p>
+</li>
+<li><p><strong>自定义函数：</strong></p>
+<p>由用户自己定义编写的可供调用的函数</p>
+</li>
+<li><p><strong>函数是组成C++的基本单位</strong></p>
+<p>C++的程序是从main函数开始的，所以main函数有且只有一个</p>
+</li>
+</ul>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  </body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
