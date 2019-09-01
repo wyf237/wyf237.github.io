@@ -59,7 +59,9 @@
     <div class="post-entry">
         <blockquote>
 <h2 id="编写程序，计算银行存款本息"><a href="#编写程序，计算银行存款本息" class="headerlink" title="编写程序，计算银行存款本息"></a>编写程序，计算银行存款本息</h2></blockquote>
-<p>用户输入存款金额money，存款期years和年利率rate，根据公式：<br>$$<br>sum =money(1+rate)^{years}<br>$$<br>计算到期存款本息。</p>
+<p>用户输入存款金额money，存款期years和年利率rate，根据公式：</p>
+<script type="math/tex; mode=display">
+sum =money(1+rate)^{years}</script><p>计算到期存款本息。</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ol>
 <li><p><strong>可以用money，years，rate，sum分表表示存款本金，存款年限，存款利率和到期本息</strong></p>
 </li>
@@ -71,7 +73,7 @@
 <li><p><strong>C++乘方</strong></p>
 <ul>
 <li>pow(x,y)；</li>
-<li>表示$x^y$，pow是函数名。x，y均应为双精度实数；</li>
+<li>表示<script type="math/tex">x^y</script>，pow是函数名。x，y均应为双精度实数；</li>
 </ul>
 </li>
 <li><p><strong>数学函数包含在头文件cmath中</strong></p>
@@ -83,9 +85,8 @@
 </li>
 </ol>
 <blockquote>
-<h2 id="初步代码"><a href="#初步代码" class="headerlink" title="初步代码"></a>初步代码</h2></blockquote>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="初步代码"><a href="#初步代码" class="headerlink" title="初步代码"></a>初步代码</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
 <h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
 <li>存款10000元，存1年，年利率3%：</li>
 </ul>
@@ -106,18 +107,14 @@
 </ul>
 <p><strong>伪代码</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (&lt;条件&gt;)&#123;</span><br><span class="line"></span><br><span class="line">​	&lt;循环体(一段程序)&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;其他语句&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>流程图</strong></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">op=&gt;operation: 处理</span><br><span class="line">cond=&gt;condition: 条件</span><br><span class="line">sub1=&gt;subroutine: 循环体</span><br><span class="line">io=&gt;subroutine: 其他语句</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;sub1(left)-&gt;cond</span><br><span class="line">cond(no)-&gt;io-&gt;e</span><br></pre></td></tr></table></figure>
-
 <p><strong>本题的循环条件可以设置为：momey&gt;0</strong></p>
 <blockquote>
-<h2 id="改进代码"><a href="#改进代码" class="headerlink" title="改进代码"></a>改进代码</h2></blockquote>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    <span class="keyword">while</span> (money&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//再输入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="改进代码"><a href="#改进代码" class="headerlink" title="改进代码"></a>改进代码</h2><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    <span class="keyword">while</span> (money&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//再输入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
 <h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="005%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C3.png" alt="005执行结果3"></p>
 <h3 id="过程分析"><a href="#过程分析" class="headerlink" title="过程分析"></a>过程分析</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">op=&gt;operation: cin&gt;&gt;money&gt;&gt;years&gt;&gt;rate;</span><br><span class="line">cond=&gt;condition: money&gt;0</span><br><span class="line">sub1=&gt;subroutine: sum=money*pow((1+rate),years);//计算，=赋值</span><br><span class="line">cout&lt;&lt;sum&lt;&lt;endl;//显示结果</span><br><span class="line">cin&gt;&gt;money&gt;&gt;years&gt;&gt;rate;//再输入</span><br><span class="line">io=&gt;subroutine: return 0;</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;sub1(left)-&gt;cond</span><br><span class="line">cond(no)-&gt;io-&gt;e</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <h2 id="新的问题"><a href="#新的问题" class="headerlink" title="新的问题"></a>新的问题</h2></blockquote>
 <p><strong>问题</strong></p>
@@ -133,9 +130,8 @@
 </ul>
 <blockquote>
 <p><strong>最终完成的代码</strong></p>
-</blockquote>
 <h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入本金、存款年限和利息，用空格隔开"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    <span class="keyword">while</span> (money&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"本息共 "</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入本金、存款年限和利息，用空格隔开"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//再输入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+</blockquote>
 <h3 id="执行结果-2"><a href="#执行结果-2" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="005%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C4.png" alt="005执行结果4"></p>
 <blockquote>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></blockquote>
@@ -145,60 +141,7 @@
  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>数学函数库中的其他函数</strong> </p>
-<table>
-<thead>
-<tr>
-<th>数学函数名</th>
-<th>C++函数名</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>乘方</td>
-<td>pow(x,y)</td>
-<td></td>
-</tr>
-<tr>
-<td>正弦</td>
-<td>sin(x)</td>
-<td>x为弧度</td>
-</tr>
-<tr>
-<td>余弦</td>
-<td>cos(x)</td>
-<td>x为弧度</td>
-</tr>
-<tr>
-<td>正切</td>
-<td>tan(x)</td>
-<td>x为弧度</td>
-</tr>
-<tr>
-<td>$e^x$</td>
-<td>exp(x)</td>
-<td></td>
-</tr>
-<tr>
-<td>$log_ex$</td>
-<td>log(x)</td>
-<td>e为底</td>
-</tr>
-<tr>
-<td>$log_{10}x$</td>
-<td>log10(x)</td>
-<td>10为底</td>
-</tr>
-<tr>
-<td>平方根</td>
-<td>sqrt(x)</td>
-<td></td>
-</tr>
-<tr>
-<td>绝对值</td>
-<td>fabs(x)</td>
-<td></td>
-</tr>
-</tbody></table>
+<p>| 数学函数名  | C++函数名 | 备注    |<br>| —————- | ————- | ———- |<br>| 乘方        | pow(x,y)  |         |<br>| 正弦        | sin(x)    | x为弧度 |<br>| 余弦        | cos(x)    | x为弧度 |<br>| 正切        | tan(x)    | x为弧度 |<br>| $e^x$       | exp(x)    |         |<br>| $log_ex$    | log(x)    | e为底   |<br>| $log_{10}x$ | log10(x)  | 10为底  |<br>| 平方根      | sqrt(x)   |         |<br>| 绝对值      | fabs(x)   |         |</p>
 <p><strong>三角函数的角度单位均为弧度。</strong></p>
 <p><strong>函数名字母均为小写。</strong></p>
 <p><strong>自变量均为双精度实数，结果也是双精度实数。</strong></p>
@@ -225,7 +168,22 @@
     <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
     <img id="top" src="/images/up-circle.svg" alt="top">
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 <!-- 加载主题脚本文件 -->
 <script src="/scripts/utone.js"></script>

@@ -71,9 +71,8 @@
 </li>
 </ul>
 <blockquote>
-<h2 id="最简单的计算代码"><a href="#最简单的计算代码" class="headerlink" title="最简单的计算代码"></a>最简单的计算代码</h2></blockquote>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算2个整数的和</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="number">4</span>+<span class="number">3</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="最简单的计算代码"><a href="#最简单的计算代码" class="headerlink" title="最简单的计算代码"></a>最简单的计算代码</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算2个整数的和</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="number">4</span>+<span class="number">3</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
 <h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="004%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C1.png" alt="004执行结果1"></p>
 <blockquote>
 <h2 id="改进方法分析"><a href="#改进方法分析" class="headerlink" title="改进方法分析"></a>改进方法分析</h2></blockquote>
@@ -85,25 +84,29 @@
 <h3 id="数学上的方法"><a href="#数学上的方法" class="headerlink" title="数学上的方法"></a>数学上的方法</h3><ul>
 <li>c=a+b；a，b是自变量；c是因变量；</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">a</th>
-<th align="left">b</th>
-<th align="left">c</th>
+<th style="text-align:left">a</th>
+<th style="text-align:left">b</th>
+<th style="text-align:left">c</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">a=4</td>
-<td align="left">b=3</td>
-<td align="left">c=a+b=7</td>
+<tbody>
+<tr>
+<td style="text-align:left">a=4</td>
+<td style="text-align:left">b=3</td>
+<td style="text-align:left">c=a+b=7</td>
 </tr>
 <tr>
-<td align="left">a=2019</td>
-<td align="left">b=4</td>
-<td align="left">c=a+b=2023</td>
+<td style="text-align:left">a=2019</td>
+<td style="text-align:left">b=4</td>
+<td style="text-align:left">c=a+b=2023</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="C-解决方法"><a href="#C-解决方法" class="headerlink" title="C++解决方法"></a>C++解决方法</h3><ul>
 <li>程序设计中，用符号表示可变的数据，也叫变量；</li>
 <li>用a,b表示2个整数，c表示他们的和；</li>
@@ -112,9 +115,12 @@
 <li>int a,b,c  //int是integer的缩写  声明语句</li>
 <li>int a;  //变量——存储单位</li>
 </ul>
-<p><font color="red"><strong>声明语句可以有多条，每条语句声明一个或多个变量；</strong></font></p>
-<p><font color="red"><strong>声明的多个变量间用逗号隔开；</strong></font></p>
-<p><font color="red"><strong>一个变量只能声明一次；</strong></font></p>
+<font color="red">**声明语句可以有多条，每条语句声明一个或多个变量；**</font>
+
+<font color="red">**声明的多个变量间用逗号隔开；**</font>
+
+<font color="red">**一个变量只能声明一次；**</font>
+
 <h3 id="数据的输入，cin"><a href="#数据的输入，cin" class="headerlink" title="数据的输入，cin"></a>数据的输入，cin</h3><ul>
 <li>cin&gt;&gt;a;//输入a</li>
 <li>cin&gt;&gt;b;//输入b</li>
@@ -129,9 +135,8 @@
 <li>cout&lt;&lt;c&lt;&lt;endl;//显示c代表的值</li>
 </ul>
 <blockquote>
-<h2 id="改进后的代码"><a href="#改进后的代码" class="headerlink" title="改进后的代码"></a>改进后的代码</h2></blockquote>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算2个整数的和</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;<span class="comment">//说明分别用a,b,c表示整数</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;<span class="comment">//输入a,b的值</span></span><br><span class="line">	c=a+b;<span class="comment">//计算a,b的和</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果c的值</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="改进后的代码"><a href="#改进后的代码" class="headerlink" title="改进后的代码"></a>改进后的代码</h2><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算2个整数的和</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;<span class="comment">//说明分别用a,b,c表示整数</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;<span class="comment">//输入a,b的值</span></span><br><span class="line">	c=a+b;<span class="comment">//计算a,b的和</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果c的值</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
 <h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="004%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C2.png" alt="004执行结果2"></p>
 <blockquote>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></blockquote>
@@ -164,7 +169,22 @@
     <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
     <img id="top" src="/images/up-circle.svg" alt="top">
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 <!-- 加载主题脚本文件 -->
 <script src="/scripts/utone.js"></script>

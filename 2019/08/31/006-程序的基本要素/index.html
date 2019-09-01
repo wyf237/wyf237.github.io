@@ -94,7 +94,6 @@
 <blockquote>
 <h2 id="标识符举例"><a href="#标识符举例" class="headerlink" title="标识符举例"></a>标识符举例</h2></blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="keyword">int</span> A,B,C;</span><br><span class="line"><span class="keyword">double</span> a1,b2,c3;</span><br><span class="line"><span class="keyword">double</span> table_width,table_height;</span><br><span class="line"><span class="keyword">char</span>  name[<span class="number">40</span>],_address[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> <span class="number">1</span>a,<span class="number">2b</span>,<span class="number">3</span>c;<span class="comment">//不合法的标识符,会出现以下报错信息</span></span><br></pre></td></tr></table></figure>
-
 <p><strong><font color="red">[Error] invalid suffix ‘“a” on integer constant</font></strong><br><strong><font color="red">好习惯</font>：标识符的命名应有意义，或与数学公式中的习惯使用的符号一致</strong></p>
 <blockquote>
 <h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2></blockquote>
@@ -102,7 +101,6 @@
 <li><h3 id="表示数据可以改变的符号，称为变量。"><a href="#表示数据可以改变的符号，称为变量。" class="headerlink" title="表示数据可以改变的符号，称为变量。"></a>表示数据可以改变的符号，称为变量。</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;<span class="comment">//a表示整数</span></span><br><span class="line"><span class="keyword">char</span> name[<span class="number">40</span>];<span class="comment">//不超过40个字符的字符数组</span></span><br><span class="line">a=<span class="number">5</span>;<span class="comment">//赋值语句，表示a为5</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;ae&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示出a为5</span></span><br><span class="line">a=a+<span class="number">5</span>;<span class="comment">//重新赋值，a为10；</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示a为10</span></span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;name;<span class="comment">//输入值存储到name变量</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;name&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示name的值</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><h3 id="直接写出的数据以及表示的数据不能改变的符号是常量。"><a href="#直接写出的数据以及表示的数据不能改变的符号是常量。" class="headerlink" title="直接写出的数据以及表示的数据不能改变的符号是常量。"></a>直接写出的数据以及表示的数据不能改变的符号是常量。</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//"Hello World"是常量</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="number">5</span>+<span class="number">3</span>&lt;&lt;end;<span class="comment">//5和3是常量，endl也是常量，表示换行符</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>可以自己定义符号常量。</li>
 </ul>
@@ -111,13 +109,13 @@
 <li><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><ul>
 <li>表示运算的符号。</li>
 <li>+，-，*，/，%   算数运算符。</li>
-<li>&gt; ，&lt;，&gt;=，&lt;=  比较运算符。</li>
+<li>> ，&lt;，&gt;=，&lt;=  比较运算符。</li>
 </ul>
 </li>
 <li><h4 id="表示运算的式子，就是表达式"><a href="#表示运算的式子，就是表达式" class="headerlink" title="表示运算的式子，就是表达式"></a>表示运算的式子，就是表达式</h4><ul>
 <li><p><strong>可以是一个变量、一个常量：</strong><br>a，b，5</p>
 </li>
-<li><p><strong>也可以是用运算符将变量、常量连接起来：</strong><br>3+5，a+b，a-b，a<em>b，a&gt;b，a&lt;b，a&gt;=b，a&lt;=b等</em></p>
+<li><p><strong>也可以是用运算符将变量、常量连接起来：</strong><br>3+5，a+b，a-b，a<em>b，a&gt;b，a<b，a>=b，a&lt;=b等</b，a></em></p>
 </li>
 <li><p><strong>还可以是用运算符将表达式连接起来的式子：</strong><br>(a+b)*(a-b)<br>用圆括号改变运算的优先级，括号内有限运算符</p>
 </li>
@@ -156,12 +154,10 @@
 <ul>
 <li><p>输入cin</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cin</span>&gt;&gt;v1&gt;&gt;v2&gt;&gt;v3&gt;&gt;v4;<span class="comment">//cin是输入流对象&gt;&gt;提取运算符</span></span><br><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;b;</span><br><span class="line"><span class="built_in">cin</span>&gt;.c;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>输出cout</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;v1&lt;&lt;v2&lt;,v3&lt;&lt;v4;<span class="comment">//输出流对象&lt;&lt;插入运算符</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"  "</span>&lt;&lt;b&lt;&lt;<span class="string">"  "</span>&lt;c&lt;&lt;<span class="string">"sum:"</span>&lt;&lt;a+b+c&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <blockquote>
@@ -191,7 +187,22 @@
     <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
     <img id="top" src="/images/up-circle.svg" alt="top">
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 <!-- 加载主题脚本文件 -->
 <script src="/scripts/utone.js"></script>
