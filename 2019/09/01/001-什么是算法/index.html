@@ -32,7 +32,7 @@
             
           </ul>
            
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 绪论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一讲-什么是算法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一讲  什么是算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、算法与问题求解的基本概念"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">一、算法与问题求解的基本概念</span></a></li></ol></li></ol></li></ol> 
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 绪论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一讲-什么是算法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一讲  什么是算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、算法与问题求解的基本概念"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">一、算法与问题求解的基本概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、算法时间复杂度的表示方法以及分析技术"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">二、算法时间复杂度的表示方法以及分析技术</span></a></li></ol></li></ol></li></ol> 
           
         </div>
       </div>
@@ -57,46 +57,37 @@
     </div>
     
     <div class="post-entry">
-        <h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="第一讲-什么是算法"><a href="#第一讲-什么是算法" class="headerlink" title="第一讲  什么是算法"></a>第一讲  什么是算法</h2><h3 id="一、算法与问题求解的基本概念"><a href="#一、算法与问题求解的基本概念" class="headerlink" title="一、算法与问题求解的基本概念"></a>一、算法与问题求解的基本概念</h3><font color="orange">**算法：**</font>**是解决问题的方法或者过程，严格地讲是满足下述性质的指令序列：**
-
-- <font color="blue">**输入：**</font>有0个或多个外部量作为算法的输入；
-- <font color="blue">**输出：**</font>算法产生至少1个量作为输出；
-- <font color="blue">**确定性：**</font>组成算法的每条指令清晰、无歧义；
-- <font color="blue">**有限性：**</font>算法中每条指令的执行次数有限，执行每条指令的时间也有限。
-
-<font color="orange">**程序：**</font>**是算法用某种程序设计语言的具体实现。程序可以不满足算法的性质（4）即有局限性。**
-
-### 二、算法时间复杂度的表示方法以及分析技术
-
-> 算法初体验1——“玩具”问题
-
-<font color="orange">**问题描述：**</font>判断一个byte（无符号整数）里面有多少个bit的值为1？
-
+        <h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="第一讲-什么是算法"><a href="#第一讲-什么是算法" class="headerlink" title="第一讲  什么是算法"></a>第一讲  什么是算法</h2><h3 id="一、算法与问题求解的基本概念"><a href="#一、算法与问题求解的基本概念" class="headerlink" title="一、算法与问题求解的基本概念"></a>一、算法与问题求解的基本概念</h3><p><strong><font color="orange">算法：</font>是解决问题的方法或者过程，严格地讲是满足下述性质的指令序列：</strong></p>
+<ul>
+<li><font color="blue"><strong>输入：</strong></font>有0个或多个外部量作为算法的输入；</li>
+<li><font color="blue"><strong>输出：</strong></font>算法产生至少1个量作为输出；</li>
+<li><font color="blue"><strong>确定性：</strong></font>组成算法的每条指令清晰、无歧义；</li>
+<li><font color="blue"><strong>有限性：</strong></font>算法中每条指令的执行次数有限，执行每条指令的时间也有限。</li>
+</ul>
+<p><strong><font color="orange">程序：</font>是算法用某种程序设计语言的具体实现。程序可以不满足算法的性质（4）即有局限性。</strong></p>
+<h3 id="二、算法时间复杂度的表示方法以及分析技术"><a href="#二、算法时间复杂度的表示方法以及分析技术" class="headerlink" title="二、算法时间复杂度的表示方法以及分析技术"></a>二、算法时间复杂度的表示方法以及分析技术</h3><blockquote>
+<p>算法初体验1——“玩具”问题</p>
+</blockquote>
+<p><strong><font color="orange">问题描述：</font></strong>判断一个byte（无符号整数）里面有多少个bit的值为1？</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Cal</span><span class="params">(uchar iValue)</span> </span>&#123;</span><br><span class="line">    uchar iCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (iValue != <span class="number">0</span>) &#123;</span><br><span class="line">        iReminder = iValue % <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (iReminder == <span class="number">1</span>) &#123;</span><br><span class="line">            iCount++;</span><br><span class="line">            iValue = iValue / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> iCount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-- 如果这个子函数需要调用多次，内存足够，如何提高性能？
-
-  采取打表，把所有的无符号整数有多少个bit值为1的答案算出来存到数组中，然后从数组中去寻找答案， 更省时间。
-
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> iTables[<span class="number">256</span>]=&#123;...&#125;;</span><br><span class="line">iCount = iTables[iValue];</span><br></pre></td></tr></table></figure>
-
-- 如果既想省时间，又想省空间，怎样改进？
-
-  我们可以应用一个数据结构：<font color="red">哈希表</font>，在应用这个数据结构的时候，需要iValue这个答案，先去哈希表里去找，如果有答案，那么返回，如果没有现成的答案，那么调用计算的算法，然后返回答案。这样就相对既省时间，也省空间。
-
-- **总之：**<font color="orange">**时间和控件是算法的度量标杆！**</font>
-
+<ul>
+<li><p>如果这个子函数需要调用多次，内存足够，如何提高性能？</p>
+<p>采取打表，把所有的无符号整数有多少个bit值为1的答案算出来存到数组中，然后从数组中去寻找答案， 更省时间。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> iTables[<span class="number">256</span>]=&#123;...&#125;;</span><br><span class="line">iCount = iTables[iValue];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果既想省时间，又想省空间，怎样改进？</p>
+<p>我们可以应用一个数据结构：<font color="red">哈希表</font>，在应用这个数据结构的时候，需要iValue这个答案，先去哈希表里去找，如果有答案，那么返回，如果没有现成的答案，那么调用计算的算法，然后返回答案。这样就相对既省时间，也省空间。</p>
+</li>
+<li><p><strong>总之：</strong><font color="orange"><strong>时间和控件是算法的度量标杆！</strong></font></p>
+</li>
+</ul>
 <blockquote>
 <p>算法初体验2——连续子序列和</p>
 </blockquote>
-<font color="orange">**问题描述：**</font>给定一个整数数组{$A_1$,$A_2$,$A_3$...,$A_n$}，<font color="blue">**连续子序列和**</font>定义为：
-$$
-subSum(i,j)=A_i+A_{i+1}+...+A_{j-1}+A_j
-$$
-试求解输入数组的**连续子序列和**的**最大值**。如果所有整数都是负数，那么最大连续子序列和为0。
-
-<font color="orange">**例如：**</font>
-
+<p><strong><font color="orange">问题描述：</font></strong>给定一个整数数组{$A_1$,$A_2$,$A_3$…,$A_n$}，<font color="blue"><strong>连续子序列和</strong></font>定义为：</p>
+<script type="math/tex; mode=display">
+subSum(i,j)=A_i+A_{i+1}+...+A_{j-1}+A_j</script><p>试求解输入数组的<strong>连续子序列和</strong>的<strong>最大值</strong>。如果所有整数都是负数，那么最大连续子序列和为0。</p>
+<p><strong><font color="orange">例如：</font></strong></p>
 <ul>
 <li>{1,-3,4,5}的最大子数列为<font color="blue"><strong>{4,5}</strong></font>，因为4+5最大；</li>
 <li>{3,4,-5,8,-4}的最大子数列为<font color="blue"><strong>{3,4,-5,8}</strong></font>，因为3+4-5+8最大位10；</li>
@@ -109,7 +100,10 @@ $$
 <script type="math/tex; mode=display">
 thisSum(i,j)=A_i+A_{i+1}+...+A_{j-1}+A_j</script><script type="math/tex; mode=display">
 thisSum(i,j)=thisSum(i,j-1)+A_j</script><blockquote>
-<p>算法-2：两层循环<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubSuml</span><span class="params">(counst vector&lt;<span class="keyword">int</span>&gt;&amp;a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.size(); i++) &#123;+</span><br><span class="line">    	<span class="keyword">int</span> subSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; a.size(); j++) &#123;</span><br><span class="line">            subSum+=a[j];</span><br><span class="line">            <span class="keyword">if</span> (thisSum &gt; maxSum) &#123;</span><br><span class="line">                maxSum = subSum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>算法-2：两层循环</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubSuml</span><span class="params">(counst vector&lt;<span class="keyword">int</span>&gt;&amp;a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.size(); i++) &#123;+</span><br><span class="line">    	<span class="keyword">int</span> subSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; a.size(); j++) &#123;</span><br><span class="line">            subSum+=a[j];</span><br><span class="line">            <span class="keyword">if</span> (thisSum &gt; maxSum) &#123;</span><br><span class="line">                maxSum = subSum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>算法-3：一层循环</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubSuml</span><span class="params">(counst vector&lt;<span class="keyword">int</span>&gt;&amp;a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxSum = <span class="number">0</span>,bj = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a.size(); j++) &#123;</span><br><span class="line">        bj+=a[j];</span><br><span class="line">        <span class="keyword">if</span> (bj &gt; maxSum) &#123;<span class="comment">//记录最优值</span></span><br><span class="line">            maxSum = bj;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(bj &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        	bj = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
