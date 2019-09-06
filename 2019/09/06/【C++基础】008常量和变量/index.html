@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】008常量和变量 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常量和变量"><span class="post-toc-number">1.</span> <span class="post-toc-text">常量和变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-常量"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 常量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-变量"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 变量</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】008常量和变量
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-06T15:30:31.000Z" itemprop="datePublished">
+            2019-09-06
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">10</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">10</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">11</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2></blockquote>
+<h3 id="1-常量"><a href="#1-常量" class="headerlink" title="1. 常量"></a>1. 常量</h3><ul>
+<li><strong>具体把数据写出来</strong></li>
+<li><strong>2，3，4；  1.2，1.3；  “Hello World!”，”C++”；</strong></li>
+<li><strong>cout &lt;&lt; 2015；</strong></li>
+<li><strong><font color="red">常量：不能改变的量；</font></strong></li>
+<li><strong>字面常量（字面量、直接常量）：直接写出的数据；</strong></li>
+<li><p><strong>符号常量：用符号表示数据，但它一旦确定了表示哪个数据，以后就不能再改变；</strong></p>
+<ul>
+<li><p><font color="red">符号常量①：</font></p>
+<ol>
+<li><strong>说明一个符号表示常量：</strong><br> const&lt;类型说明符&gt; &lt;符号常量名&gt; = &lt;数据&gt;;</li>
+<li><p><strong>例如</strong></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pai = <span class="number">3.1415926</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> A = <span class="string">'E'</span>;</span><br><span class="line"><span class="keyword">const</span> chr CPP[<span class="number">20</span>] = <span class="string">"C++ Programming"</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M = <span class="number">100</span>,K = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>&lt;类型说明符&gt;是表示数据类型的符号：</strong></p>
+<table>
+<tr>
+ <th>类型</th><th>类型名类型说明符</th><th>类型</th><th>类型名类型说明符</th>
+</tr>
+<tr>
+ <td>整型</td><td>int</td><td>短整型</td><td>short或short int</td>
+</tr>
+<tr>
+ <td>单精度</td><td>float</td><td>长整型</td><td>long或long int</td>
+</tr>
+<tr>
+ <td>双精度</td><td>double</td><td>无符号整型</td><td>unsigned[int]</td>
+</tr>
+<tr>
+ <td>字符</td><td>char</td><td>无符号短整型</td><td>unsigned short[int]</td>
+</tr>
+<tr>
+ <td>逻辑/布尔</td><td>bool</td><td>无符号长整型</td><td>unsigned long[int]</td>
+</tr>
+</table>
+</li>
+</ol>
+</li>
+<li><p><font color="red">符号常量②：</font></p>
+<ol>
+<li><p><strong>在main函数前</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span><span class="meta-string">&lt;符号名称&gt; &lt;数据&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>例如</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PAI 3.14 <span class="comment">//结尾没有分号</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>程序在编译时，先将&lt;符号名称&gt;全部替换为&lt;数据&gt;，然后才正式编译，所以这样的说明称为 <strong><font color="red">编译预处理</font></strong></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量"></a>2. 变量</h3><ul>
+<li><p><strong>变量</strong></p>
+<ul>
+<li>值可以变的量；</li>
+<li>更通俗的说，变量是用符号表示数据，它表示的数据是可以变的。</li>
+</ul>
+</li>
+<li><p><strong>变量的说明</strong></p>
+<ul>
+<li>&lt;类型说明符&gt; &lt;变量名表&gt;;</li>
+<li>&lt;类型说明符&gt;，就是前面介绍常量时的类型说明符，如：<br>int，float，double，char，bool等</li>
+<li>&lt;变量名表&gt;是一个或多个标识符，多个标识符之间用逗号隔开；</li>
+<li><p>例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;          <span class="comment">//预留4个字节空间</span></span><br><span class="line"><span class="keyword">double</span> d1,d2;   <span class="comment">//预留8个字节空间</span></span><br><span class="line"><span class="keyword">char</span> c1,c2,c3;  <span class="comment">//预留1个字节空间</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：<br><strong>变量的说明也叫<font color="red">变量的声明</font>；</strong><br><strong>变量意味着编译系统会<font color="red">给这个变量在内存中分配一个存储单元</font>；</strong><br><strong>所以变量的声明也叫<font color="red">变量的定义</font>；</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>变量的初始化</strong></p>
+<ul>
+<li>在声明变量的同时说明它代表的数据是什么，称为<font color="red">变量的初始化</font>；</li>
+<li>格式是<br>&lt;类型说明符&gt; &lt;变量名1&gt; = &lt;值或表达式1&gt;[,&lt;变量名2&gt; = &lt;值或表达式2&gt;];</li>
+<li>例如<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">double</span> pai = <span class="number">3.13</span>, e = <span class="number">2.71828</span>;</span><br><span class="line"><span class="keyword">char</span> A = <span class="string">'?'</span>, B = <span class="string">'%'</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">2</span>*pai*a &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>变量的赋值</strong></p>
+<ul>
+<li>设定变量值<br>&lt;变量名&gt; = &lt;值或表达式&gt;;</li>
+<li>其中的等号称为<font color="red">赋值运算符</font>，其作用之一是将右边表达式的值放到左边变量的存储单元中去</li>
+<li><p>例如</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PAI = <span class="number">3.14</span> <span class="comment">//声明常量PAI</span></span><br><span class="line"><span class="keyword">double</span> r, area;         <span class="comment">//声明变量r，area分别表示半径和面积</span></span><br><span class="line">r = <span class="number">5.0</span>;                <span class="comment">//为r赋值</span></span><br><span class="line">area = PAI*r*r;         <span class="comment">//计算圆的面积并赋值给area</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; area &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//显示结果</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量通过输入语句赋值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">double</span> PAI = <span class="number">3.14</span>; <span class="comment">//声明常量PAI</span></span><br><span class="line">    <span class="keyword">double</span> r, area;          <span class="comment">//声明变量r，area分别表示半径和面积</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; r;                <span class="comment">//通过输入为r赋值</span></span><br><span class="line">    area = PAI * r * r;      <span class="comment">//计算圆的面积并赋值给area</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; area &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>变量使用中应注意的问题</strong></p>
+<ol>
+<li><p>先定义，再使用<br><strong>【错误示例】</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;    <span class="comment">//这里未定义便使用，是错误的</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a+b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个变量只能定义一次，不能重复定义<br><strong>【错误示例】</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;          <span class="comment">//这里出现重复定义，是不行的</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>先赋值，再参与运算<br><strong>【错误示例】</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    c = a + b;       <span class="comment">//a和b还未赋值便计算，是错误的</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量可以多次赋值，而常量是不可以赋值的</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> N = <span class="number">5</span>; <span class="comment">//常量</span></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">2</span>;   <span class="comment">//变量</span></span><br><span class="line">a = a + a;   <span class="comment">//正确</span></span><br><span class="line">a = a * a;   <span class="comment">//正确</span></span><br><span class="line">N = N + <span class="number">1</span>;   <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量的定义可以出现在使用前的任何地方，但建议在程序的开始定义变量</p>
+</li>
+<li>少用或不用字面常量</li>
+</ol>
+</li>
+</ul>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

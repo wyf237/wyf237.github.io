@@ -49,10 +49,10 @@
             2019-09-06
         </time>
         
-        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">7</span></li></ul>
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">10</span></li></ul>
         
         
-        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">7</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">8</span></li></ul>
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">10</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">11</span></li></ul>
         
     </div>
     
@@ -217,50 +217,21 @@
 <h3 id="4-字符串"><a href="#4-字符串" class="headerlink" title="4. 字符串"></a>4. 字符串</h3><ul>
 <li>连续的多个字符</li>
 <li>字符串写在一对双引号之间，如：<br>“Hello World”<br>“程序设计”</li>
-<li>字符串占的字节数等于字符串长度+1<br><strong><font color="red">注:</font>汉字保存的是机内码，一个汉字占2个字节。</strong><ul>
+<li><p>字符串占的字节数等于字符串长度+1<br><strong><font color="red">注:</font>汉字保存的是机内码，一个汉字占2个字节。</strong></p>
+<ul>
 <li>“Hello World”，长度11（10个字母+1个空格），占12字节；</li>
 <li>“程序设计”，长度8（4个汉字8字节），占9个字节；</li>
-<li>为什么+1？<br>末尾加了一个结束符，用’\0’表示，数值上是0</li>
-</ul>
+<li>为什么+1？<br>末尾加了一个结束符，用’\0’表示，数值上是0<table>
+  <tr>
+    <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+  </tr>
+  <tr>
+    <td>H</td><td>e</td><td>l</td><td>l</td><td>o</td><td> </td><td>W</td><td>o</td><td>r</td><td>l</td><td>d</td><td>'\0'</td>
+  </tr>
+</table>
 </li>
 </ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">1</th>
-<th style="text-align:left">2</th>
-<th style="text-align:left">3</th>
-<th style="text-align:left">4</th>
-<th style="text-align:left">5</th>
-<th style="text-align:left">6</th>
-<th style="text-align:left">7</th>
-<th style="text-align:left">8</th>
-<th style="text-align:left">9</th>
-<th style="text-align:left">10</th>
-<th style="text-align:left">11</th>
-<th style="text-align:left">12</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">H</td>
-<td style="text-align:left">e</td>
-<td style="text-align:left">l</td>
-<td style="text-align:left">l</td>
-<td style="text-align:left">o</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">W</td>
-<td style="text-align:left">o</td>
-<td style="text-align:left">r</td>
-<td style="text-align:left">l</td>
-<td style="text-align:left">d</td>
-<td style="text-align:left">‘\0’</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
+</li>
 <li><blockquote>
 <font color="red">空字符</font>与<font color="red">空格</font>
 
@@ -282,53 +253,27 @@
 </ul>
 </li>
 <li><p><strong>基本数据类型的类型说明符：</strong></p>
-</li>
-</ul>
-<div class="table-container">
 <table>
-<thead>
-<tr>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">类型名 类型说明符</th>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">类型名 类型说明符</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">整型</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">短整型</td>
-<td style="text-align:left">short或short int</td>
-</tr>
-<tr>
-<td style="text-align:left">单精度</td>
-<td style="text-align:left">float</td>
-<td style="text-align:left">长整型</td>
-<td style="text-align:left">long或long int</td>
-</tr>
-<tr>
-<td style="text-align:left">双精度</td>
-<td style="text-align:left">double</td>
-<td style="text-align:left">无符号整型</td>
-<td style="text-align:left">unsigned[int]</td>
-</tr>
-<tr>
-<td style="text-align:left">字符</td>
-<td style="text-align:left">char</td>
-<td style="text-align:left">无符号短整型</td>
-<td style="text-align:left">unsigned short[int]</td>
-</tr>
-<tr>
-<td style="text-align:left">逻辑/布尔</td>
-<td style="text-align:left">bool</td>
-<td style="text-align:left">无符号长整型</td>
-<td style="text-align:left">unsigned long[int]</td>
-</tr>
-</tbody>
+    <tr>
+      <th>类型</th><th>类型名类型说明符</th><th>类型</th><th>类型名类型说明符</th>
+    </tr>
+    <tr>
+      <td>整型</td><td>int</td><td>短整型</td><td>short或short int</td>
+    </tr>
+    <tr>
+      <td>单精度</td><td>float</td><td>长整型</td><td>long或long int</td>
+    </tr>
+    <tr>
+      <td>双精度</td><td>double</td><td>无符号整型</td><td>unsigned[int]</td>
+    </tr>
+    <tr>
+      <td>字符</td><td>char</td><td>无符号短整型</td><td>unsigned short[int]</td>
+    </tr>
+    <tr>
+      <td>逻辑/布尔</td><td>bool</td><td>无符号长整型</td><td>unsigned long[int]</td>
+    </tr>
 </table>
-</div>
-<ul>
+</li>
 <li><p><strong>如何知道不同的输占的字节数</strong></p>
 <ul>
 <li>sizeof(&lt;类型名&gt;) //类型占字节数</li>
@@ -372,29 +317,16 @@
 </li>
 <li><p><strong>水平制表符\t</strong></p>
 <ul>
-<li>显示如下像表格一样可以对齐的多行内容</li>
-</ul>
-</li>
-</ul>
-<div class="table-container">
+<li><p>显示如下像表格一样可以对齐的多行内容</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">1234</th>
-<th style="text-align:left">12</th>
-<th style="text-align:left">567</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>12</strong></td>
-<td style="text-align:left"><strong>143</strong></td>
-<td style="text-align:left"><strong>12</strong></td>
-</tr>
-</tbody>
+  <tr>
+    <td>1234</td><td>12</td><td>567</td>
+  </tr>
+  <tr>
+    <td>12</td><td>143</td><td>12</td>
+  </tr>
 </table>
-</div>
-<ul>
+</li>
 <li><p>可以：（加空格）</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">1234</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">567</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">143</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 </li>
@@ -405,6 +337,8 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"使用加空格的方法显示如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1234</span> &lt;&lt; <span class="string">"    "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"      "</span> &lt;&lt; <span class="number">567</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"      "</span> &lt;&lt; <span class="number">143</span> &lt;&lt; <span class="string">"     "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"========================================"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"使用加\\t的方法显示如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1234</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">567</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">143</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"========================================"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"下面是一个明显的对比，每隔8个字符输出一个字符："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"12345678123456781234567812345678"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">8</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">16</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">24</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"========================================"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>运行结果</strong><br><img src="【C++基础】007执行结果4.png" alt="007执行结果"></p>
+</li>
+</ul>
 </li>
 </ul>
 
