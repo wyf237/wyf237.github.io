@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】007-数据类型 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数学中的数据类别"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数学中的数据类别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算机中的数据类型"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">计算机中的数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-整数"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1. 整数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例代码"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">示例代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#执行结果"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">执行结果</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-实数"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">2. 实数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-字符"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">3. 字符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-字符串"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">4. 字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-转义字符"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">5. 转义字符</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】007-数据类型
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-06T10:18:34.000Z" itemprop="datePublished">
+            2019-09-06
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">7</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">7</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">8</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2></blockquote>
+<h3 id="数学中的数据类别"><a href="#数学中的数据类别" class="headerlink" title="数学中的数据类别"></a>数学中的数据类别</h3><ul>
+<li>不同的性质</li>
+<li>不同的运算</li>
+</ul>
+<h3 id="计算机中的数据类型"><a href="#计算机中的数据类型" class="headerlink" title="计算机中的数据类型"></a>计算机中的数据类型</h3><ul>
+<li>不同的表示形式</li>
+<li>不同的存储控件</li>
+<li>不同的运算</li>
+</ul>
+<h3 id="1-整数"><a href="#1-整数" class="headerlink" title="1. 整数"></a>1. 整数</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">表示类型的符号</th>
+<th style="text-align:left">字节数</th>
+<th style="text-align:left">数值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">整型</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">$-2^{31}(-2147483648)$ ~ $2^{31}-1(2147483647)$</td>
+</tr>
+<tr>
+<td style="text-align:left">短整型</td>
+<td style="text-align:left">short或short int</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">$-$32768 ~ 32767</td>
+</tr>
+<tr>
+<td style="text-align:left">长整型</td>
+<td style="text-align:left">long或long int</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">$-2^{31}$ ~ $2^{31}-1$</td>
+</tr>
+<tr>
+<td style="text-align:left">无符号整型</td>
+<td style="text-align:left">unsigned [int]</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0 ~ $2^{32}$-1</td>
+</tr>
+<tr>
+<td style="text-align:left">无符号短整型</td>
+<td style="text-align:left">unsigned short [int]</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">0 ~ 65535</td>
+</tr>
+<tr>
+<td style="text-align:left">无符号长整型</td>
+<td style="text-align:left">unsigned long [int]</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0 ~ $2^{32}$-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>表示的数较小，就用<font color="red">短整型</font>。</strong></li>
+<li><strong>表示的数比较大，就用<font color="red">整型</font>或长<font color="red">整型</font>。</strong></li>
+<li><strong>表示的数均是非负数，就用<font color="red">无符号型</font>。</strong></li>
+<li><p><strong>不同类型的数所占的字节数</strong></p>
+<ul>
+<li>C++没有规定不同类型的数占的字节数；</li>
+<li>会因计算机系统、编译器的不同而不同；</li>
+<li><p>sizeof()运算符测试某类型数所占字节数；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">int</span>) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//整型数的字节数</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">short</span> <span class="keyword">int</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">short</span>) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//短整型数的字节数</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">int</span>) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//整型数的字节数</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">short</span> <span class="keyword">int</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">short</span>) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//短整型数的字节数</span></span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h4><p><img src="【C++基础】007执行结果1.png" alt="007执行结果"></p>
+</li>
+</ul>
+</li>
+<li>方括号表示可选，如unsigned[int]<ul>
+<li>表示使用<font color="red">unsigned int</font>可以；</li>
+<li>表示使用<font color="red">unsigned</font>也可以；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-实数"><a href="#2-实数" class="headerlink" title="2. 实数"></a>2. 实数</h3><ol>
+<li><blockquote>
+<p>IEEE754标准 <font color="red">该标准有两种格式</font></p>
+</blockquote>
+<ul>
+<li>分为<font color="red">单精度</font>和<font color="red">双精度</font></li>
+</ul>
+</li>
+<li><blockquote>
+<p>单精度（类型名：float）</p>
+</blockquote>
+<ul>
+<li>4字节，$±3.4×10^{-38}$ ~ $±3.4×10^{38}$，<font color="red">单精度</font>浮点型</li>
+</ul>
+</li>
+<li><blockquote>
+<p>双精度（类型名：double）</p>
+</blockquote>
+<ul>
+<li>8字节，$±1.8×10^{-308}$ ~ $±1.8×10^{308}$，<font color="red">双精度</font>浮点型</li>
+</ul>
+</li>
+<li><blockquote>
+<p>数的书写</p>
+</blockquote>
+<ul>
+<li><strong>整数型，一个数不带小数点，可以带正负号，计算机认为这是整型数。如：</strong><br>1，12，+123，-1234</li>
+<li><strong>16进制整数，前缀0X（X大小写均可），如：</strong><br>0xFF，0x10，0XFF，-0X10，-0X21</li>
+<li><strong>8进制整数，前缀0，如：</strong><br>010，021，-010，-021</li>
+<li><strong>10进制，16进制，8进制，没小数点，都是整型</strong></li>
+<li><p><strong>16，0x16，020在计算机中存的都是16这个数</strong></p>
+<ul>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">16</span> &lt;&lt; <span class="string">"  "</span> &lt;&lt; <span class="number">0x10</span> &lt;&lt; <span class="string">"  "</span> &lt;&lt; <span class="number">020</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>运行结果</strong><br><img src="【C++基础】007执行结果2.png" alt="007执行结果"></p>
+</li>
+</ul>
+</li>
+<li><strong>无符号整型数，加后缀U或u，如：</strong><ul>
+<li>1U，12U，123U，2019U；</li>
+<li>无符号数，就意味着可以写绝对值更大的数；</li>
+</ul>
+</li>
+<li><strong>双精度数</strong><ul>
+<li>数据带小数点</li>
+<li>小数形式：1.0，1.，0.1，.1；<font color="red">【0可以不写，但是小数点必须写】</font></li>
+<li>指数形式：<br>a. $1.2E-2$表示$1.2×10^-2$<br>b. $1.2e+2$表示$1.2×10^2$<br>c. $-1.2E2$表示$-1.2×10^2$</li>
+</ul>
+</li>
+<li><strong>单精度数</strong><ul>
+<li>带小数点，加后缀F或f，如：<br>12.5F，1.25E-2F，-12.5f</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-字符"><a href="#3-字符" class="headerlink" title="3. 字符"></a>3. 字符</h3><ul>
+<li>单个字符的表示，将字母写在一堆单引号中表示字符，如：<br>‘A’，’B’，’C’，’a’，’b’，’c’，’0’，’1’，’2’，’3’，’#’，’$’，’%’</li>
+<li>每个字符占一个字节，保存英文字符的ASCII码</li>
+<li>注意：<ul>
+<li>‘a’和a是不一样的</li>
+<li>‘0’和0是有本质区别的</li>
+<li>‘0’，是字符，1字节，存ASCII码为48，二进制00110000</li>
+<li>0，是整数，4字节，存的是0，二进制0000…0（32个0）</li>
+<li>可以参与整型数能进行的运算，如’a’+1</li>
+</ul>
+</li>
+<li>char<br>取值范围-128 ~ 127</li>
+<li>unsigned char<br>数值范围0 ~ 255</li>
+</ul>
+<h3 id="4-字符串"><a href="#4-字符串" class="headerlink" title="4. 字符串"></a>4. 字符串</h3><ul>
+<li>连续的多个字符</li>
+<li>字符串写在一对双引号之间，如：<br>“Hello World”<br>“程序设计”</li>
+<li>字符串占的字节数等于字符串长度+1<br><strong><font color="red">注:</font>汉字保存的是机内码，一个汉字占2个字节。</strong><ul>
+<li>“Hello World”，长度11（10个字母+1个空格），占12字节；</li>
+<li>“程序设计”，长度8（4个汉字8字节），占9个字节；</li>
+<li>为什么+1？<br>末尾加了一个结束符，用’\0’表示，数值上是0</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">1</th>
+<th style="text-align:left">2</th>
+<th style="text-align:left">3</th>
+<th style="text-align:left">4</th>
+<th style="text-align:left">5</th>
+<th style="text-align:left">6</th>
+<th style="text-align:left">7</th>
+<th style="text-align:left">8</th>
+<th style="text-align:left">9</th>
+<th style="text-align:left">10</th>
+<th style="text-align:left">11</th>
+<th style="text-align:left">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">H</td>
+<td style="text-align:left">e</td>
+<td style="text-align:left">l</td>
+<td style="text-align:left">l</td>
+<td style="text-align:left">o</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">W</td>
+<td style="text-align:left">o</td>
+<td style="text-align:left">r</td>
+<td style="text-align:left">l</td>
+<td style="text-align:left">d</td>
+<td style="text-align:left">‘\0’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><blockquote>
+<font color="red">空字符</font>与<font color="red">空格</font>
+
+</blockquote>
+<ul>
+<li><strong>空字符</strong>：表示为’\0’，是什么也没有，ASCII码值为0；</li>
+<li><strong>空格</strong>：表示为’ ‘，占1个字符位置，不显示任何东西，ASCII码值为32；</li>
+</ul>
+</li>
+<li><p><strong>逻辑型（布尔型，bool）</strong></p>
+<ul>
+<li>表示“真”，“假”这样判断的结果</li>
+<li>取值：<br>true，表示“真”<br>false，表示“假”</li>
+<li>例如：<br>1&gt;5，是“假”，false<br>2&lt;6，是“真”，true</li>
+<li>存储<br>true，存的是1<br>false，存的是0</li>
+<li>非0数值，当逻辑值相当于true</li>
+<li>数值0，当作逻辑值相当于false</li>
+<li>逻辑型数据存放的实际也是<font color="red">整数</font>，可以进行数学运算</li>
+</ul>
+</li>
+<li><p><strong>基本数据类型的类型说明符：</strong></p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">类型名 类型说明符</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">类型名 类型说明符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">整型</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">短整型</td>
+<td style="text-align:left">short或short int</td>
+</tr>
+<tr>
+<td style="text-align:left">单精度</td>
+<td style="text-align:left">float</td>
+<td style="text-align:left">长整型</td>
+<td style="text-align:left">long或long int</td>
+</tr>
+<tr>
+<td style="text-align:left">双精度</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">无符号整型</td>
+<td style="text-align:left">unsigned[int]</td>
+</tr>
+<tr>
+<td style="text-align:left">字符</td>
+<td style="text-align:left">char</td>
+<td style="text-align:left">无符号短整型</td>
+<td style="text-align:left">unsigned short[int]</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑/布尔</td>
+<td style="text-align:left">bool</td>
+<td style="text-align:left">无符号长整型</td>
+<td style="text-align:left">unsigned long[int]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p><strong>如何知道不同的输占的字节数</strong></p>
+<ul>
+<li>sizeof(&lt;类型名&gt;) //类型占字节数</li>
+<li>sizeof(&lt;数据&gt;) //数据占字节数</li>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof(5)得到的结果是："</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="number">5</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof(5.0)得到的结果是："</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="number">5.0</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof('A') 得到的结果是："</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="string">'A'</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof(true)得到的结果是："</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="literal">true</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof(\"Hello World\")得到的结果是："</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="string">"Hello World"</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof(\"程序设计\") 得到的结果是："</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="string">"程序设计"</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>运行结果</strong><br><img src="【C++基础】007执行结果3.png" alt="007执行结果"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-转义字符"><a href="#5-转义字符" class="headerlink" title="5. 转义字符"></a>5. 转义字符</h3><ul>
+<li><strong>有些ASCII码符号是不可显示的，如：</strong><br>换行符，回车符，退格符，水平制表符等</li>
+<li><strong>有些符号是有特殊意义的，如：</strong><br>比如单引号、双引号、反斜杠等</li>
+<li><strong>用一个反斜杠和一个字母（或数字）表示，它<font color="red">也是1个字符</font>，如：</strong><ul>
+<li>\n 表示换行符</li>
+<li>\r 表示回车</li>
+<li>\b 表示退格</li>
+<li>\t 表示水平制表符</li>
+<li>\’ 表示单引号</li>
+<li>\” 表示双引号</li>
+<li>\0 表示空字符</li>
+</ul>
+</li>
+<li><p><strong>比如：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">'\''</span>;<span class="comment">//显示单引号</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">'\"'</span>;<span class="comment">//显示双引号</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>将”Hello World”显示到两行上</strong></p>
+<ul>
+<li><p>可以写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"World"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello"</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"World"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello \nWorld"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>水平制表符\t</strong></p>
+<ul>
+<li>显示如下像表格一样可以对齐的多行内容</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">1234</th>
+<th style="text-align:left">12</th>
+<th style="text-align:left">567</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>12</strong></td>
+<td style="text-align:left"><strong>143</strong></td>
+<td style="text-align:left"><strong>12</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>可以：（加空格）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">1234</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">567</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">143</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">1234</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">567</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">143</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>测试代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"使用加空格的方法显示如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1234</span> &lt;&lt; <span class="string">"    "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"      "</span> &lt;&lt; <span class="number">567</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"      "</span> &lt;&lt; <span class="number">143</span> &lt;&lt; <span class="string">"     "</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"========================================"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"使用加\\t的方法显示如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1234</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">567</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">143</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">12</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"========================================"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"下面是一个明显的对比，每隔8个字符输出一个字符："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"12345678123456781234567812345678"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">8</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">16</span> &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="number">24</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"========================================"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>运行结果</strong><br><img src="【C++基础】007执行结果4.png" alt="007执行结果"></p>
+</li>
+</ul>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
