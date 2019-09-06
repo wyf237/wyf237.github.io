@@ -90,11 +90,11 @@ sum =money(1+rate)^{years}</script><p>计算到期存款本息。</p>
 <h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
 <li>存款10000元，存1年，年利率3%：</li>
 </ul>
-<p><img src="005%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C1.png" alt="005执行结果1"></p>
+<p><img src="【C++基础】005执行结果1.png" alt="005执行结果1"></p>
 <ul>
 <li>存款10000元，存3年，年利率4%：</li>
 </ul>
-<p><img src="005%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C2.png" alt="005执行结果2"></p>
+<p><img src="【C++基础】005执行结果2.png" alt="005执行结果2"></p>
 <blockquote>
 <h2 id="问题来了"><a href="#问题来了" class="headerlink" title="问题来了"></a>问题来了</h2></blockquote>
 <p>我们无法多次计算，每次计算都需要重新运行程序，非常麻烦。</p>
@@ -114,7 +114,7 @@ sum =money(1+rate)^{years}</script><p>计算到期存款本息。</p>
 <blockquote>
 <h2 id="改进代码"><a href="#改进代码" class="headerlink" title="改进代码"></a>改进代码</h2><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    <span class="keyword">while</span> (money&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//再输入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="005%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C3.png" alt="005执行结果3"></p>
+<h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】005执行结果3.png" alt="005执行结果3"></p>
 <h3 id="过程分析"><a href="#过程分析" class="headerlink" title="过程分析"></a>过程分析</h3> <div id="flowchart-1" class="flow-chart"></div>
 
 <blockquote>
@@ -134,7 +134,7 @@ sum =money(1+rate)^{years}</script><p>计算到期存款本息。</p>
 <p><strong>最终完成的代码</strong></p>
 <h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入本金、存款年限和利息，用空格隔开"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    <span class="keyword">while</span> (money&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"本息共 "</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入本金、存款年限和利息，用空格隔开"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//再输入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="执行结果-2"><a href="#执行结果-2" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="005%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C4.png" alt="005执行结果4"></p>
+<h3 id="执行结果-2"><a href="#执行结果-2" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】005执行结果4.png" alt="005执行结果4"></p>
 <blockquote>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></blockquote>
 <ol>
@@ -142,14 +142,71 @@ sum =money(1+rate)^{years}</script><p>计算到期存款本息。</p>
 <li><p><strong>函数引用</strong></p>
  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>数学函数库中的其他函数</strong> </p>
-<p>| 数学函数名  | C++函数名 | 备注    |<br>| —————- | ————- | ———- |<br>| 乘方        | pow(x,y)  |         |<br>| 正弦        | sin(x)    | x为弧度 |<br>| 余弦        | cos(x)    | x为弧度 |<br>| 正切        | tan(x)    | x为弧度 |<br>| $e^x$       | exp(x)    |         |<br>| $log_ex$    | log(x)    | e为底   |<br>| $log_{10}x$ | log10(x)  | 10为底  |<br>| 平方根      | sqrt(x)   |         |<br>| 绝对值      | fabs(x)   |         |</p>
-<p><strong>三角函数的角度单位均为弧度。</strong></p>
+<li><p><strong>数学函数库中的其他函数</strong><br><strong>三角函数的角度单位均为弧度。</strong></p>
 <p><strong>函数名字母均为小写。</strong></p>
 <p><strong>自变量均为双精度实数，结果也是双精度实数。</strong></p>
 </li>
 </ul>
 </li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数学函数名</th>
+<th style="text-align:left">C++函数名</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">乘方</td>
+<td style="text-align:left">pow(x,y)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">正弦</td>
+<td style="text-align:left">sin(x)</td>
+<td style="text-align:left">x为弧度</td>
+</tr>
+<tr>
+<td style="text-align:left">余弦</td>
+<td style="text-align:left">cos(x)</td>
+<td style="text-align:left">x为弧度</td>
+</tr>
+<tr>
+<td style="text-align:left">正切</td>
+<td style="text-align:left">tan(x)</td>
+<td style="text-align:left">x为弧度</td>
+</tr>
+<tr>
+<td style="text-align:left">$e^x$</td>
+<td style="text-align:left">exp(x)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$log_ex$</td>
+<td style="text-align:left">log(x)</td>
+<td style="text-align:left">e为底</td>
+</tr>
+<tr>
+<td style="text-align:left">$log_{10}x$</td>
+<td style="text-align:left">log10(x)</td>
+<td style="text-align:left">10为底</td>
+</tr>
+<tr>
+<td style="text-align:left">平方根</td>
+<td style="text-align:left">sqrt(x)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">绝对值</td>
+<td style="text-align:left">fabs(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
 <li><h4 id="循环，有条件地重复执行一段程序"><a href="#循环，有条件地重复执行一段程序" class="headerlink" title="循环，有条件地重复执行一段程序"></a>循环，有条件地重复执行一段程序</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (&lt;条件&gt;)&#123;</span><br><span class="line">​	&lt;循环体(一段程序)&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;其他语句&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><h4 id="编程的好习惯"><a href="#编程的好习惯" class="headerlink" title="编程的好习惯"></a>编程的好习惯</h4><ul>
@@ -187,7 +244,22 @@ cond(no)->io->e</sum<<endl;></textarea><textarea id="flowchart-1-options" style=
     <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
     <img id="top" src="/images/up-circle.svg" alt="top">
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 <!-- 加载主题脚本文件 -->
 <script src="/scripts/utone.js"></script>
