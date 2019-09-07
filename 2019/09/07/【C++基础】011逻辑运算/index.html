@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】011逻辑运算 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#逻辑运算"><span class="post-toc-number">1.</span> <span class="post-toc-text">逻辑运算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-逻辑运算"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 逻辑运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-逻辑运算符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 逻辑运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-逻辑表达式"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 逻辑表达式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-逻辑表达式的值"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 逻辑表达式的值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-逻辑运算符的优先级"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5. 逻辑运算符的优先级</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-注意事项"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">6. 注意事项</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】011逻辑运算
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-07T05:00:30.000Z" itemprop="datePublished">
+            2019-09-07
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">13</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">13</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">14</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2></blockquote>
+<h3 id="1-逻辑运算"><a href="#1-逻辑运算" class="headerlink" title="1. 逻辑运算"></a>1. 逻辑运算</h3><ul>
+<li><strong>逻辑运算表达、判断多个条件之间的关系</strong><br>同时成立、之一成立、不成立</li>
+<li><strong>例如</strong><ul>
+<li>$x\in[0,1]$，可以表示为<br>x &gt;= 0 并且 x &lt;= 1</li>
+<li>$x\notin[0,1]$，可以表示为<br>x &gt; 1 或者 x &lt; 0</li>
+</ul>
+</li>
+<li><strong>非负实数</strong><br>不是(x &lt; 0)，非(x &lt; 0)</li>
+<li>“并且”，“或”，“不是”，就是逻辑运算</li>
+</ul>
+<h3 id="2-逻辑运算符"><a href="#2-逻辑运算符" class="headerlink" title="2. 逻辑运算符"></a>2. 逻辑运算符</h3><p><strong>表示逻辑运算的符号</strong></p>
+<ul>
+<li>&amp;&amp;——并且，逻辑“与”，and</li>
+<li>||——或，逻辑“或”，or</li>
+<li>!——不是，逻辑“非”，not</li>
+</ul>
+<h3 id="3-逻辑表达式"><a href="#3-逻辑表达式" class="headerlink" title="3. 逻辑表达式"></a>3. 逻辑表达式</h3><ul>
+<li><strong>逻辑运算符和关系表达式或有数值的表达式连接构成逻辑表达式</strong></li>
+<li><strong>&amp;&amp;，||是双目运算，格式是</strong><br>&lt;条件1&gt; &amp;&amp; &lt;条件2&gt;<br>&lt;条件1&gt; || &lt;条件2&gt;</li>
+<li><strong>!是弹幕运算，格式是</strong><br>!&lt;条件&gt;</li>
+<li><strong>例如</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> x;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">x &gt;= <span class="number">0</span> &amp;&amp; x &lt;= <span class="number">1</span>;      <span class="comment">// x∈ [0,1]</span></span><br><span class="line">x &gt;= <span class="number">0</span> || x &lt;= <span class="number">1</span>;      <span class="comment">// x∈ [0,1]</span></span><br><span class="line">!(x &gt;= <span class="number">0</span> &amp;&amp; x &lt;= <span class="number">1</span>);   <span class="comment">// x∈ [0,1]</span></span><br><span class="line">!(x &lt; <span class="number">0</span>);              <span class="comment">// x是非负数，x &gt; 0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-逻辑表达式的值"><a href="#4-逻辑表达式的值" class="headerlink" title="4. 逻辑表达式的值"></a>4. 逻辑表达式的值</h3><ol>
+<li><strong>逻辑值：true，false</strong></li>
+</ol>
+<ul>
+<li><p>与运算 &lt;条件1&gt; &amp;&amp; &lt;条件2&gt;</p>
+<table>
+      <tr>
+        <th>条件1</th><th>条件2</th><th>结果</th>
+      </tr>
+      <tr>
+        <td><font color="red">true</font></td>
+        <td><font color="red">true</font></td>
+        <td><font color="red">true</font></td>
+      </tr>
+      <tr>
+        <td>true</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>true</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+  </table>
+</li>
+<li><p>或运算 &lt;条件1&gt; || &lt;条件2&gt;</p>
+  <table>
+      <tr>
+        <th>条件1</th><th>条件2</th><th>结果</th>
+      </tr>
+      <tr>
+        <td><font color="red">true</font></td>
+        <td><font color="red">true</font></td>
+        <td><font color="red">true</font></td>
+      </tr>
+      <tr>
+        <td><font color="red">true</font></td>
+        <td>false</td>
+        <td><font color="red">true</font></td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td><font color="red">true</font></td>
+        <td><font color="red">true</font></td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+  </table>
+</li>
+<li><p>非运算 !</p>
+<table>
+    <tr>
+      <th>条件</th><th>结果</th>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td><font color="red">false</font></td>
+      <td>true</td>
+    </tr>
+</table>
+</li>
+<li><p>举例</p>
+<table>
+    <tr>
+      <th>逻辑表达式</th>
+      <th>-0.5</th>
+      <th>0.5</th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <td>x >= 0 && x <= 1< td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </=></td></tr>
+    <tr>
+      <td>x >= 0 || x <= 1< td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </=></td></tr>
+    <tr>
+      <td>!(x >= 0 && x <= 1)< td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </=></td></tr>
+    <tr>
+      <td>x < 0</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>!(x < 0)</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+</table>
+
+</li>
+</ul>
+<h3 id="5-逻辑运算符的优先级"><a href="#5-逻辑运算符的优先级" class="headerlink" title="5. 逻辑运算符的优先级"></a>5. 逻辑运算符的优先级</h3>  <table>
+      <tr>
+        <th>优先级</th>
+        <th>类型</th>
+        <th>大类</th>
+      </tr>
+      <tr>
+        <th rowspan="7">高<br><br>↓<br><br>低
+        </th><td>逻辑非 !，负号 -</td>
+        <td>逻辑运算符、负号</td>
+      </tr>
+      <tr>
+        <td>乘、除、求余【*，/，%】</td>
+        <td rowspan="2">算数运算</td>
+      </tr>
+      <tr>
+        <td>加、减【+，-】</td>
+      </tr>
+      <tr>
+        <td>大于、小于【>，<】< td>
+        <td rowspan="2">关系运算</td>
+      </】<></td></tr>
+      <tr>
+        <td>等于、不等于【==，!=】</td>
+      </tr>
+      <tr>
+        <td>逻辑与【&&】</td>
+        <td rowspan="2">逻辑运算</td>
+      </tr>
+      <tr>
+        <td>逻辑或【||】</td>
+      </tr>
+  </table>
+
+<ul>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> f;</span><br><span class="line">    f = !(<span class="number">2</span> &gt; <span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    f = !<span class="number">2</span> &gt; <span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>运行结果</strong><br><img src="【C++基础】011执行结果1.png" alt="011执行结果"></p>
+</li>
+</ul>
+<h3 id="6-注意事项"><a href="#6-注意事项" class="headerlink" title="6. 注意事项"></a>6. 注意事项</h3><ol>
+<li><strong>单个变量或常量也可以作为条件</strong><br>1 &amp;&amp; 2  ———  true<br>1 &amp;&amp; 0  ———  false<br>0 || 1  ———  true<br>0 || 0  ———  false<br>!2      ———  false<br>!0      ———  true<br>a &amp;&amp; b  ———  a!=0 &amp;&amp; b!=0<br>a || b  ———  a!=0 || b!=0<br>!a      ———  a==0，a为0时，!a为true<br>a       ———  a!=0</li>
+<li>逻辑表达式的<font color="red">短路求值</font>（short circuit evaluation）<ul>
+<li>如果判断了前面的条件，已经能达到表达式的结果，就不再计算后面的条件<br>如x&gt;=0 &amp;&amp; x&lt;=1，如果x=-1，x&gt;=0结果为false，那么此表达式的值必然为false，那么x&lt;=1这里就不再计算</li>
+<li>逻辑运算符也用在条件分支语句当中</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
