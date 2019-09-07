@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】011-1例题讲解 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断闰年并输出"><span class="post-toc-number">1.</span> <span class="post-toc-text">判断闰年并输出</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【实例名称】"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">【实例名称】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【例题分析】"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">【例题分析】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【算法设计】"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">【算法设计】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【示例代码】"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">【示例代码】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【执行结果】"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">【执行结果】</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】011-1例题讲解
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-07T06:03:44.000Z" itemprop="datePublished">
+            2019-09-07
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">14</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">14</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">15</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <h2 id="判断闰年并输出"><a href="#判断闰年并输出" class="headerlink" title="判断闰年并输出"></a>判断闰年并输出</h2><h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><pre><code>输入年份，判断该年是否闰年，是输出1，不是输出0
+</code></pre><h3 id="【例题分析】"><a href="#【例题分析】" class="headerlink" title="【例题分析】"></a>【例题分析】</h3><ul>
+<li>闰年的判断方法<br>能被4整除且不能被100整除<br>或能被400整除</li>
+<li>设年用y表示<br>((y%4 == 0) &amp;&amp; (y%100 !=0)) || (y%400 == 0)</li>
+</ul>
+<h3 id="【算法设计】"><a href="#【算法设计】" class="headerlink" title="【算法设计】"></a>【算法设计】</h3><p>设y表示年份，f是判断结果，是逻辑变量</p>
+<ol>
+<li>输入y</li>
+<li>计算<br>f = ((y%4 == 0) &amp;&amp; (y%100 !=0)) || (y%400 == 0)<ul>
+<li>如果f为true，就是闰年</li>
+<li>如果f为false，就不是闰年</li>
+</ul>
+</li>
+<li>输出<ul>
+<li>cout &lt;&lt; f &lt;&lt; endl;</li>
+</ul>
+</li>
+</ol>
+<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> f;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; y;</span><br><span class="line">        f = ((y % <span class="number">4</span> == <span class="number">0</span>) &amp;&amp; (y % <span class="number">100</span> != <span class="number">0</span>)) || (y % <span class="number">400</span> == <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; f &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"========"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【执行结果】"><a href="#【执行结果】" class="headerlink" title="【执行结果】"></a>【执行结果】</h3><p><img src="【C++基础】011-1执行结果1.png" alt="011执行结果"></p>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
