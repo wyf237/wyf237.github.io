@@ -58,16 +58,18 @@
     
     <div class="post-entry">
         <blockquote>
-<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="1-什么是位运算"><a href="#1-什么是位运算" class="headerlink" title="1. 什么是位运算"></a>1. 什么是位运算</h3><p><strong>数据在计算机中是以二进制数的形式存放的</strong>。<br>  a = 01101001B<br>  b = 01011110B<br>  <table>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2></blockquote>
+<h3 id="1-什么是位运算"><a href="#1-什么是位运算" class="headerlink" title="1. 什么是位运算"></a>1. 什么是位运算</h3><p><strong>数据在计算机中是以二进制数的形式存放的</strong>。<br>  a = 01101001B<br>  b = 01011110B<br>  <table>
     <tr>
-      <th rowspan="2"></th>
-      <th>高</th>
-      <th colspan="6"></th>
-      <th>低</th>
+      <td>-</td>
+      <td>高
+      </td><td colspan="6"></td>
+      <td>低</td>
     </tr>
     <tr>
-      <th>7</th><th>6</th><th>5</th><th>4</th>
-      <th>3</th><th>1</th><th>1</th><th>0</th>
+      <td>-</td>
+      <td>7</td><td>6</td><td>5</td><td>4</td>
+      <td>3</td><td>1</td><td>1</td><td>0</td>
     </tr>
     <tr>
       <td>a</td>
@@ -80,7 +82,6 @@
       <td>1</td><td>1</td><td>1</td><td>0</td>
     </tr>
   </table></p>
-</blockquote>
 <h3 id="2-位运算有哪些"><a href="#2-位运算有哪些" class="headerlink" title="2. 位运算有哪些"></a>2. 位运算有哪些</h3><ul>
 <li>与（and）、或（or）、取反（not）、异或（xor）、左移、右移</li>
 <li>按位“与”、按位“或”、按位“取反”、按位“异或”</li>
@@ -356,7 +357,7 @@
 <td style="text-align:left">c=a&amp;b</td>
 <td style="text-align:left">0100 1000B</td>
 <td style="text-align:left">72</td>
-<td style="text-align:left"></td>
+<td style="text-align:left">48H</td>
 <td style="text-align:left">0x48</td>
 </tr>
 <tr>
@@ -364,35 +365,35 @@
 <td style="text-align:left">b</td>
 <td style="text-align:left">0111 1111B</td>
 <td style="text-align:left">127</td>
-<td style="text-align:left"></td>
+<td style="text-align:left">7FH</td>
 <td>0x7F</td>
 </tr>
 <tr>
 <td style="text-align:left">c=a^b</td>
 <td style="text-align:left">0011 0111B</td>
 <td style="text-align:left">55</td>
-<td style="text-align:left"></td>
+<td style="text-align:left">37H</td>
 <td style="text-align:left">0x37</td>
 </tr>
 <tr>
 <td style="text-align:left">c=~a</td>
 <td style="text-align:left">11111111 11111111 11111111 10010110B</td>
 <td style="text-align:left">-106</td>
-<td style="text-align:left"></td>
+<td style="text-align:left">FFFFFF96H</td>
 <td style="text-align:left">0xFFFFFF96</td>
 </tr>
 <tr>
 <td style="text-align:left">c=a&lt;&lt;2</td>
 <td style="text-align:left">00000000 00000000 00000001 10100100B</td>
 <td style="text-align:left">420</td>
-<td style="text-align:left"></td>
+<td style="text-align:left">1A4H</td>
 <td style="text-align:left">0x1A4</td>
 </tr>
 <tr>
 <td style="text-align:left">c=a&gt;&gt;2</td>
 <td style="text-align:left">00000000 00000000 00000000 00011010B</td>
 <td style="text-align:left">26</td>
-<td style="text-align:left"></td>
+<td style="text-align:left">1AH</td>
 <td style="text-align:left">0x1A</td>
 </tr>
 </tbody>
@@ -407,7 +408,7 @@
 </ul>
 <h3 id="5-位运算符的优先级"><a href="#5-位运算符的优先级" class="headerlink" title="5. 位运算符的优先级"></a>5. 位运算符的优先级</h3><table>
    <tr>
-      <td rowspan="13">高<br><br>↓<br><br>低</td>
+      <td rowspan="13">最高<br><br>↓<br><br>最低</td>
       <td>按位反，逻辑非!，符号-，前置++，前置--</td>
    </tr>
    <tr>
