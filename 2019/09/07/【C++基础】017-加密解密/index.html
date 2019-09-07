@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】017-加密解密 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#加密解密"><span class="post-toc-number">1.</span> <span class="post-toc-text">加密解密</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【实例名称】"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">【实例名称】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【算法描述】"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">【算法描述】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【示例代码】"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">【示例代码】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【执行结果】"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">【执行结果】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【思路扩展】"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">【思路扩展】</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】017-加密解密
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-07T14:44:13.000Z" itemprop="datePublished">
+            2019-09-07
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">20</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">20</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">21</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="加密解密"><a href="#加密解密" class="headerlink" title="加密解密"></a>加密解密</h2></blockquote>
+<h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><ul>
+<li>一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。</li>
+<li>加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。</li>
+<li>例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。</li>
+<li>编写程序，用户从键盘输入一个小写字母和k值，将输入的小写字母用替换加密法加密并输出加密后的字母。</li>
+</ul>
+<h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><blockquote>
+<p>替换加密</p>
+</blockquote>
+<ol>
+<li>输入单个小写字符c，和数k；</li>
+<li>计算它在英文字母表中的序号n=c-‘a’（从0开始）；</li>
+<li>将序号n加k（n=n+k）；</li>
+<li>如果超出了25，则除26求余（n=n%26）</li>
+<li>输出新序号位置的字母（ec=n+’a’）；</li>
+</ol>
+<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;  <span class="comment">//存放原字母</span></span><br><span class="line">    <span class="keyword">char</span> ec; <span class="comment">//存放密后的字母</span></span><br><span class="line">    <span class="keyword">int</span> k;   <span class="comment">//存放密钥</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please input a lower character and k "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; c &gt;&gt; k;                   <span class="comment">//输入</span></span><br><span class="line">    ec = ((c - <span class="string">'a'</span>) + k) % <span class="number">26</span> + <span class="string">'a'</span>; <span class="comment">//加密算法</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ec &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【执行结果】"><a href="#【执行结果】" class="headerlink" title="【执行结果】"></a>【执行结果】</h3><p><img src="【C++基础】017执行结果1.png" alt="017执行结果"></p>
+<h3 id="【思路扩展】"><a href="#【思路扩展】" class="headerlink" title="【思路扩展】"></a>【思路扩展】</h3><ol>
+<li><p><strong>如何实现大写字母的加密呢？</strong><br>将’a’换成’A’即可</p>
+</li>
+<li><p><strong>如何解密？</strong><br>ec = (26 + (c - ‘a’) - k) % 26 + ‘a’; //改这一句即可</p>
+</li>
+<li><p><strong>该例实现一个字母、一个密钥的加密。输入一组数据，程序结束。这非常不实用。如何实现程序的一次运行，可以输入多组数据内？</strong></p>
+</li>
+</ol>
+<ul>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> c;  <span class="comment">//存放原字母串</span></span><br><span class="line">    <span class="built_in">string</span> ec; <span class="comment">//存放密后的字母</span></span><br><span class="line">    <span class="keyword">int</span> k;     <span class="comment">//存放密钥</span></span><br><span class="line">    <span class="keyword">int</span> i;     <span class="comment">//循环序数</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        c = <span class="string">""</span>;</span><br><span class="line">        ec = <span class="string">""</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please input a lower character and k "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; c &gt;&gt; k; <span class="comment">//输入</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; c.length(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            ec += ((c[i] - <span class="string">'a'</span>) + k) % <span class="number">26</span> + <span class="string">'a'</span>; <span class="comment">//加密算法</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ec &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行结果</strong><br><img src="【C++基础】017执行结果2.png" alt="017执行结果"></p>
+</li>
+</ul>
+<ol>
+<li><strong>上面的程序也只能实现小写字母的加密，也就是说用户只能输入小写字母。要同时实现大写和小写字母的加密呢？</strong></li>
+</ol>
+<ul>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> c;  <span class="comment">//存放原字母串</span></span><br><span class="line">    <span class="built_in">string</span> ec; <span class="comment">//存放密后的字母</span></span><br><span class="line">    <span class="keyword">int</span> k;     <span class="comment">//存放密钥</span></span><br><span class="line">    <span class="keyword">int</span> i;     <span class="comment">//循环序数</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        c = <span class="string">""</span>;</span><br><span class="line">        ec = <span class="string">""</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please input a lower character and k "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; c &gt;&gt; k; <span class="comment">//输入</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; c.length(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> ((<span class="keyword">int</span>)c[i] &gt; <span class="number">96</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ec += ((c[i] - <span class="string">'a'</span>) + k) % <span class="number">26</span> + <span class="string">'a'</span>; <span class="comment">//加密算法</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                ec += ((c[i] - <span class="string">'A'</span>) + k) % <span class="number">26</span> + <span class="string">'A'</span>; <span class="comment">//加密算法</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ec &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行结果</strong><br><img src="【C++基础】017执行结果3.png" alt="017执行结果"></p>
+</li>
+</ul>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
