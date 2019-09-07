@@ -75,7 +75,8 @@
 <li><p><strong>优先级和结合顺序</strong></p>
 <ul>
 <li>优先级较低，低于逻辑运算，和复合算数运算、符合位运算是同级的</li>
-<li>结合顺序是从右向左<br>int a=1,b=5,x,y,z;<br>x=y=z=a+b;//x,y,z都是6<br>或者x=(y=(z=a+b));<br>是否可以写成：z=x+y=a+b; ？不可以！，会报如下错误：<font color="red">[Errpr] lvalue required as left operand of assignment</font>
+<li><p>结合顺序是从右向左<br>int a=1,b=5,x,y,z;<br>x=y=z=a+b;//x,y,z都是6<br>或者x=(y=(z=a+b));<br>是否可以写成：z=x+y=a+b; ？不可以！，会报如下错误：</p>
+<font color="red">[Errpr] lvalue required as left operand of assignment</font>
 </li>
 </ul>
 </li>
