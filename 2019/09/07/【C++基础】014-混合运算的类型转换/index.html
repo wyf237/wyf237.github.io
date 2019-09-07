@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】014-混合运算的类型转换 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#混合运算的类型转换"><span class="post-toc-number">1.</span> <span class="post-toc-text">混合运算的类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-混合运算和隐式转换"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 混合运算和隐式转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-算术转换"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 算术转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-隐式转换时机"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 隐式转换时机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-显示转换"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4.显示转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-总结"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5.总结</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】014-混合运算的类型转换
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-07T10:27:40.000Z" itemprop="datePublished">
+            2019-09-07
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">18</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">18</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">19</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="混合运算的类型转换"><a href="#混合运算的类型转换" class="headerlink" title="混合运算的类型转换"></a>混合运算的类型转换</h2></blockquote>
+<h3 id="1-混合运算和隐式转换"><a href="#1-混合运算和隐式转换" class="headerlink" title="1. 混合运算和隐式转换"></a>1. 混合运算和隐式转换</h3><ul>
+<li><strong>2 + 5 = 7</strong></li>
+<li><strong>整型2+浮点型5，行吗？</strong></li>
+<li><strong>C++中允许相关的数据类型进行混合运算</strong></li>
+<li><strong>相关数据类型</strong><br>尽管在程序中的数据类型不同，但逻辑上进行这种运算是合理的</li>
+<li><strong>相关类型在混合运算时会自动进行类型转换</strong>，再计算</li>
+<li><strong>称为隐式转换</strong></li>
+</ul>
+<h3 id="2-算术转换"><a href="#2-算术转换" class="headerlink" title="2. 算术转换"></a>2. 算术转换</h3><ul>
+<li><strong>转换原则</strong>：<ul>
+<li>确保计算值的精度。转换后尽可能不丢失有效数字。</li>
+<li>short，2字节，能表示的数小</li>
+<li>int，4字节，能表示的数大</li>
+<li>int转short，要丢掉2字节的信息，不可取</li>
+<li>short转int，增加存储空间，但不丢失信息，可以</li>
+</ul>
+</li>
+<li><strong>转换方式</strong><ul>
+<li>char，unsigned char，short，unsigned short，bool → int<br>cout &lt;&lt; (‘a’+5) &lt;&lt; endl;//‘a’转换为int再加5，结果为整型</li>
+<li>精度低的向精度高的转换<ul>
+<li>int → float → double<br>cout &lt;&lt; (5+3.5) &lt;&lt; endl;//5转换为double型再相加</li>
+</ul>
+</li>
+<li>有符号向无符号转换<ul>
+<li>int → unsigned int</li>
+<li>unsigned int ui=32678;</li>
+<li>cout &lt;&lt; (5+ui) &lt;&lt; endl;//5转换为unsigned int</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-隐式转换时机"><a href="#3-隐式转换时机" class="headerlink" title="3. 隐式转换时机"></a>3. 隐式转换时机</h3><ul>
+<li><p><strong>混合类型的表达式</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (c+n) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//'a'的ASCII码为97，加2得整型99</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>赋值</strong></p>
+<ul>
+<li><p>向左值类型转换</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a = <span class="number">8.12</span>;</span><br><span class="line"><span class="keyword">int</span> k;</span><br><span class="line">k = a;<span class="comment">//a转换为int，舍去小数，k为8</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="red">向低精度转换会损失有效数字</font></p>
+<ul>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">256</span> + <span class="number">97</span>;</span><br><span class="line">    <span class="keyword">double</span> b = <span class="number">256</span> + <span class="number">97.625</span>;</span><br><span class="line">    <span class="keyword">char</span> c1, c2;</span><br><span class="line">    c1 = a;<span class="comment">//错误</span></span><br><span class="line">    c2 = b;<span class="comment">//错误</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (<span class="keyword">int</span>)c1 &lt;&lt; <span class="string">"\t"</span> &lt;&lt; c1 &lt;&lt; <span class="string">"\t"</span> &lt;&lt; (<span class="keyword">int</span>)c2 &lt;&lt; <span class="string">"\t"</span> &lt;&lt; c2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行结果</strong><br><img src="【C++基础】014执行结果1.png" alt="014执行结果"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在需要条件、逻辑表达式的地方<br>非0转true，0转false</li>
+</ul>
+<h3 id="4-显示转换"><a href="#4-显示转换" class="headerlink" title="4.显示转换"></a>4.显示转换</h3><ul>
+<li><strong>程序中明确标记转换的类型</strong>，就是显示转换，也就是强制类型转换</li>
+<li><strong>格式</strong><br>&lt;类型&gt;(&lt;表达式&gt;)<br>(&lt;类型&gt;)&lt;表达式&gt;</li>
+<li><p><strong>举例</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a=<span class="number">128</span>,b=<span class="number">30</span>;</span><br><span class="line"><span class="keyword">int</span> n=<span class="number">3</span>;</span><br><span class="line">a=(<span class="keyword">double</span>)n/<span class="number">2</span>; <span class="comment">//强制将n转换为double</span></span><br><span class="line">n=<span class="keyword">int</span>(a/b);    <span class="comment">//强制将a/b的值转换为int</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>优先级：高于乘法和除法，和逻辑非、按位取反同级</strong></p>
+</li>
+<li><strong>结合顺序：从左向右</strong></li>
+</ul>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><ol>
+<li><strong>相同类型的数据运算，结果的类型不变</strong></li>
+<li><strong>不同类型的数据运算，自动向精度高的类型转换</strong></li>
+<li><strong>赋值运算，向左值类型转换</strong></li>
+<li><strong>强制类型转换</strong><br>&lt;类型&gt;(&lt;表达式&gt;)<br>(&lt;类型&gt;)&lt;表达式&gt;</li>
+<li><strong>精度高向精度低的类型转换，会损失精度</strong></li>
+<li><strong>整型相除，结果为整型，小数会被舍去</strong><ul>
+<li>整型/整型=整型，3/2=1，而不是1.5</li>
+<li>double赋值给int，会舍去小数</li>
+<li>char和int相加，是字符的ASCII和整数相加</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

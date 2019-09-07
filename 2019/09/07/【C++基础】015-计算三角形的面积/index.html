@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】015-计算三角形的面积 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算三角形的面积"><span class="post-toc-number">1.</span> <span class="post-toc-text">计算三角形的面积</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【实例名称】"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">【实例名称】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【运行结果】"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">【运行结果】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【算法描述】"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">【算法描述】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【示例代码】"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">【示例代码】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【运行结果】-1"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">【运行结果】</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【思考题】"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">【思考题】</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】015-计算三角形的面积
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-07T10:55:48.000Z" itemprop="datePublished">
+            2019-09-07
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">18</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">18</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">19</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="计算三角形的面积"><a href="#计算三角形的面积" class="headerlink" title="计算三角形的面积"></a>计算三角形的面积</h2></blockquote>
+<h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p>用户输入三角形的三条边长a、b、c，利用海伦公式计算三角形的面积。</p>
+<script type="math/tex; mode=display">A=\sqrt{s(s-a)(s-b)(s-c)}</script><p>其中，a、b、c是三角形的三边，可能为实数。</p>
+<h3 id="【运行结果】"><a href="#【运行结果】" class="headerlink" title="【运行结果】"></a>【运行结果】</h3><ul>
+<li>Please input three edges a,b,c=3 4 5</li>
+<li>The area is 6</li>
+</ul>
+<h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><blockquote>
+<p>利用海伦公式计算三角形的面积<br>用a，b，c表示三角形的三个边</p>
+</blockquote>
+<ul>
+<li>①输入a，b，c三个数；</li>
+<li>②计算s=(a+b+c)/2；</li>
+<li>③计算面积；</li>
+<li>④输出面积A；</li>
+</ul>
+<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b, c;</span><br><span class="line">    <span class="keyword">double</span> s, A;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please input three edges a,b,c="</span>; <span class="comment">//输出提示</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;                        <span class="comment">//输入</span></span><br><span class="line">    s = (a + b + c) / <span class="number">2.0</span>;                     <span class="comment">//计算s</span></span><br><span class="line">    A = <span class="built_in">sqrt</span>(s * (s - a) * (s - b) * (s - c)); <span class="comment">//计算面积</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The area is "</span> &lt;&lt; A &lt;&lt; <span class="built_in">endl</span>;       <span class="comment">//输出结果</span></span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【运行结果】-1"><a href="#【运行结果】-1" class="headerlink" title="【运行结果】"></a>【运行结果】</h3><p><img src="【C++基础】015执行结果1.png" alt="015执行结果"></p>
+<h3 id="【思考题】"><a href="#【思考题】" class="headerlink" title="【思考题】"></a>【思考题】</h3><ol>
+<li>计算s的右边的表达式注意什么问题，还可以怎样书写？<br>A = sqrt(s <em> (s - a) </em> (s - b) * (s - c));<ul>
+<li>*不可以去掉</li>
+</ul>
+</li>
+<li><p>程序中怎么有2个a（一个大写A，一个小写a）呢？</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a,b,c;</span><br><span class="line"><span class="keyword">double</span> s,A;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>C++中大小写敏感，A和a不是一个变量</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
