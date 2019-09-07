@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】012位运算 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#位运算"><span class="post-toc-number">1.</span> <span class="post-toc-text">位运算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-什么是位运算"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 什么是位运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-位运算有哪些"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 位运算有哪些</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#按位“与”"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">按位“与”</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#按位“或”"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">按位“或”</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#按位“异或”"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">按位“异或”</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#按位“取反”"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">按位“取反”</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#移位运算"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">移位运算</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-位运算符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 位运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-举例"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 举例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-位运算符的优先级"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5. 位运算符的优先级</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-位运算的应用"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">6. 位运算的应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-复合位运算"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">7. 复合位运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-位运算使用注意事项"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">8. 位运算使用注意事项</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】012位运算
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-07T06:25:06.000Z" itemprop="datePublished">
+            2019-09-07
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">15</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">15</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">16</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="1-什么是位运算"><a href="#1-什么是位运算" class="headerlink" title="1. 什么是位运算"></a>1. 什么是位运算</h3><p><strong>数据在计算机中是以二进制数的形式存放的</strong>。<br>  a = 01101001B<br>  b = 01011110B<br>  <table>
+    <tr>
+      <th rowspan="2"></th>
+      <th>高</th>
+      <th colspan="6"></th>
+      <th>低</th>
+    </tr>
+    <tr>
+      <th>7</th><th>6</th><th>5</th><th>4</th>
+      <th>3</th><th>1</th><th>1</th><th>0</th>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>0</td><td>1</td><td>1</td><td>0</td>
+      <td>1</td><td>0</td><td>0</td><td>1</td>
+    </tr>
+    <tr>
+      <td>b</td>
+      <td>0</td><td>1</td><td>0</td><td>1</td>
+      <td>1</td><td>1</td><td>1</td><td>0</td>
+    </tr>
+  </table></p>
+</blockquote>
+<h3 id="2-位运算有哪些"><a href="#2-位运算有哪些" class="headerlink" title="2. 位运算有哪些"></a>2. 位运算有哪些</h3><ul>
+<li>与（and）、或（or）、取反（not）、异或（xor）、左移、右移</li>
+<li>按位“与”、按位“或”、按位“取反”、按位“异或”</li>
+</ul>
+<h4 id="按位“与”"><a href="#按位“与”" class="headerlink" title="按位“与”"></a>按位“与”</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ai</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">bi</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">结果</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="按位“或”"><a href="#按位“或”" class="headerlink" title="按位“或”"></a>按位“或”</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ai</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">bi</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">结果</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="按位“异或”"><a href="#按位“异或”" class="headerlink" title="按位“异或”"></a>按位“异或”</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ai</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">bi</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">结果</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="按位“取反”"><a href="#按位“取反”" class="headerlink" title="按位“取反”"></a>按位“取反”</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ai</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">结果</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="移位运算"><a href="#移位运算" class="headerlink" title="移位运算"></a>移位运算</h4><p><strong>移位：将二进制数的每一位向左或向右移动指定的位数</strong></p>
+<blockquote>
+<p>如：左移两位</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">内存位置</th>
+<th style="text-align:center">外面</th>
+<th style="text-align:center">外面</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">移动前</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">移动后</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><font color="red">0</font></td>
+<td style="text-align:center"><font color="red">0</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>如：右移两位</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">内存位置</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">外面</th>
+<th style="text-align:center">外面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">移动前</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">移动后</td>
+<td style="text-align:center"><font color="red">0</font></td>
+<td style="text-align:center"><font color="red">0</font></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3-位运算符"><a href="#3-位运算符" class="headerlink" title="3. 位运算符"></a>3. 位运算符</h3><ul>
+<li>&amp; 按位“与”</li>
+<li>| 按位“或”</li>
+<li>^ 按位“异或”</li>
+<li>&lt;&lt; 左移</li>
+<li>>&gt; 右移</li>
+<li>~ 按位“取反”</li>
+<li>格式<br>&lt;整数类型表达式1&gt; &lt;位运算符&gt; &lt;整数类型表达式2&gt;<br>~&lt;整数类型表达式&gt;</li>
+</ul>
+<h3 id="4-举例"><a href="#4-举例" class="headerlink" title="4. 举例"></a>4. 举例</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数值</th>
+<th style="text-align:left">二进制</th>
+<th style="text-align:left">十进制</th>
+<th style="text-align:left">十六进制</th>
+<th style="text-align:left">C++中十六进制表示形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">0110 1001B</td>
+<td style="text-align:left">105</td>
+<td style="text-align:left">69H</td>
+<td style="text-align:left">0x69</td>
+</tr>
+<tr>
+<td style="text-align:left">b</td>
+<td style="text-align:left">0101 1110B</td>
+<td style="text-align:left">94</td>
+<td style="text-align:left">5EH</td>
+<td style="text-align:left">0x5E</td>
+</tr>
+<tr>
+<td style="text-align:left">c=a&amp;b</td>
+<td style="text-align:left">0100 1000B</td>
+<td style="text-align:left">72</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0x48</td>
+</tr>
+<tr>
+<td style="text-align:left">c=a\</td>
+<td style="text-align:left">b</td>
+<td style="text-align:left">0111 1111B</td>
+<td style="text-align:left">127</td>
+<td style="text-align:left"></td>
+<td>0x7F</td>
+</tr>
+<tr>
+<td style="text-align:left">c=a^b</td>
+<td style="text-align:left">0011 0111B</td>
+<td style="text-align:left">55</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0x37</td>
+</tr>
+<tr>
+<td style="text-align:left">c=~a</td>
+<td style="text-align:left">11111111 11111111 11111111 10010110B</td>
+<td style="text-align:left">-106</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0xFFFFFF96</td>
+</tr>
+<tr>
+<td style="text-align:left">c=a&lt;&lt;2</td>
+<td style="text-align:left">00000000 00000000 00000001 10100100B</td>
+<td style="text-align:left">420</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0x1A4</td>
+</tr>
+<tr>
+<td style="text-align:left">c=a&gt;&gt;2</td>
+<td style="text-align:left">00000000 00000000 00000000 00011010B</td>
+<td style="text-align:left">26</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0x1A</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0x69</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">0x5E</span>;</span><br><span class="line">    <span class="keyword">int</span> c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; uppercase;                            <span class="comment">//输出的16进制数中的字母为大写字母</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; a &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//输出a</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; b &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//输出b</span></span><br><span class="line">    c = a &amp; b;                                    <span class="comment">//按位“与”</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; c &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//</span></span><br><span class="line">    c = a | b;                                    <span class="comment">//按位“或”</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; c &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//</span></span><br><span class="line">    c = a ^ b;                                    <span class="comment">//按位“异或”</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; c &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//</span></span><br><span class="line">    c = ~a;                                       <span class="comment">//按位“取反”</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; c &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//</span></span><br><span class="line">    c = a &lt;&lt; <span class="number">2</span>;                                   <span class="comment">//左移2位</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; c &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//</span></span><br><span class="line">    c = a &gt;&gt; <span class="number">2</span>;                                   <span class="comment">//右移2位</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; c &lt;&lt; <span class="string">"\t"</span> &lt;&lt; hex &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dec;                                  <span class="comment">//恢复10进制格式输出</span></span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行结果</strong><br><img src="【C++基础】012执行结果1.png" alt="012执行结果"></p>
+</li>
+</ul>
+<h3 id="5-位运算符的优先级"><a href="#5-位运算符的优先级" class="headerlink" title="5. 位运算符的优先级"></a>5. 位运算符的优先级</h3><table>
+   <tr>
+      <td rowspan="13">高<br><br>↓<br><br>低</td>
+      <td>按位反，逻辑非!，符号-，前置++，前置--</td>
+   </tr>
+   <tr>
+      <td>算数乘*，除/，求余%</td>
+   </tr>
+   <tr>
+      <td>算数加+，减-</td>
+   </tr>
+   <tr>
+      <td>按位左移<<，右移>></，右移></td>
+   </tr>
+   <tr>
+      <td>关系：大于>，小于<，大于等于>=，小于等于<=< td>
+   </=<></，大于等于></td></tr>
+   <tr>
+      <td>关系：等于=，不等于!=</td>
+   </tr>
+   <tr>
+      <td>按位与</td>
+   </tr>
+   <tr>
+      <td>按位异或</td>
+   </tr>
+   <tr>
+      <td>按位或</td>
+   </tr>
+   <tr>
+      <td>逻辑与&&</td>
+   </tr>
+   <tr>
+      <td>逻辑或||</td>
+   </tr>
+   <tr>
+      <td>…</td>
+   </tr>
+   <tr>
+      <td>等号=</td>
+   </tr>
+</table>
+
+<h3 id="6-位运算的应用"><a href="#6-位运算的应用" class="headerlink" title="6. 位运算的应用"></a>6. 位运算的应用</h3><p><strong>按位“与”可以将某些位设置为0</strong><br>(a=0110 1001B) &amp; (b=1111 <font color="red">0000</font>B) = (c=0110 <font color="red">0000</font>B)</p>
+<p><strong>按位“或”可以将某些位设置为1</strong><br>(a=0110 1001B) | (b=<font color="red">1111</font> 0000B) = (c=<font color="red">1111</font> 0000B)</p>
+<p><strong>按位“异或”可以让某些位变反，而另一些位不变</strong><br>(a=<font color="blue">0110</font> <font color="green">1001</font>B) ^ (b=<font color="red">1111</font> 0000B) = (c=<font color="blue">1001</font> <font color="green">1001</font>B)</p>
+<h3 id="7-复合位运算"><a href="#7-复合位运算" class="headerlink" title="7. 复合位运算"></a>7. 复合位运算</h3><ol>
+<li><strong>位运算可以使用复合运算符</strong><ul>
+<li>复合与：&amp;=</li>
+<li>复合或：|=</li>
+<li>复合异或：^=</li>
+<li>复合左移：&lt;&lt;=</li>
+<li>复合右移：&gt;&gt;=</li>
+</ul>
+</li>
+<li>int x=0x1A6F,y=0x35AA,k=3:<ul>
+<li>x&amp;y=; 等价于 x=x&y;</li>
+<li>x|y=; 等价于 x=x|y;</li>
+<li>x^y=; 等价于 x=x^y;</li>
+<li>x&lt;&lt;=l; 等价于 x=x&lt;&lt;k;</li>
+<li>x&gt;&gt;=k; 等价于 x=x&gt;&gt;k;</li>
+<li>优先级：很低，与复合算数运算、等号同级</li>
+<li>结合顺序：从右向左</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-位运算使用注意事项"><a href="#8-位运算使用注意事项" class="headerlink" title="8. 位运算使用注意事项"></a>8. 位运算使用注意事项</h3><ol>
+<li>一个&amp;和两个&amp;&amp;是不同的<br>&amp;是按位“与”，&amp;&amp;是逻辑“与”<br>|是按位“或”，||是逻辑“或”</li>
+<li>在输出中使用移位运算的表达式时，要加括号<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="number">4</span> &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//结果为42</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="number">4</span> &lt;&lt; <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//结果为16</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
