@@ -30,7 +30,7 @@
             
           </ul>
            
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二阶与三阶行列式"><span class="post-toc-number">1.</span> <span class="post-toc-text">二阶与三阶行列式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二元线性方程组与二阶行列式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">二元线性方程组与二阶行列式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三阶行列式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">三阶行列式</span></a></li></ol></li></ol> 
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二阶与三阶行列式"><span class="post-toc-number">1.</span> <span class="post-toc-text">二阶与三阶行列式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二元线性方程组与二阶行列式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">二元线性方程组与二阶行列式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#【例1】求解二元线性方程组-begin-cases-3x-1-2x-2-12-2x-1-x-2-1-end-cases"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">【例1】求解二元线性方程组$\begin{cases}3x_1-2x_2=12\\2x_1+x_2=1\end{cases}$</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三阶行列式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">三阶行列式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#【例2】计算三阶行列式-D-begin-vmatrix-1-amp-2-amp-4-2-amp-2-amp-1-3-amp-4-amp-2-end-vmatrix-quad"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">【例2】计算三阶行列式$D=\begin{vmatrix} 1 &amp; 2 &amp; -4 \ -2 &amp; 2 &amp; 1 \ -3 &amp; 4 &amp; -2 \ \end{vmatrix}\quad$</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#【例3】求解方程-begin-vmatrix-1-amp-1-amp-1-2-amp-3-amp-x-4-amp-9-amp-x-2-end-vmatrix-quad-0"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">【例3】求解方程$\begin{vmatrix} 1 &amp; 1 &amp; 1 \ 2 &amp; 3 &amp; x \ 4 &amp; 9 &amp; x^2 \ \end{vmatrix}\quad=0.$</span></a></li></ol></li></ol></li></ol> 
           
         </div>
       </div>
@@ -76,10 +76,26 @@ x_2=\dfrac{b_2a_{11}-a_{21}b_1}{a_{11}a_{22}-a_{12}a_{21}}</script></li>
 \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ \end{vmatrix} \quad</script></li>
 <li><p><strong>数$a_{ij}(i=1,2;j=1,2)$称为行列式的元素</strong><br>$a_{ij}$的第一个下标$i$称为行标，表名该元素位于第$i$行；<br>第二个下标$j$称为列标，表明该元素位于第$j$列；</p>
 </li>
-<li><strong>二阶行列式遵从对角线法则</strong><br>从$a_{11}$到$a_{22}$的实连线，称为主对角线；（取乘积的正值）<br>从$a_{12}$到$a_{21}$的虚连线，称为副对角线；（取乘积的负值）<script type="math/tex; mode=display">
+<li><p><strong>二阶行列式遵从对角线法则</strong><br>从$a_{11}$到$a_{22}$的实连线，称为主对角线；（取乘积的正值）<br>从$a_{12}$到$a_{21}$的虚连线，称为副对角线；（取乘积的负值）</p>
+<script type="math/tex; mode=display">
 即可得到：\begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ \end{vmatrix} \quad=a_{11}a_{22}-a_{12}a_{21}</script></li>
+<li><p><strong>利用二阶行列式的概念，方程组的解可以重新表示为</strong></p>
+<script type="math/tex; mode=display">
+x_1=\dfrac{D_1}{D},x_2=\dfrac{D_2}{D}</script><p>其中$D=\begin{vmatrix} a_{11} &amp; a_{12} \ a_{21} &amp; a_{22} \ \end{vmatrix}\quad$称为系数行列式；<br>$D_1=\begin{vmatrix} b_1 &amp; a_{12} \ b_2 &amp; a_{22} \ \end{vmatrix}\quad$是用常数项$b_1b_2$替代第一列元素$a_{11},a{21}$所得的行列式；<br>$D_2=\begin{vmatrix} a_{11} &amp; b_1 \ a_{21} &amp; b_2\ \end{vmatrix}\quad$是用常数项$b_1b_2$替代第一列元素$a_{12},a{22}$所得的行列式；</p>
+</li>
 </ul>
-<h3 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h3>
+<h4 id="【例1】求解二元线性方程组-begin-cases-3x-1-2x-2-12-2x-1-x-2-1-end-cases"><a href="#【例1】求解二元线性方程组-begin-cases-3x-1-2x-2-12-2x-1-x-2-1-end-cases" class="headerlink" title="【例1】求解二元线性方程组$\begin{cases}3x_1-2x_2=12\\2x_1+x_2=1\end{cases}$"></a>【例1】求解二元线性方程组$\begin{cases}3x_1-2x_2=12\\2x_1+x_2=1\end{cases}$</h4><p>解：由于$D=\begin{vmatrix} 3 &amp; -2 \ 2 &amp; 1 \ \end{vmatrix}\quad=3-(-4)=7≠0$，</p>
+<p>&emsp;&emsp;$D_1=\begin{vmatrix} 12 &amp; 1 \ -2 &amp; 1 \ \end{vmatrix}\quad=12-(-2)=14$<br>&emsp;&emsp;$D_2=\begin{vmatrix} 3 &amp; 2 \ 12 &amp; 1 \ \end{vmatrix}\quad=3-24=-21$<br>&emsp;&emsp;因此 $x_1=\dfrac{D_1}{D}=\dfrac{14}{7}=2,x_2=\dfrac{D_2}{D}=\dfrac{-21}{7}=-3$</p>
+<h3 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h3><ul>
+<li><p><strong>定义1：</strong> 由9个数排成3行3列的数表</p>
+<script type="math/tex; mode=display">\begin{vmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \\ \end{vmatrix}\quad</script><p>  确定的数$\begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \ a_{21} &amp; a_{22} &amp; a_{23} \ a_{31} &amp; a_{32} &amp; a_{33} \ \end{vmatrix}\quad$称为三阶行列式，它是6项的代数和，每一项都是取自不同行、不同列的三个元素之积并冠以正负号</p>
+</li>
+<li><p><strong>三阶行列式的计算遵从对角线法则</strong><br><img src="【线性代数】001配图.png" alt="三阶行列式"><br>$=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}$</p>
+</li>
+</ul>
+<h4 id="【例2】计算三阶行列式-D-begin-vmatrix-1-amp-2-amp-4-2-amp-2-amp-1-3-amp-4-amp-2-end-vmatrix-quad"><a href="#【例2】计算三阶行列式-D-begin-vmatrix-1-amp-2-amp-4-2-amp-2-amp-1-3-amp-4-amp-2-end-vmatrix-quad" class="headerlink" title="【例2】计算三阶行列式$D=\begin{vmatrix} 1 &amp; 2 &amp; -4 \ -2 &amp; 2 &amp; 1 \ -3 &amp; 4 &amp; -2 \ \end{vmatrix}\quad$"></a>【例2】计算三阶行列式$D=\begin{vmatrix} 1 &amp; 2 &amp; -4 \ -2 &amp; 2 &amp; 1 \ -3 &amp; 4 &amp; -2 \ \end{vmatrix}\quad$</h4><p>解：按对角线法则，有<br>$D=$1×2×(-2)+2×1×(-3)+(-4)×(-2)×4-1×1×4-2×(-2)×(-2)-(-4)×2×(-3)<br>&ensp;&emsp;$=$-4-6+32-4-8-24<br>&ensp;&emsp;$=$-14</p>
+<h4 id="【例3】求解方程-begin-vmatrix-1-amp-1-amp-1-2-amp-3-amp-x-4-amp-9-amp-x-2-end-vmatrix-quad-0"><a href="#【例3】求解方程-begin-vmatrix-1-amp-1-amp-1-2-amp-3-amp-x-4-amp-9-amp-x-2-end-vmatrix-quad-0" class="headerlink" title="【例3】求解方程$\begin{vmatrix} 1 &amp; 1 &amp; 1 \ 2 &amp; 3 &amp; x \ 4 &amp; 9 &amp; x^2 \ \end{vmatrix}\quad=0.$"></a>【例3】求解方程$\begin{vmatrix} 1 &amp; 1 &amp; 1 \ 2 &amp; 3 &amp; x \ 4 &amp; 9 &amp; x^2 \ \end{vmatrix}\quad=0.$</h4><p>解：方程左端的三阶行列式为<br>$D=3x^2+4x+18-9x-2x^2-12=x^2-5x+6$<br>由$x^2-5x+6=0$ 解得 $x=2 或 x=3$</p>
+
     </div>
     <!--畅言PC和WAP自适应版-->
   
