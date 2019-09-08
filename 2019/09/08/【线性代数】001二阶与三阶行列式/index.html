@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【线性代数】001二阶与三阶行列式 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二阶与三阶行列式"><span class="post-toc-number">1.</span> <span class="post-toc-text">二阶与三阶行列式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二元线性方程组与二阶行列式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">二元线性方程组与二阶行列式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三阶行列式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">三阶行列式</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【线性代数】001二阶与三阶行列式
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-08T08:00:42.000Z" itemprop="datePublished">
+            2019-09-08
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/高等数学/">高等数学</a><span class="post-category-list-count">1</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/线性代数/">线性代数</a><span class="post-tag-list-count">1</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <h2 id="二阶与三阶行列式"><a href="#二阶与三阶行列式" class="headerlink" title="二阶与三阶行列式"></a>二阶与三阶行列式</h2><h3 id="二元线性方程组与二阶行列式"><a href="#二元线性方程组与二阶行列式" class="headerlink" title="二元线性方程组与二阶行列式"></a>二元线性方程组与二阶行列式</h3><ul>
+<li><p><strong>用消元法解线性方程组</strong>：$\begin{cases}a_{11}x_1+a{12}x_2=b_1, &amp;\dots(1)\\a_{21}x_1+a{22}x_2=b_2, &amp;\dots(2)\end{cases}$</p>
+<ol>
+<li><strong>消去未知数$x_2$：</strong>$(1)x×a_{22}-(2)×a_{12}$得<script type="math/tex; mode=display">
+(a_{11}a_{22}-a{12}a_{21})x_1=b_1a{22}-b_2a{12}</script></li>
+<li><strong>同理消去$x_1$得：</strong>$(a_{11}a_{22}-a_{12}a_{21})x_2=b_2a_{11}-b_1a_{21}$</li>
+<li><strong>当$a_{11}a_{22}-a_{12}a_{21}≠0$时，得方程组的解为：</strong><script type="math/tex; mode=display">
+x_1=\dfrac{b_1a_{22}-a_{12}b_2}{a_{11}a_{22}-a_{12}a_{21}},
+x_2=\dfrac{b_2a_{11}-a_{21}b_1}{a_{11}a_{22}-a_{12}a_{21}}</script></li>
+</ol>
+</li>
+<li><p><strong>在方程组解的表达式中，分子、分母都是四个数分两队乘积再作差得到，其中分母$a_{11}a_{22}-a_{12}a_{21}$由方程组中未知量系数确定。</strong></p>
+</li>
+<li><p><strong>把四个系数按照它们在方程组中的相对位置，拍成二行二列（横排叫行，竖排叫列）的数表：</strong></p>
+<p>  $a_{11}$  $a_{12}$<br>  $a_{21}$  $a_{22}$</p>
+</li>
+<li><p><strong>表达式$a_{11}a_{22}-a_{12}a_{21}$称为该鼠标确定的二阶行列式，记作为：</strong></p>
+<script type="math/tex; mode=display">
+\begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ \end{vmatrix} \quad</script></li>
+<li><p><strong>数$a_{ij}(i=1,2;j=1,2)$称为行列式的元素</strong><br>$a_{ij}$的第一个下标$i$称为行标，表名该元素位于第$i$行；<br>第二个下标$j$称为列标，表明该元素位于第$j$列；</p>
+</li>
+<li><strong>二阶行列式遵从对角线法则</strong><br>从$a_{11}$到$a_{22}$的实连线，称为主对角线；（取乘积的正值）<br>从$a_{12}$到$a_{21}$的虚连线，称为副对角线；（取乘积的负值）<script type="math/tex; mode=display">
+即可得到：\begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ \end{vmatrix} \quad=a_{11}a_{22}-a_{12}a_{21}</script></li>
+</ul>
+<h3 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h3>
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>

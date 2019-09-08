@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】整数、字符和字符串 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整数、字符和字符串"><span class="post-toc-number">1.</span> <span class="post-toc-text">整数、字符和字符串</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-整数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 整数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-字符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 字符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-字符和整数"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 字符和整数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-字符串"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 字符串</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】整数、字符和字符串
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-08T01:08:44.000Z" itemprop="datePublished">
+            2019-09-08
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">22</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">22</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">23</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="整数、字符和字符串"><a href="#整数、字符和字符串" class="headerlink" title="整数、字符和字符串"></a>整数、字符和字符串</h2></blockquote>
+<h3 id="1-整数"><a href="#1-整数" class="headerlink" title="1. 整数"></a>1. 整数</h3><ul>
+<li><strong>整数常量</strong><br>如：12，12L，0x15，015，12U</li>
+<li><strong>整型变量</strong><br>int a,b;<br>int x=10,y=20;</li>
+</ul>
+<h3 id="2-字符"><a href="#2-字符" class="headerlink" title="2. 字符"></a>2. 字符</h3><ul>
+<li><strong>字符常量</strong><br>如：’a’，’1’，’\t’，’\x41’，’\102’</li>
+<li><strong>字符变量</strong><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c,d;</span><br><span class="line">char e='A',f='\121';</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-字符和整数"><a href="#3-字符和整数" class="headerlink" title="3. 字符和整数"></a>3. 字符和整数</h3><ol>
+<li><strong>整数1，内存中存：</strong><br>00000000 00000000 00000000 00000001</li>
+<li><p><strong>字符’1’，内存中存：</strong><br>1这个字符的ASCII码，49<br>0011 0001<br>实际是个整数，占一个字节</p>
+</li>
+<li><p><strong>字符和整数</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">65</span>;                      <span class="comment">//a='A'</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;             <span class="comment">//65</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">char</span>)a &lt;&lt; <span class="built_in">endl</span>;       <span class="comment">//A</span></span><br><span class="line"><span class="keyword">char</span> c=<span class="string">'a'</span>;                    <span class="comment">//C=97</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;             <span class="comment">//a</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">int</span>)c &lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//97</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><font color="red">整数</font>和<font color="red">字符</font>在内存中存的<font color="red">都是整数</font>。</li>
+<li><font color="red">整数</font>，存放数的<font color="red">二进制形式</font>，<font color="red">字符</font>，存放其<font color="red">ASCII码</font>值。</li>
+<li>输出时，<font color="red">当整数</font>看待，显示数的<font color="red">十进制形式</font>。<font color="red">当字符</font>看待，显示的是ASCII值是这个数的<font color="red">字符</font>（该数&lt;128）。</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-字符串"><a href="#4-字符串" class="headerlink" title="4. 字符串"></a>4. 字符串</h3><ul>
+<li><strong>字符串常量</strong><br>“zhang”，”wang”，”Hello World”</li>
+<li><p><strong>字符串变量</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> name[<span class="number">40</span>]=<span class="string">"zhang"</span>;<span class="comment">//name称为字符数组</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>内存中</strong></p>
+<table>
+  <tr>
+    <td>序号</td>
+    <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>...</td><td>39</td>
+  </tr>
+  <tr>
+    <td>char</td>
+    <td>'z'</td><td>'h'</td><td>'a'</td><td>'n'</td><td>'g'</td><td>'\0'</td><td>...</td><td></td>
+  </tr>
+  <tr>
+    <td>ASCII</td>
+    <td>122</td><td>104</td><td>97</td><td>110</td><td>103</td><td>0</td><td>...</td><td></td>
+  </tr>
+</table>
+</li>
+</ul>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
