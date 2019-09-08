@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
+    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
+    
+    <title>
+       【C++基础】019转义字符 -  南烛的学习小栈
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#转义字符"><span class="post-toc-number">1.</span> <span class="post-toc-text">转义字符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-字符"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 字符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-转义字符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 转义字符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-转义符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 转义符</span></a></li></ol></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            【C++基础】019转义字符
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-08T01:59:53.000Z" itemprop="datePublished">
+            2019-09-08
+        </time>
+        
+        <ul class="post-category-list"><li class="post-category-list-item"><a class="post-category-list-link" href="/categories/C-基础/">C++基础</a><span class="post-category-list-count">22</span></li></ul>
+        
+        
+        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/C/">C++</a><span class="post-tag-list-count">22</span></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/编程/">编程</a><span class="post-tag-list-count">23</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <blockquote>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2></blockquote>
+<h3 id="1-字符"><a href="#1-字符" class="headerlink" title="1. 字符"></a>1. 字符</h3><ul>
+<li><p><strong>可显示字符</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c=<span class="string">'A'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>不可显示字符</strong><br>不能直接输入</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> d=<span class="string">'\n'</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"zhang"</span> &lt;&lt; d&lt;&lt; <span class="string">"xjtu &lt;&lt; endl;</span></span><br><span class="line"><span class="string">cout &lt;&lt; "</span>zhang\nxjtu\n<span class="string">";</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-转义字符"><a href="#2-转义字符" class="headerlink" title="2. 转义字符"></a>2. 转义字符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">八进制</th>
+<th style="text-align:left">十六进制</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">\12</td>
+<td style="text-align:left">\x0A</td>
+<td style="text-align:left">表示换行</td>
+</tr>
+<tr>
+<td style="text-align:left">\41</td>
+<td style="text-align:left">\041</td>
+<td style="text-align:left">\x21</td>
+<td style="text-align:left">表示’!’</td>
+</tr>
+<tr>
+<td style="text-align:left">\60</td>
+<td style="text-align:left">\060</td>
+<td style="text-align:left">\x30</td>
+<td style="text-align:left">表示字符’0’</td>
+</tr>
+<tr>
+<td style="text-align:left">\101</td>
+<td style="text-align:left">\x41</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">表示’A’</td>
+</tr>
+<tr>
+<td style="text-align:left">\141</td>
+<td style="text-align:left">\x61</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">表示’a’</td>
+</tr>
+<tr>
+<td style="text-align:left">\7</td>
+<td style="text-align:left">\007</td>
+<td style="text-align:left">\x7</td>
+<td style="text-align:left">表示响铃</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li> + 三位数字（0~7）——八进制ASCII码</li>
+<li>\X +两位数字（0~9）或字母A~F——十六进制ASCII码</li>
+</ul>
+<h3 id="3-转义符"><a href="#3-转义符" class="headerlink" title="3. 转义符"></a>3. 转义符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">转义符</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">ASCII十进制</th>
+<th style="text-align:left"></th>
+<th style="text-align:left">转义符</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">ASCII十进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\0</td>
+<td style="text-align:left">空字符</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">回车</td>
+<td style="text-align:left">13</td>
+</tr>
+<tr>
+<td style="text-align:left">\a</td>
+<td style="text-align:left">响铃</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">\\”</td>
+<td style="text-align:left">双引号</td>
+<td style="text-align:left">34</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">退格</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">\\’</td>
+<td style="text-align:left">单引号</td>
+<td style="text-align:left">39</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">水平制表符</td>
+<td style="text-align:left">9</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">\\\</td>
+<td style="text-align:left">反斜杠</td>
+<td style="text-align:left">92</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">换行</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">\ddd</td>
+<td style="text-align:left">任意字符</td>
+<td style="text-align:left">ddd八进制</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">垂直制表</td>
+<td style="text-align:left">11</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">\xhh</td>
+<td style="text-align:left">任意字符</td>
+<td style="text-align:left">hh十六进制</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">换页</td>
+<td style="text-align:left">12</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
