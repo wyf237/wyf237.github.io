@@ -55,19 +55,21 @@
   };
 </script>
 
-  <meta name="description" content="简介：整数、字符和字符串。">
+  <meta name="description" content="简介：寻找自幂数">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【C++基础】018整数、字符和字符串">
-<meta property="og:url" content="http://yoursite.com/2019/09/08/【C++基础】018整数、字符和字符串/index.html">
+<meta property="og:title" content="【C++基础】027寻找自幂数">
+<meta property="og:url" content="http://yoursite.com/2019/09/13/【C++基础】027寻找自幂数/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="简介：整数、字符和字符串。">
+<meta property="og:description" content="简介：寻找自幂数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T14:11:18.043Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/13/【C++基础】027寻找自幂数/【C++基础】027执行结果1.png">
+<meta property="og:updated_time" content="2019-09-13T16:47:26.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【C++基础】018整数、字符和字符串">
-<meta name="twitter:description" content="简介：整数、字符和字符串。">
-  <link rel="canonical" href="http://yoursite.com/2019/09/08/【C++基础】018整数、字符和字符串/">
+<meta name="twitter:title" content="【C++基础】027寻找自幂数">
+<meta name="twitter:description" content="简介：寻找自幂数">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/13/【C++基础】027寻找自幂数/【C++基础】027执行结果1.png">
+  <link rel="canonical" href="http://yoursite.com/2019/09/13/【C++基础】027寻找自幂数/">
 
 
 <script id="page-configurations">
@@ -81,7 +83,7 @@
   };
 </script>
 
-  <title>【C++基础】018整数、字符和字符串 | 南烛的学习小栈</title>
+  <title>【C++基础】027寻找自幂数 | 南烛的学习小栈</title>
   
 
 
@@ -229,7 +231,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/08/【C++基础】018整数、字符和字符串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/【C++基础】027寻找自幂数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vico.">
@@ -241,7 +243,7 @@
       <meta itemprop="name" content="南烛的学习小栈">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">【C++基础】018整数、字符和字符串
+        <h1 class="post-title" itemprop="name headline">【C++基础】027寻找自幂数
 
           
         </h1>
@@ -257,7 +259,7 @@
                 
               
 
-              <time title="创建时间：2019-09-08 09:08:44" itemprop="dateCreated datePublished" datetime="2019-09-08T09:08:44+08:00">2019-09-08</time>
+              <time title="创建时间：2019-09-13 23:43:09" itemprop="dateCreated datePublished" datetime="2019-09-13T23:43:09+08:00">2019-09-13</time>
             </span>
           
             
@@ -268,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-13 22:11:18" itemprop="dateModified" datetime="2019-09-13T22:11:18+08:00">2019-09-13</time>
+                <time title="修改时间：2019-09-14 00:47:26" itemprop="dateModified" datetime="2019-09-14T00:47:26+08:00">2019-09-14</time>
               </span>
             
           
@@ -297,53 +299,59 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>简介：整数、字符和字符串。<br><a id="more"></a></p>
-<blockquote>
-<h2 id="整数、字符和字符串"><a href="#整数、字符和字符串" class="headerlink" title="整数、字符和字符串"></a>整数、字符和字符串</h2></blockquote>
-<h3 id="1-整数"><a href="#1-整数" class="headerlink" title="1. 整数"></a>1. 整数</h3><ul>
-<li><strong>整数常量</strong><br>如：12，12L，0x15，015，12U</li>
-<li><strong>整型变量</strong><br>int a,b;<br>int x=10,y=20;</li>
-</ul>
-<h3 id="2-字符"><a href="#2-字符" class="headerlink" title="2. 字符"></a>2. 字符</h3><ul>
-<li><strong>字符常量</strong><br>如：’a’，’1’，’\t’，’\x41’，’\102’</li>
-<li><strong>字符变量</strong><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c,d;</span><br><span class="line">char e='A',f='\121';</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="3-字符和整数"><a href="#3-字符和整数" class="headerlink" title="3. 字符和整数"></a>3. 字符和整数</h3><ol>
-<li><strong>整数1，内存中存：</strong><br>00000000 00000000 00000000 00000001</li>
-<li><p><strong>字符’1’，内存中存：</strong><br>1这个字符的ASCII码，49<br>0011 0001<br>实际是个整数，占一个字节</p>
-</li>
-<li><p><strong>字符和整数</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">65</span>;                      <span class="comment">//a='A'</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;             <span class="comment">//65</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">char</span>)a &lt;&lt; <span class="built_in">endl</span>;       <span class="comment">//A</span></span><br><span class="line"><span class="keyword">char</span> c=<span class="string">'a'</span>;                    <span class="comment">//C=97</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;             <span class="comment">//a</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">int</span>)c &lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//97</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><font color="red">整数</font>和<font color="red">字符</font>在内存中存的<font color="red">都是整数</font>。</li>
-<li><font color="red">整数</font>，存放数的<font color="red">二进制形式</font>，<font color="red">字符</font>，存放其<font color="red">ASCII码</font>值。</li>
-<li>输出时，<font color="red">当整数</font>看待，显示数的<font color="red">十进制形式</font>。<font color="red">当字符</font>看待，显示的是ASCII值是这个数的<font color="red">字符</font>（该数&lt;128）。</li>
+        <p>简介：寻找自幂数<br><a id="more"></a></p>
+<h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><ol>
+<li><strong>用户输入位数n，找出并显示所有n位的自幂数。</strong></li>
+<li><strong>数学家发现了很多有趣的数字。</strong></li>
+<li><strong>比如，153，一个普通的三位数，然而$1^3+5^3+3^3=153$。</strong></li>
+<li><strong>即它的各个数字的三次方的和等于这个数本身。</strong></li>
+<li><strong>更一般地，一个n位正整数，如果它的各位数的n次方的和加起来还等于这个数呢？</strong></li>
+<li><strong>数学家称这样的数为自幂数，也叫自恋数。</strong></li>
+<li><strong>特殊说明</strong>：<ul>
+<li>n为1时，自幂数称为独身，0，1，2，3，4，5，6，7，8，9都是自幂数。</li>
+<li>n为2时，没有自幂数</li>
+<li>n为3时，自幂数称为水仙花数，153就是一个水仙花数。</li>
+<li>n为4时，自幂数称为四叶玫瑰数。</li>
+<li>n为5时，自幂数称为五角星数。</li>
+<li>n为6时，自幂数称为六合数。</li>
+<li>n为7时，自幂数称为北斗七星数。</li>
+<li>n为8时，自幂数称为八仙数。</li>
+<li>n为9时，自幂数称为九九重阳数。</li>
 </ul>
 </li>
 </ol>
-<h3 id="4-字符串"><a href="#4-字符串" class="headerlink" title="4. 字符串"></a>4. 字符串</h3><ul>
-<li><strong>字符串常量</strong><br>“zhang”，”wang”，”Hello World”</li>
-<li><p><strong>字符串变量</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> name[<span class="number">40</span>]=<span class="string">"zhang"</span>;<span class="comment">//name称为字符数组</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>内存中</strong></p>
-<table>
-  <tr>
-    <td>序号</td>
-    <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>...</td><td>39</td>
-  </tr>
-  <tr>
-    <td>char</td>
-    <td>'z'</td><td>'h'</td><td>'a'</td><td>'n'</td><td>'g'</td><td>'\0'</td><td>...</td><td></td>
-  </tr>
-  <tr>
-    <td>ASCII</td>
-    <td>122</td><td>104</td><td>97</td><td>110</td><td>103</td><td>0</td><td>...</td><td></td>
-  </tr>
-</table>
-</li>
+<h3 id="【问题分析】"><a href="#【问题分析】" class="headerlink" title="【问题分析】"></a>【问题分析】</h3><ul>
+<li>两个要点，<font color="red">一是怎样找出“各位”</font>，<font color="bule">二是n次方的计算</font>。</li>
+<li>n次方的计算有一个数学函数可用，<font color="green">pow(x,n)</font>。</li>
+<li>找出各位，举例来说，153，找个位，可用153%10=3；找十位可用(153%10)%10=5，以此类推。</li>
+<li>构造最小n位数。0是最小的一位数，10的1次方是最小的两位数，10的平方是最小的三位数，那么10的n-1此次方就是最小的n位数。</li>
 </ul>
+<h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><ol>
+<li>输入位数n。</li>
+<li>计算n位数的起始值和终止值。<br>$start=10^{n-1}，end=10^n-1，i=start$</li>
+<li>如果$ i &gt; end$，转第9步</li>
+<li>$m=i，sum=0$；</li>
+<li>如果$m=0$，转第7步</li>
+<li>$d=m\%10，sum=sum+d^n，m=m / 10$，转第5步</li>
+<li>如果$sum=i$，显示$i$。</li>
+<li>$i=i+1$，转第3步。</li>
+<li>结束。</li>
+</ol>
+<h3 id="【运行结果】"><a href="#【运行结果】" class="headerlink" title="【运行结果】"></a>【运行结果】</h3><p>Please enter digits:1<br>1digits’  self power  are:  1   2   3    4   5   6   7   8   9</p>
+<p>Please enter digits:2<br>2digits’  self power  are:</p>
+<p>Please enter digits:3<br>3digits’  self power  are:  153   370   371   407</p>
+<p>Please enter digits:4<br>4digits’  self power  are:  1634   8208   9474</p>
+<p>Please enter digits:5<br>5digits’  self power  are:  54748   92727   93084</p>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">double</span> start, end;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="keyword">int</span> digit;</span><br><span class="line">    <span class="keyword">double</span> sum;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter digits:"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        start = <span class="built_in">pow</span>(<span class="number">10</span>, n - <span class="number">1</span>);</span><br><span class="line">        end = <span class="built_in">pow</span>(<span class="number">10</span>, n) - <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="string">"digits'  self power  are:  "</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = start; i &lt;= end; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            m = i;</span><br><span class="line">            sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (m != <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                digit = m % <span class="number">10</span>;</span><br><span class="line">                sum = sum + <span class="built_in">pow</span>(digit, n);</span><br><span class="line">                m = m / <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (sum == i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter digits:"</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】027执行结果1.png" alt="027执行结果"></p>
+<h3 id="【思路扩展】"><a href="#【思路扩展】" class="headerlink" title="【思路扩展】"></a>【思路扩展】</h3><ol>
+<li><p>如果一种计算会破坏（或改变）某个变量的值，而这个原始值在后面的计算中还会使用，那就先将其赋值给另一个变量，使用新变量作“破坏性”计算，随时可以通过原来的变量获得原始值。</p>
+</li>
+<li><p>分离各位数字的相反运算是合成一个数<br> 例如有三个变量，a，b，c，分别存放一位整数，比如1，2，3，如果将他们合成为a作为百位，b作为十位，c作为个位的三位数呢？<br> <strong>解：</strong>a*100+b*10+c即可</p>
+</li>
+<li><p>C++中，int型变量能表示的最大正整数为2147483647，它不过是10位，那么有11，12，12位的自幂数吗？如果有，怎样计算呢？自幂数是有限的吗？如果有，有多少呢？</p>
+</li>
+</ol>
 
     </div>
 
@@ -394,8 +402,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/07/【C++基础】017-加密解密/" rel="next" title="【C++基础】017-加密解密">
-                  <i class="fa fa-chevron-left"></i> 【C++基础】017-加密解密
+                <a href="/2019/09/13/【C++基础】026一个简单的计算器/" rel="next" title="【C++基础】026一个简单的计算器">
+                  <i class="fa fa-chevron-left"></i> 【C++基础】026一个简单的计算器
                 </a>
               
             </div>
@@ -403,10 +411,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/08/【C++基础】019转义字符/" rel="prev" title="【C++基础】019转义字符">
-                  【C++基础】019转义字符 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -462,7 +466,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整数、字符和字符串"><span class="nav-text">整数、字符和字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-整数"><span class="nav-text">1. 整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符"><span class="nav-text">2. 字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-字符和整数"><span class="nav-text">3. 字符和整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-字符串"><span class="nav-text">4. 字符串</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【实例名称】"><span class="nav-text">【实例名称】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【问题分析】"><span class="nav-text">【问题分析】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【算法描述】"><span class="nav-text">【算法描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【运行结果】"><span class="nav-text">【运行结果】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行结果"><span class="nav-text">执行结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【思路扩展】"><span class="nav-text">【思路扩展】</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -594,58 +598,6 @@
 
   
 
-  
-    
-      
-<script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        extensions: ['[mhchem]/mhchem.js'],
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
-</script>
-
-    
   
 
   
