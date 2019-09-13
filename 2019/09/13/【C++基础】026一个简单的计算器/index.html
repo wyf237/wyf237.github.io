@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="简介：编写一个简单的计算器。【实例名称】编写一个简单的计算器。 编写一个简单的计算器功能，实现简单的加、减、乘、除表达式的计算。  设用户输入的表达式具有如下格式：&amp;lt;操作数1&amp;gt;空格&amp;lt;运算符&amp;gt;空格&amp;lt;操作数2&amp;gt;如：3 + 42得：3 + 42 = 45  【问题分析】 用户输入表达式后，程序要判断是什么运算，然后再做相应的处理。 该问题可以使用if，或者if…els">
+  <meta name="description" content="简介：编写一个简单的计算器。">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】026一个简单的计算器">
 <meta property="og:url" content="http://yoursite.com/2019/09/13/【C++基础】026一个简单的计算器/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="简介：编写一个简单的计算器。【实例名称】编写一个简单的计算器。 编写一个简单的计算器功能，实现简单的加、减、乘、除表达式的计算。  设用户输入的表达式具有如下格式：&amp;lt;操作数1&amp;gt;空格&amp;lt;运算符&amp;gt;空格&amp;lt;操作数2&amp;gt;如：3 + 42得：3 + 42 = 45  【问题分析】 用户输入表达式后，程序要判断是什么运算，然后再做相应的处理。 该问题可以使用if，或者if…els">
+<meta property="og:description" content="简介：编写一个简单的计算器。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/09/13/【C++基础】026一个简单的计算器/【C++基础】026执行结果1.png">
-<meta property="og:updated_time" content="2019-09-13T15:21:31.025Z">
+<meta property="og:updated_time" content="2019-09-13T17:58:37.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】026一个简单的计算器">
-<meta name="twitter:description" content="简介：编写一个简单的计算器。【实例名称】编写一个简单的计算器。 编写一个简单的计算器功能，实现简单的加、减、乘、除表达式的计算。  设用户输入的表达式具有如下格式：&amp;lt;操作数1&amp;gt;空格&amp;lt;运算符&amp;gt;空格&amp;lt;操作数2&amp;gt;如：3 + 42得：3 + 42 = 45  【问题分析】 用户输入表达式后，程序要判断是什么运算，然后再做相应的处理。 该问题可以使用if，或者if…els">
+<meta name="twitter:description" content="简介：编写一个简单的计算器。">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/13/【C++基础】026一个简单的计算器/【C++基础】026执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/09/13/【C++基础】026一个简单的计算器/">
 
@@ -259,11 +259,19 @@
                 
               
 
-              <time title="创建时间：2019-09-13 23:00:31 / 修改时间：23:21:31" itemprop="dateCreated datePublished" datetime="2019-09-13T23:00:31+08:00">2019-09-13</time>
+              <time title="创建时间：2019-09-13 23:00:31" itemprop="dateCreated datePublished" datetime="2019-09-13T23:00:31+08:00">2019-09-13</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-14 01:58:37" itemprop="dateModified" datetime="2019-09-14T01:58:37+08:00">2019-09-14</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -291,19 +299,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>简介：编写一个简单的计算器。</p><h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p><strong>编写一个简单的计算器。</strong></p><ul>
+        <p>简介：编写一个简单的计算器。<br><a id="more"></a></p>
+<h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p><strong>编写一个简单的计算器。</strong></p>
+<ul>
 <li><p>编写一个简单的计算器功能，实现简单的加、减、乘、除表达式的计算。</p>
 </li>
 <li><p>设用户输入的表达式具有如下格式：<br>&lt;操作数1&gt;空格&lt;运算符&gt;空格&lt;操作数2&gt;<br>如：3 + 42<br>得：3 + 42 = 45</p>
 </li>
-</ul><h3 id="【问题分析】"><a href="#【问题分析】" class="headerlink" title="【问题分析】"></a>【问题分析】</h3><ol>
+</ul>
+<h3 id="【问题分析】"><a href="#【问题分析】" class="headerlink" title="【问题分析】"></a>【问题分析】</h3><ol>
 <li>用户输入表达式后，程序要判断是什么运算，然后再做相应的处理。</li>
 <li>该问题可以使用if，或者if…else解决。</li>
 <li>对于分支较多的情况，C++提供switch语句。switch语句也叫开关语句、多分支语句，它计算一个表达式的值，根据结果的不同，执行不同的分支处理语句。</li>
-</ol><a id="more"></a>
-
-
-
+</ol>
 <h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><ol>
 <li>用num1，num2，op分别表示输入的表达式的是两个操作数和一个运算符。</li>
 <li>如果op=‘+’，则result=num1 + num2，输出result；</li>
