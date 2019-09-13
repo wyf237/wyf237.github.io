@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="二元线性方程组与二阶行列式 用消元法解线性方程组：$\begin{cases}a_{11}x_1+a{12}x_2=b_1, &amp;amp;\dots(1)\\a_{21}x_1+a{22}x_2=b_2, &amp;amp;\dots(2)\end{cases}$  消去未知数$x_2$：$(1)x×a_{22}-(2)×a_{12}$得 (a_{11}a_{22}-a{12}a_{21})x_1=b_1a">
+  <meta name="description" content="二元线性方程组与二阶行列式。">
 <meta name="keywords" content="线性代数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【线性代数】001二阶与三阶行列式">
 <meta property="og:url" content="http://yoursite.com/2019/09/08/【线性代数】001二阶与三阶行列式/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="二元线性方程组与二阶行列式 用消元法解线性方程组：$\begin{cases}a_{11}x_1+a{12}x_2=b_1, &amp;amp;\dots(1)\\a_{21}x_1+a{22}x_2=b_2, &amp;amp;\dots(2)\end{cases}$  消去未知数$x_2$：$(1)x×a_{22}-(2)×a_{12}$得 (a_{11}a_{22}-a{12}a_{21})x_1=b_1a">
+<meta property="og:description" content="二元线性方程组与二阶行列式。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/09/08/【线性代数】001二阶与三阶行列式/【线性代数】001配图.png">
-<meta property="og:updated_time" content="2019-09-13T04:26:47.598Z">
+<meta property="og:updated_time" content="2019-09-13T07:36:57.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【线性代数】001二阶与三阶行列式">
-<meta name="twitter:description" content="二元线性方程组与二阶行列式 用消元法解线性方程组：$\begin{cases}a_{11}x_1+a{12}x_2=b_1, &amp;amp;\dots(1)\\a_{21}x_1+a{22}x_2=b_2, &amp;amp;\dots(2)\end{cases}$  消去未知数$x_2$：$(1)x×a_{22}-(2)×a_{12}$得 (a_{11}a_{22}-a{12}a_{21})x_1=b_1a">
+<meta name="twitter:description" content="二元线性方程组与二阶行列式。">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/08/【线性代数】001二阶与三阶行列式/【线性代数】001配图.png">
   <link rel="canonical" href="http://yoursite.com/2019/09/08/【线性代数】001二阶与三阶行列式/">
 
@@ -270,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-13 12:26:47" itemprop="dateModified" datetime="2019-09-13T12:26:47+08:00">2019-09-13</time>
+                <time title="修改时间：2019-09-13 15:36:57" itemprop="dateModified" datetime="2019-09-13T15:36:57+08:00">2019-09-13</time>
               </span>
             
           
@@ -299,7 +299,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="二元线性方程组与二阶行列式"><a href="#二元线性方程组与二阶行列式" class="headerlink" title="二元线性方程组与二阶行列式"></a>二元线性方程组与二阶行列式</h3><ul>
+        <p>二元线性方程组与二阶行列式。<br><a id="more"></a></p>
+<h3 id="二元线性方程组与二阶行列式"><a href="#二元线性方程组与二阶行列式" class="headerlink" title="二元线性方程组与二阶行列式"></a>二元线性方程组与二阶行列式</h3><ul>
 <li><p><strong>用消元法解线性方程组</strong>：$\begin{cases}a_{11}x_1+a{12}x_2=b_1, &amp;\dots(1)\\a_{21}x_1+a{22}x_2=b_2, &amp;\dots(2)\end{cases}$</p>
 <ol>
 <li><strong>消去未知数$x_2$：</strong>$(1)x×a_{22}-(2)×a_{12}$得<script type="math/tex; mode=display">
@@ -328,7 +329,7 @@ x_2=\dfrac{b_2a_{11}-a_{21}b_1}{a_{11}a_{22}-a_{12}a_{21}}</script></li>
 x_1=\dfrac{D_1}{D},x_2=\dfrac{D_2}{D}</script><p>其中<script type="math/tex">D= \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ \end{vmatrix}\quad</script>称为系数行列式；<br><script type="math/tex">D_1=\begin{vmatrix} b_1 & a_{12} \\ b_2 & a_{22} \\ \end{vmatrix}\quad</script> 是用常数项<script type="math/tex">b_1b_2</script>替代第一列元素<script type="math/tex">a_{11},a{21}</script>所得的行列式；</p>
 <p><script type="math/tex">D_2=\begin{vmatrix} a_{11} & b_1 \\ a_{21} & b_2\\ \end{vmatrix}\quad</script>是用常数项$b_1b_2$替代第一列元素$a_{12},a{22}$所得的行列式；</p>
 </li>
-</ul><a id="more"></a>
+</ul>
 <h4 id="【例1】求解二元线性方程组-begin-cases-3x-1-2x-2-12-2x-1-x-2-1-end-cases"><a href="#【例1】求解二元线性方程组-begin-cases-3x-1-2x-2-12-2x-1-x-2-1-end-cases" class="headerlink" title="【例1】求解二元线性方程组$\begin{cases}3x_1-2x_2=12\\2x_1+x_2=1\end{cases}$"></a>【例1】求解二元线性方程组$\begin{cases}3x_1-2x_2=12\\2x_1+x_2=1\end{cases}$</h4><p>解：由于<script type="math/tex">D=\begin{vmatrix} 3 & -2 \\ 2 & 1 \\ \end{vmatrix}\quad=3-(-4)=7≠0</script>，</p>
 <p>&emsp;&emsp;<script type="math/tex">D_1=\begin{vmatrix} 12 & 1 \\ -2 & 1 \\ \end{vmatrix}\quad=12-(-2)=14</script><br>&emsp;&emsp;<script type="math/tex">D_2=\begin{vmatrix} 3 & 2 \\ 12 & 1 \\ \end{vmatrix}\quad=3-24=-21</script><br>&emsp;&emsp;因此 <script type="math/tex">x_1=\dfrac{D_1}{D}=\dfrac{14}{7}=2,x_2=\dfrac{D_2}{D}=\dfrac{-21}{7}=-3</script></p>
 <h3 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h3><ul>
@@ -470,7 +471,7 @@ x_1=\dfrac{D_1}{D},x_2=\dfrac{D_2}{D}</script><p>其中<script type="math/tex">D
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
