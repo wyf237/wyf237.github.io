@@ -25,10 +25,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -55,13 +55,13 @@
   };
 </script>
 
-  <meta name="description" content="加密解密 【实例名称】 一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。 加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。 例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。 编写程序，用户从键盘输入一个小写字母和k值，将">
+  <meta name="description" content="加密解密【实例名称】 一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。 加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。 例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。 编写程序，用户从键盘输入一个小写字母和k值，将输">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】017-加密解密">
 <meta property="og:url" content="http://yoursite.com/2019/09/07/【C++基础】017-加密解密/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="加密解密 【实例名称】 一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。 加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。 例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。 编写程序，用户从键盘输入一个小写字母和k值，将">
+<meta property="og:description" content="加密解密【实例名称】 一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。 加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。 例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。 编写程序，用户从键盘输入一个小写字母和k值，将输">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/09/07/【C++基础】017-加密解密/【C++基础】017执行结果1.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/07/【C++基础】017-加密解密/【C++基础】017执行结果2.png">
@@ -69,7 +69,7 @@
 <meta property="og:updated_time" content="2019-09-13T04:28:56.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】017-加密解密">
-<meta name="twitter:description" content="加密解密 【实例名称】 一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。 加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。 例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。 编写程序，用户从键盘输入一个小写字母和k值，将">
+<meta name="twitter:description" content="加密解密【实例名称】 一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。 加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。 例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。 编写程序，用户从键盘输入一个小写字母和k值，将输">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/07/【C++基础】017-加密解密/【C++基础】017执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/09/07/【C++基础】017-加密解密/">
 
@@ -208,8 +208,6 @@
   </li>
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -224,6 +222,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
 
@@ -302,13 +302,13 @@
 
       
         <blockquote>
-<h2 id="加密解密"><a href="#加密解密" class="headerlink" title="加密解密"></a>加密解密</h2></blockquote>
-<h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><ul>
+<h2 id="加密解密"><a href="#加密解密" class="headerlink" title="加密解密"></a>加密解密</h2></blockquote><h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><ul>
 <li>一段意义明确的文字，经过变换变得无法理解。合法用户可以将其变回原来的文字，而不合法的用户则不能，这就是加密。</li>
 <li>加密的一种方法叫做替换加密法，将原来文字中的字母用其后的第k个字母代替（26个字母的字母表看做是循环的，即z后面的字母是a）。</li>
 <li>例如，k=3，对“today”的每一个字母用其后的第3个字母代替，结果为“wrgdb”。</li>
 <li>编写程序，用户从键盘输入一个小写字母和k值，将输入的小写字母用替换加密法加密并输出加密后的字母。</li>
-</ul>
+</ul><a id="more"></a>
+
 <h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><blockquote>
 <p>替换加密</p>
 </blockquote>
@@ -487,18 +487,26 @@
       
       <div class="site-state-item site-state-categories">
         
+          
+            <a href="/categories/">
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
-        
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
+          
+            <a href="/tags/">
+          
+        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
+        </a>
       </div>
     
   </nav>
@@ -558,7 +566,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 

@@ -25,10 +25,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="位运算 1. 什么是位运算数据在计算机中是以二进制数的形式存放的。  a = 01101001B  b = 01011110B              -       高              低                 -       7654       3110                 a       0110       1001                 b">
+  <meta name="description" content="位运算1. 什么是位运算数据在计算机中是以二进制数的形式存放的。  a = 01101001B  b = 01011110B              -       高              低                 -       7654       3110                 a       0110       1001                 b">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】012位运算">
 <meta property="og:url" content="http://yoursite.com/2019/09/07/【C++基础】012位运算/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="位运算 1. 什么是位运算数据在计算机中是以二进制数的形式存放的。  a = 01101001B  b = 01011110B              -       高              低                 -       7654       3110                 a       0110       1001                 b">
+<meta property="og:description" content="位运算1. 什么是位运算数据在计算机中是以二进制数的形式存放的。  a = 01101001B  b = 01011110B              -       高              低                 -       7654       3110                 a       0110       1001                 b">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/09/07/【C++基础】012位运算/【C++基础】012执行结果1.png">
 <meta property="og:updated_time" content="2019-09-13T04:32:48.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】012位运算">
-<meta name="twitter:description" content="位运算 1. 什么是位运算数据在计算机中是以二进制数的形式存放的。  a = 01101001B  b = 01011110B              -       高              低                 -       7654       3110                 a       0110       1001                 b">
+<meta name="twitter:description" content="位运算1. 什么是位运算数据在计算机中是以二进制数的形式存放的。  a = 01101001B  b = 01011110B              -       高              低                 -       7654       3110                 a       0110       1001                 b">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/07/【C++基础】012位运算/【C++基础】012执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/09/07/【C++基础】012位运算/">
 
@@ -206,8 +206,6 @@
   </li>
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -222,6 +220,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
 
@@ -300,8 +300,7 @@
 
       
         <blockquote>
-<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2></blockquote>
-<h3 id="1-什么是位运算"><a href="#1-什么是位运算" class="headerlink" title="1. 什么是位运算"></a>1. 什么是位运算</h3><p><strong>数据在计算机中是以二进制数的形式存放的</strong>。<br>  a = 01101001B<br>  b = 01011110B<br>  <table>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2></blockquote><h3 id="1-什么是位运算"><a href="#1-什么是位运算" class="headerlink" title="1. 什么是位运算"></a>1. 什么是位运算</h3><p><strong>数据在计算机中是以二进制数的形式存放的</strong>。<br>  a = 01101001B<br>  b = 01011110B<br>  <table>
     <tr>
       <td>-</td>
       <td>高
@@ -323,7 +322,8 @@
       <td>0</td><td>1</td><td>0</td><td>1</td>
       <td>1</td><td>1</td><td>1</td><td>0</td>
     </tr>
-  </table></p>
+  </table></p><a id="more"></a>
+
 <h3 id="2-位运算有哪些"><a href="#2-位运算有哪些" class="headerlink" title="2. 位运算有哪些"></a>2. 位运算有哪些</h3><ul>
 <li>与（and）、或（or）、取反（not）、异或（xor）、左移、右移</li>
 <li>按位“与”、按位“或”、按位“取反”、按位“异或”</li>
@@ -860,18 +860,26 @@
       
       <div class="site-state-item site-state-categories">
         
+          
+            <a href="/categories/">
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
-        
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
+          
+            <a href="/tags/">
+          
+        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
+        </a>
       </div>
     
   </nav>
@@ -931,7 +939,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 

@@ -25,10 +25,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -55,20 +55,20 @@
   };
 </script>
 
-  <meta name="description" content="十种转义字符的应用 【实例名称】  以下列各式使用10种转义字符，看得到什么效果：   1cout &amp;lt;&amp;lt; &quot;1abcde\n#12345\n&quot;;  其中，字符串常量中开头1是序号，以后要依次替换为2，3，4…10； 中间的\n是转义字符，以后依次换为\r，\t，\f等；  【算法描述】 查看转义字符的效果   ① 输出字符串”1abcde\n#12345\n”； ② 将\n依次换为\">
+  <meta name="description" content="十种转义字符的应用【实例名称】  以下列各式使用10种转义字符，看得到什么效果：1cout &amp;lt;&amp;lt; &quot;1abcde\n#12345\n&quot;; 其中，字符串常量中开头1是序号，以后要依次替换为2，3，4…10； 中间的\n是转义字符，以后依次换为\r，\t，\f等； 【算法描述】 查看转义字符的效果">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】007-2例题讲解">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/【C++基础】007-2例题讲解/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="十种转义字符的应用 【实例名称】  以下列各式使用10种转义字符，看得到什么效果：   1cout &amp;lt;&amp;lt; &quot;1abcde\n#12345\n&quot;;  其中，字符串常量中开头1是序号，以后要依次替换为2，3，4…10； 中间的\n是转义字符，以后依次换为\r，\t，\f等；  【算法描述】 查看转义字符的效果   ① 输出字符串”1abcde\n#12345\n”； ② 将\n依次换为\">
+<meta property="og:description" content="十种转义字符的应用【实例名称】  以下列各式使用10种转义字符，看得到什么效果：1cout &amp;lt;&amp;lt; &quot;1abcde\n#12345\n&quot;; 其中，字符串常量中开头1是序号，以后要依次替换为2，3，4…10； 中间的\n是转义字符，以后依次换为\r，\t，\f等； 【算法描述】 查看转义字符的效果">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/09/06/【C++基础】007-2例题讲解/【C++基础】007-2执行结果1.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/06/【C++基础】007-2例题讲解/【C++基础】007-2执行结果2.png">
 <meta property="og:updated_time" content="2019-09-13T04:29:29.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】007-2例题讲解">
-<meta name="twitter:description" content="十种转义字符的应用 【实例名称】  以下列各式使用10种转义字符，看得到什么效果：   1cout &amp;lt;&amp;lt; &quot;1abcde\n#12345\n&quot;;  其中，字符串常量中开头1是序号，以后要依次替换为2，3，4…10； 中间的\n是转义字符，以后依次换为\r，\t，\f等；  【算法描述】 查看转义字符的效果   ① 输出字符串”1abcde\n#12345\n”； ② 将\n依次换为\">
+<meta name="twitter:description" content="十种转义字符的应用【实例名称】  以下列各式使用10种转义字符，看得到什么效果：1cout &amp;lt;&amp;lt; &quot;1abcde\n#12345\n&quot;; 其中，字符串常量中开头1是序号，以后要依次替换为2，3，4…10； 中间的\n是转义字符，以后依次换为\r，\t，\f等； 【算法描述】 查看转义字符的效果">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/06/【C++基础】007-2例题讲解/【C++基础】007-2执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/09/06/【C++基础】007-2例题讲解/">
 
@@ -207,8 +207,6 @@
   </li>
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -223,6 +221,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
 
@@ -301,16 +301,16 @@
 
       
         <blockquote>
-<h2 id="十种转义字符的应用"><a href="#十种转义字符的应用" class="headerlink" title="十种转义字符的应用"></a>十种转义字符的应用</h2></blockquote>
-<h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p>  以下列各式使用10种转义字符，看得到什么效果：</p>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"1abcde\n#12345\n"</span>;</span><br></pre></td></tr></table></figure>
-<ul>
+<h2 id="十种转义字符的应用"><a href="#十种转义字符的应用" class="headerlink" title="十种转义字符的应用"></a>十种转义字符的应用</h2></blockquote><h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p>  以下列各式使用10种转义字符，看得到什么效果：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"1abcde\n#12345\n"</span>;</span><br></pre></td></tr></table></figure><ul>
 <li>其中，字符串常量中开头1是序号，以后要依次替换为2，3，4…10；</li>
 <li>中间的\n是转义字符，以后依次换为\r，\t，\f等；</li>
-</ul>
-<h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><blockquote>
+</ul><h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><blockquote>
 <p>查看转义字符的效果</p>
-</blockquote>
+</blockquote><a id="more"></a>
+
+  
+
+
 <ul>
 <li>① 输出字符串”1abcde\n#12345\n”；</li>
 <li>② 将\n依次换为\r，\t，\f等，将开头的‘1’依次替换为2，3，4等；</li>
@@ -470,18 +470,26 @@
       
       <div class="site-state-item site-state-categories">
         
+          
+            <a href="/categories/">
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
-        
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
+          
+            <a href="/tags/">
+          
+        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
+        </a>
       </div>
     
   </nav>
@@ -541,7 +549,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 

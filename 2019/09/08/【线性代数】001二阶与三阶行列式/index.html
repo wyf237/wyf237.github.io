@@ -25,10 +25,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -206,8 +206,6 @@
   </li>
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -222,6 +220,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
 
@@ -328,7 +328,7 @@ x_2=\dfrac{b_2a_{11}-a_{21}b_1}{a_{11}a_{22}-a_{12}a_{21}}</script></li>
 x_1=\dfrac{D_1}{D},x_2=\dfrac{D_2}{D}</script><p>其中<script type="math/tex">D= \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ \end{vmatrix}\quad</script>称为系数行列式；<br><script type="math/tex">D_1=\begin{vmatrix} b_1 & a_{12} \\ b_2 & a_{22} \\ \end{vmatrix}\quad</script> 是用常数项<script type="math/tex">b_1b_2</script>替代第一列元素<script type="math/tex">a_{11},a{21}</script>所得的行列式；</p>
 <p><script type="math/tex">D_2=\begin{vmatrix} a_{11} & b_1 \\ a_{21} & b_2\\ \end{vmatrix}\quad</script>是用常数项$b_1b_2$替代第一列元素$a_{12},a{22}$所得的行列式；</p>
 </li>
-</ul>
+</ul><a id="more"></a>
 <h4 id="【例1】求解二元线性方程组-begin-cases-3x-1-2x-2-12-2x-1-x-2-1-end-cases"><a href="#【例1】求解二元线性方程组-begin-cases-3x-1-2x-2-12-2x-1-x-2-1-end-cases" class="headerlink" title="【例1】求解二元线性方程组$\begin{cases}3x_1-2x_2=12\\2x_1+x_2=1\end{cases}$"></a>【例1】求解二元线性方程组$\begin{cases}3x_1-2x_2=12\\2x_1+x_2=1\end{cases}$</h4><p>解：由于<script type="math/tex">D=\begin{vmatrix} 3 & -2 \\ 2 & 1 \\ \end{vmatrix}\quad=3-(-4)=7≠0</script>，</p>
 <p>&emsp;&emsp;<script type="math/tex">D_1=\begin{vmatrix} 12 & 1 \\ -2 & 1 \\ \end{vmatrix}\quad=12-(-2)=14</script><br>&emsp;&emsp;<script type="math/tex">D_2=\begin{vmatrix} 3 & 2 \\ 12 & 1 \\ \end{vmatrix}\quad=3-24=-21</script><br>&emsp;&emsp;因此 <script type="math/tex">x_1=\dfrac{D_1}{D}=\dfrac{14}{7}=2,x_2=\dfrac{D_2}{D}=\dfrac{-21}{7}=-3</script></p>
 <h3 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h3><ul>
@@ -479,18 +479,26 @@ x_1=\dfrac{D_1}{D},x_2=\dfrac{D_2}{D}</script><p>其中<script type="math/tex">D
       
       <div class="site-state-item site-state-categories">
         
+          
+            <a href="/categories/">
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
-        
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
+          
+            <a href="/tags/">
+          
+        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
+        </a>
       </div>
     
   </nav>
@@ -550,7 +558,8 @@ x_1=\dfrac{D_1}{D},x_2=\dfrac{D_2}{D}</script><p>其中<script type="math/tex">D
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 

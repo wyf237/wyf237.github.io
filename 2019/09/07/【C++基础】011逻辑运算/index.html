@@ -25,10 +25,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="逻辑运算 1. 逻辑运算 逻辑运算表达、判断多个条件之间的关系同时成立、之一成立、不成立 例如 $x\in[0,1]$，可以表示为x &amp;gt;= 0 并且 x &amp;lt;= 1 $x\notin[0,1]$，可以表示为x &amp;gt; 1 或者 x &amp;lt; 0   非负实数不是(x &amp;lt; 0)，非(x &amp;lt; 0) “并且”，“或”，“不是”，就是逻辑运算  2. 逻辑运算符表示逻辑运算的符号">
+  <meta name="description" content="逻辑运算1. 逻辑运算 逻辑运算表达、判断多个条件之间的关系同时成立、之一成立、不成立 例如 $x\in[0,1]$，可以表示为x &amp;gt;= 0 并且 x &amp;lt;= 1 $x\notin[0,1]$，可以表示为x &amp;gt; 1 或者 x &amp;lt; 0   非负实数不是(x &amp;lt; 0)，非(x &amp;lt; 0) “并且”，“或”，“不是”，就是逻辑运算">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】011逻辑运算">
 <meta property="og:url" content="http://yoursite.com/2019/09/07/【C++基础】011逻辑运算/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="逻辑运算 1. 逻辑运算 逻辑运算表达、判断多个条件之间的关系同时成立、之一成立、不成立 例如 $x\in[0,1]$，可以表示为x &amp;gt;= 0 并且 x &amp;lt;= 1 $x\notin[0,1]$，可以表示为x &amp;gt; 1 或者 x &amp;lt; 0   非负实数不是(x &amp;lt; 0)，非(x &amp;lt; 0) “并且”，“或”，“不是”，就是逻辑运算  2. 逻辑运算符表示逻辑运算的符号">
+<meta property="og:description" content="逻辑运算1. 逻辑运算 逻辑运算表达、判断多个条件之间的关系同时成立、之一成立、不成立 例如 $x\in[0,1]$，可以表示为x &amp;gt;= 0 并且 x &amp;lt;= 1 $x\notin[0,1]$，可以表示为x &amp;gt; 1 或者 x &amp;lt; 0   非负实数不是(x &amp;lt; 0)，非(x &amp;lt; 0) “并且”，“或”，“不是”，就是逻辑运算">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/09/07/【C++基础】011逻辑运算/【C++基础】011执行结果1.png">
 <meta property="og:updated_time" content="2019-09-13T04:30:54.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】011逻辑运算">
-<meta name="twitter:description" content="逻辑运算 1. 逻辑运算 逻辑运算表达、判断多个条件之间的关系同时成立、之一成立、不成立 例如 $x\in[0,1]$，可以表示为x &amp;gt;= 0 并且 x &amp;lt;= 1 $x\notin[0,1]$，可以表示为x &amp;gt; 1 或者 x &amp;lt; 0   非负实数不是(x &amp;lt; 0)，非(x &amp;lt; 0) “并且”，“或”，“不是”，就是逻辑运算  2. 逻辑运算符表示逻辑运算的符号">
+<meta name="twitter:description" content="逻辑运算1. 逻辑运算 逻辑运算表达、判断多个条件之间的关系同时成立、之一成立、不成立 例如 $x\in[0,1]$，可以表示为x &amp;gt;= 0 并且 x &amp;lt;= 1 $x\notin[0,1]$，可以表示为x &amp;gt; 1 或者 x &amp;lt; 0   非负实数不是(x &amp;lt; 0)，非(x &amp;lt; 0) “并且”，“或”，“不是”，就是逻辑运算">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/07/【C++基础】011逻辑运算/【C++基础】011执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/09/07/【C++基础】011逻辑运算/">
 
@@ -206,8 +206,6 @@
   </li>
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -222,6 +220,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
 
@@ -300,8 +300,7 @@
 
       
         <blockquote>
-<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2></blockquote>
-<h3 id="1-逻辑运算"><a href="#1-逻辑运算" class="headerlink" title="1. 逻辑运算"></a>1. 逻辑运算</h3><ul>
+<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2></blockquote><h3 id="1-逻辑运算"><a href="#1-逻辑运算" class="headerlink" title="1. 逻辑运算"></a>1. 逻辑运算</h3><ul>
 <li><strong>逻辑运算表达、判断多个条件之间的关系</strong><br>同时成立、之一成立、不成立</li>
 <li><strong>例如</strong><ul>
 <li>$x\in[0,1]$，可以表示为<br>x &gt;= 0 并且 x &lt;= 1</li>
@@ -310,7 +309,8 @@
 </li>
 <li><strong>非负实数</strong><br>不是(x &lt; 0)，非(x &lt; 0)</li>
 <li>“并且”，“或”，“不是”，就是逻辑运算</li>
-</ul>
+</ul><a id="more"></a>
+
 <h3 id="2-逻辑运算符"><a href="#2-逻辑运算符" class="headerlink" title="2. 逻辑运算符"></a>2. 逻辑运算符</h3><p><strong>表示逻辑运算的符号</strong></p>
 <ul>
 <li>&amp;&amp;——并且，逻辑“与”，and</li>
@@ -628,18 +628,26 @@
       
       <div class="site-state-item site-state-categories">
         
+          
+            <a href="/categories/">
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
-        
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
+          
+            <a href="/tags/">
+          
+        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
+        </a>
       </div>
     
   </nav>
@@ -699,7 +707,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 

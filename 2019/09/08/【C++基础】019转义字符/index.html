@@ -25,10 +25,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="转义字符 1. 字符 可显示字符 1char c=&apos;A&apos;;  不可显示字符不能直接输入 123char d=&apos;\n&apos;;cout &amp;lt;&amp;lt; &quot;zhang&quot; &amp;lt;&amp;lt; d&amp;lt;&amp;lt; &quot;xjtu &amp;lt;&amp;lt; endl;cout &amp;lt;&amp;lt; &quot;zhang\nxjtu\n&quot;;   2. 转义字符    符号 八进制 十六进制 含义     \n \12 \x0A 表示换行">
+  <meta name="description" content="转义字符1. 字符 可显示字符 1char c=&apos;A&apos;;  不可显示字符不能直接输入 123char d=&apos;\n&apos;;cout &amp;lt;&amp;lt; &quot;zhang&quot; &amp;lt;&amp;lt; d&amp;lt;&amp;lt; &quot;xjtu &amp;lt;&amp;lt; endl;cout &amp;lt;&amp;lt; &quot;zhang\nxjtu\n&quot;;">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】019转义字符">
 <meta property="og:url" content="http://yoursite.com/2019/09/08/【C++基础】019转义字符/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="转义字符 1. 字符 可显示字符 1char c=&apos;A&apos;;  不可显示字符不能直接输入 123char d=&apos;\n&apos;;cout &amp;lt;&amp;lt; &quot;zhang&quot; &amp;lt;&amp;lt; d&amp;lt;&amp;lt; &quot;xjtu &amp;lt;&amp;lt; endl;cout &amp;lt;&amp;lt; &quot;zhang\nxjtu\n&quot;;   2. 转义字符    符号 八进制 十六进制 含义     \n \12 \x0A 表示换行">
+<meta property="og:description" content="转义字符1. 字符 可显示字符 1char c=&apos;A&apos;;  不可显示字符不能直接输入 123char d=&apos;\n&apos;;cout &amp;lt;&amp;lt; &quot;zhang&quot; &amp;lt;&amp;lt; d&amp;lt;&amp;lt; &quot;xjtu &amp;lt;&amp;lt; endl;cout &amp;lt;&amp;lt; &quot;zhang\nxjtu\n&quot;;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-09-13T04:29:15.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】019转义字符">
-<meta name="twitter:description" content="转义字符 1. 字符 可显示字符 1char c=&apos;A&apos;;  不可显示字符不能直接输入 123char d=&apos;\n&apos;;cout &amp;lt;&amp;lt; &quot;zhang&quot; &amp;lt;&amp;lt; d&amp;lt;&amp;lt; &quot;xjtu &amp;lt;&amp;lt; endl;cout &amp;lt;&amp;lt; &quot;zhang\nxjtu\n&quot;;   2. 转义字符    符号 八进制 十六进制 含义     \n \12 \x0A 表示换行">
+<meta name="twitter:description" content="转义字符1. 字符 可显示字符 1char c=&apos;A&apos;;  不可显示字符不能直接输入 123char d=&apos;\n&apos;;cout &amp;lt;&amp;lt; &quot;zhang&quot; &amp;lt;&amp;lt; d&amp;lt;&amp;lt; &quot;xjtu &amp;lt;&amp;lt; endl;cout &amp;lt;&amp;lt; &quot;zhang\nxjtu\n&quot;;">
   <link rel="canonical" href="http://yoursite.com/2019/09/08/【C++基础】019转义字符/">
 
 
@@ -204,8 +204,6 @@
   </li>
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -220,6 +218,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
 
@@ -298,15 +298,15 @@
 
       
         <blockquote>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2></blockquote>
-<h3 id="1-字符"><a href="#1-字符" class="headerlink" title="1. 字符"></a>1. 字符</h3><ul>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2></blockquote><h3 id="1-字符"><a href="#1-字符" class="headerlink" title="1. 字符"></a>1. 字符</h3><ul>
 <li><p><strong>可显示字符</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c=<span class="string">'A'</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>不可显示字符</strong><br>不能直接输入</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> d=<span class="string">'\n'</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"zhang"</span> &lt;&lt; d&lt;&lt; <span class="string">"xjtu &lt;&lt; endl;</span></span><br><span class="line"><span class="string">cout &lt;&lt; "</span>zhang\nxjtu\n<span class="string">";</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+</ul><a id="more"></a>
+
 <h3 id="2-转义字符"><a href="#2-转义字符" class="headerlink" title="2. 转义字符"></a>2. 转义字符</h3><div class="table-container">
 <table>
 <thead>
@@ -583,18 +583,26 @@
       
       <div class="site-state-item site-state-categories">
         
+          
+            <a href="/categories/">
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
-        
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
+          
+            <a href="/tags/">
+          
+        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
+        </a>
       </div>
     
   </nav>
@@ -654,7 +662,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 

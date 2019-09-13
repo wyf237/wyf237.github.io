@@ -25,10 +25,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="标识符  程序中变量、类型、函数和标号的名称统称 标识符。  如a，b，name，int，char，main，void等。   系统已有的标识符称为关键字。  常见关键字  using，namespace，void，return  int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof  if，e">
+  <meta name="description" content="标识符 程序中变量、类型、函数和标号的名称统称 标识符。  如a，b，name，int，char，main，void等。   系统已有的标识符称为关键字。  常见关键字  using，namespace，void，return  int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof  if，el">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】006-程序的基本要素">
 <meta property="og:url" content="http://yoursite.com/2019/08/31/【C++基础】006-程序的基本要素/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="标识符  程序中变量、类型、函数和标号的名称统称 标识符。  如a，b，name，int，char，main，void等。   系统已有的标识符称为关键字。  常见关键字  using，namespace，void，return  int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof  if，e">
+<meta property="og:description" content="标识符 程序中变量、类型、函数和标号的名称统称 标识符。  如a，b，name，int，char，main，void等。   系统已有的标识符称为关键字。  常见关键字  using，namespace，void，return  int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof  if，el">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-09-13T04:29:35.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】006-程序的基本要素">
-<meta name="twitter:description" content="标识符  程序中变量、类型、函数和标号的名称统称 标识符。  如a，b，name，int，char，main，void等。   系统已有的标识符称为关键字。  常见关键字  using，namespace，void，return  int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof  if，e">
+<meta name="twitter:description" content="标识符 程序中变量、类型、函数和标号的名称统称 标识符。  如a，b，name，int，char，main，void等。   系统已有的标识符称为关键字。  常见关键字  using，namespace，void，return  int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof  if，el">
   <link rel="canonical" href="http://yoursite.com/2019/08/31/【C++基础】006-程序的基本要素/">
 
 
@@ -204,8 +204,6 @@
   </li>
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -220,6 +218,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
 
@@ -298,8 +298,7 @@
 
       
         <blockquote>
-<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2></blockquote>
-<ol>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2></blockquote><ol>
 <li><p>程序中变量、类型、函数和标号的名称统称 <font color="red">标识符</font>。</p>
 <ul>
 <li>如a，b，name，int，char，main，void等。</li>
@@ -335,7 +334,8 @@
 </li>
 </ul>
 </li>
-</ol>
+</ol><a id="more"></a>
+
 <blockquote>
 <h2 id="标识符举例"><a href="#标识符举例" class="headerlink" title="标识符举例"></a>标识符举例</h2></blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="keyword">int</span> A,B,C;</span><br><span class="line"><span class="keyword">double</span> a1,b2,c3;</span><br><span class="line"><span class="keyword">double</span> table_width,table_height;</span><br><span class="line"><span class="keyword">char</span>  name[<span class="number">40</span>],_address[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> <span class="number">1</span>a,<span class="number">2b</span>,<span class="number">3</span>c;<span class="comment">//不合法的标识符,会出现以下报错信息</span></span><br></pre></td></tr></table></figure>
@@ -566,18 +566,26 @@
       
       <div class="site-state-item site-state-categories">
         
+          
+            <a href="/categories/">
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
-        
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
+          
+            <a href="/tags/">
+          
+        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
+        </a>
       </div>
     
   </nav>
@@ -637,7 +645,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 
