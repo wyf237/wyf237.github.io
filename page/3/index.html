@@ -1,124 +1,1511 @@
 <!DOCTYPE html>
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-    <meta name="baidu-site-verification" content="vvVgSQUzPU">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="南烛|博客|个人|utone|Utone|">
-    <meta name="description" content="倚剑证道心通明，青衫磊落采长歌行">
-    
-    <title>
-       南烛的学习小栈
-    </title>
-    <link rel="stylesheet" href="/css/style.css"> 
-    
-      <link rel="icon" href="/images/favicon.ico">
-    
-  </head>
-  <body>
-    <div id="container">
-      <div id="main-left">
-        <div id="introduce">
-          <div class="logo-worp">
-            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
-          </div>
-          <ul>
-            
-              <li><a href="/"> 首页 </a></li>
-            
-              <li><a href="/archives"> 归档 </a></li>
-            
-              <li><a href="/about"> 关于 </a></li>
-            
-          </ul>
-          
-        </div>
-      </div>
-      <div id="main-right">
 
-<article class="list">
-    <div class="list-time">
-        <a href="/2019/08/31/【C++基础】004-加法计算器/">
-            2019-08-31
-        </a>
-    </div>
-    <div class="list-title">
-        <a href="/2019/08/31/【C++基础】004-加法计算器/">
-            【C++基础】004-加法计算器
-        </a>
-    </div>
-</article>
 
-<article class="list">
-    <div class="list-time">
-        <a href="/2019/08/31/【C++基础】003-生日贺卡改良/">
-            2019-08-31
-        </a>
-    </div>
-    <div class="list-title">
-        <a href="/2019/08/31/【C++基础】003-生日贺卡改良/">
-            【C++基础】003-生日贺卡改良
-        </a>
-    </div>
-</article>
 
-<article class="list">
-    <div class="list-time">
-        <a href="/2019/08/31/【C++基础】002-生日贺卡/">
-            2019-08-31
-        </a>
-    </div>
-    <div class="list-title">
-        <a href="/2019/08/31/【C++基础】002-生日贺卡/">
-            【C++基础】002-生日贺卡
-        </a>
-    </div>
-</article>
 
-<article class="list">
-    <div class="list-time">
-        <a href="/2019/08/31/【C++基础】001-HelloWorld/">
-            2019-08-31
-        </a>
-    </div>
-    <div class="list-title">
-        <a href="/2019/08/31/【C++基础】001-HelloWorld/">
-            【C++基础】001-HelloWorld
-        </a>
-    </div>
-</article>
 
-<div class="list-paginator">
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-</div>
-</div>
-    </div>
-    <div id="footer">倚剑证道心通明，青衫磊落采长歌行</div>
-    <img id="top" src="/images/up-circle.svg" alt="top">
-    
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="南烛的学习小栈">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="南烛的学习小栈">
+  <link rel="canonical" href="http://yoursite.com/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>南烛的学习小栈</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">南烛的学习小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/【C++基础】006-程序的基本要素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/31/【C++基础】006-程序的基本要素/" class="post-title-link" itemprop="url">【C++基础】006-程序的基本要素</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-31 21:52:11" itemprop="dateCreated datePublished" datetime="2019-08-31T21:52:11+08:00">2019-08-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-13 12:29:35" itemprop="dateModified" datetime="2019-09-13T12:29:35+08:00">2019-09-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2></blockquote>
+<ol>
+<li><p>程序中变量、类型、函数和标号的名称统称 <font color="red">标识符</font>。</p>
+<ul>
+<li>如a，b，name，int，char，main，void等。</li>
+</ul>
+</li>
+<li><p>系统已有的标识符称为<font color="red">关键字</font>。</p>
+</li>
+<li><p>常见关键字</p>
+<ul>
+<li><p>using，namespace，void，return</p>
+</li>
+<li><p>int，float，double，char，bool，singed，unsigned，long，short，const，true，false，sizeof</p>
+</li>
+<li><p>if，else，for，do，while，switch，case，continue，break</p>
+</li>
+<li><p>class，struct，private，public，this，new，delete</p>
+</li>
+</ul>
+</li>
+<li><p>自己给变量、函数起的名字称为<font color="red">自定义标识符</font></p>
+</li>
+<li><p>自定义标识符的命名规则</p>
+<ul>
+<li><p>由字母、数字和下划线组成。</p>
+</li>
+<li><p>第1个符号不能是数字。</p>
+</li>
+<li><p>标识符的长度：不同编译器规定的不同，但至少识别前6个字符，有的长度可达32个字符，甚至更长。</p>
+</li>
+<li><p>区分大小写（大小写敏感）。</p>
+</li>
+<li><p>int a,A;这里a和A是2个不同的变量。</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<h2 id="标识符举例"><a href="#标识符举例" class="headerlink" title="标识符举例"></a>标识符举例</h2></blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="keyword">int</span> A,B,C;</span><br><span class="line"><span class="keyword">double</span> a1,b2,c3;</span><br><span class="line"><span class="keyword">double</span> table_width,table_height;</span><br><span class="line"><span class="keyword">char</span>  name[<span class="number">40</span>],_address[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> <span class="number">1</span>a,<span class="number">2b</span>,<span class="number">3</span>c;<span class="comment">//不合法的标识符,会出现以下报错信息</span></span><br></pre></td></tr></table></figure>
+<p><strong><font color="red">[Error] invalid suffix ‘“a” on integer constant</font></strong><br><strong><font color="red">好习惯</font>：标识符的命名应有意义，或与数学公式中的习惯使用的符号一致</strong></p>
+<blockquote>
+<h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2></blockquote>
+<ol>
+<li><p>表示数据可以改变的符号，称为变量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;<span class="comment">//a表示整数</span></span><br><span class="line"><span class="keyword">char</span> name[<span class="number">40</span>];<span class="comment">//不超过40个字符的字符数组</span></span><br><span class="line">a=<span class="number">5</span>;<span class="comment">//赋值语句，表示a为5</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;ae&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示出a为5</span></span><br><span class="line">a=a+<span class="number">5</span>;<span class="comment">//重新赋值，a为10；</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示a为10</span></span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;name;<span class="comment">//输入值存储到name变量</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;name&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示name的值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>直接写出的数据以及表示的数据不能改变的符号是常量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//"Hello World"是常量</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="number">5</span>+<span class="number">3</span>&lt;&lt;end;<span class="comment">//5和3是常量，endl也是常量，表示换行符</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以自己定义符号常量。</li>
+</ul>
+</li>
+<li><p>运算符和表达式</p>
+<p><1>.  运算符</1></p>
+<ul>
+<li>表示运算的符号。</li>
+<li>+，-，*，/，%   算数运算符。</li>
+<li>> ，&lt;，&gt;=，&lt;=  比较运算符。</li>
+</ul>
+<p><2>.  表示运算的式子，就是表达式</2></p>
+<ul>
+<li><p><strong>可以是一个变量、一个常量：</strong><br>a，b，5</p>
+</li>
+<li><p><strong>也可以是用运算符将变量、常量连接起来：</strong><br>3+5，a+b，a-b，a<em>b，a&gt;b，a<b，a>=b，a&lt;=b等</b，a></em></p>
+</li>
+<li><p><strong>还可以是用运算符将表达式连接起来的式子：</strong><br>(a+b)*(a-b)<br>用圆括号改变运算的优先级，括号内有限运算符</p>
+</li>
+<li><p><strong>等号运算符</strong></p>
+<ol>
+<li><p><strong>等号也是运算符</strong></p>
+</li>
+<li><p><strong>等号连接起来的式子是表达式，如：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c=a+b</span><br><span class="line">如果a=<span class="number">5</span>;b=<span class="number">6</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;(c=a+b)&lt;,<span class="built_in">endl</span>;<span class="comment">//这里输出显示的值是11</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><strong><font color="red">等号的左边必须是变量</font></strong></p>
+<p> 5=3，a+b=c+d  —&gt;  这两个表达式是<font color="red">错误</font>的，会出现以下错误提示：<br> <strong><font color="red">[Error] lvalue required as left operand of assignment</font></strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2></blockquote>
+<ul>
+<li><p>语句是一个表达完整的命令。</p>
+</li>
+<li><p>C++中，语句的标志就是分号“;”。</p>
+</li>
+<li><p>一个式子后面写上分号，就是一条语句。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;<span class="comment">//这是一个声明语句，说明用a，b，c表示整数</span></span><br><span class="line">a=<span class="number">5</span>;<span class="comment">//赋值语句</span></span><br><span class="line">b=<span class="number">10</span>;</span><br><span class="line">c=a+b;</span><br><span class="line">a+b;<span class="comment">//表达式语句，在程序中没多大作用</span></span><br><span class="line">a;<span class="comment">//表达式语句，在程序中没多大作用</span></span><br><span class="line">;;;<span class="comment">//空语句，什么也没做，对程序功能无任何影响</span></span><br><span class="line">c=a+b<span class="comment">//无分号，那么不是语句，单独占行是不正确的</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><font color="red">每行的末尾必须有分号，才能构成语句</font></strong></p>
+</li>
+</ul>
+<blockquote>
+<h2 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h2></blockquote>
+<ul>
+<li><p>输入cin</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cin</span>&gt;&gt;v1&gt;&gt;v2&gt;&gt;v3&gt;&gt;v4;<span class="comment">//cin是输入流对象&gt;&gt;提取运算符</span></span><br><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;b;</span><br><span class="line"><span class="built_in">cin</span>&gt;.c;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>输出cout</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;v1&lt;&lt;v2&lt;,v3&lt;&lt;v4;<span class="comment">//输出流对象&lt;&lt;插入运算符</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"  "</span>&lt;&lt;b&lt;&lt;<span class="string">"  "</span>&lt;c&lt;&lt;<span class="string">"sum:"</span>&lt;&lt;a+b+c&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2></blockquote>
+<ul>
+<li><p><strong>能完成一定功能的有名字的程序序列</strong></p>
+</li>
+<li><p><strong>main函数：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">	<span class="built_in">cout</span>&lt;,a+b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>系统函数：</strong></p>
+<p>sin(x),cos(x),exp(x),sqrt(x)</p>
+</li>
+<li><p><strong>自定义函数：</strong></p>
+<p>由用户自己定义编写的可供调用的函数</p>
+</li>
+<li><p><strong>函数是组成C++的基本单位</strong></p>
+<p>C++的程序是从main函数开始的，所以main函数有且只有一个</p>
+</li>
+</ul>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/【C++基础】005-计算存款本息/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/31/【C++基础】005-计算存款本息/" class="post-title-link" itemprop="url">【C++基础】005-计算存款本息</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-31 15:29:06" itemprop="dateCreated datePublished" datetime="2019-08-31T15:29:06+08:00">2019-08-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-13 12:13:49" itemprop="dateModified" datetime="2019-09-13T12:13:49+08:00">2019-09-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<h2 id="编写程序，计算银行存款本息"><a href="#编写程序，计算银行存款本息" class="headerlink" title="编写程序，计算银行存款本息"></a>编写程序，计算银行存款本息</h2></blockquote>
+<p>用户输入存款金额money，存款期years和年利率rate，根据公式：</p>
+<script type="math/tex; mode=display">
+sum =money(1+rate)^{years}</script><p>计算到期存款本息。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ol>
+<li><p><strong>可以用money，years，rate，sum分表表示存款本金，存款年限，存款利率和到期本息</strong></p>
+</li>
+<li><p><strong>这些数可能为实数，说明符号表示实数，用double。例如</strong></p>
+<p>double money,years,rate,sum;</p>
+</li>
+<li><p><strong>程序中，加法用“+”号，乘法用“*”号。</strong></p>
+</li>
+<li><p><strong>C++乘方</strong></p>
+<ul>
+<li>pow(x,y)；</li>
+<li>表示<script type="math/tex">x^y</script>，pow是函数名。x，y均应为双精度实数；</li>
+</ul>
+</li>
+<li><p><strong>数学函数包含在头文件cmath中</strong></p>
+</li>
+<li><p><strong>包含头文件</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>输入用cin，输出用cout。</strong></p>
+</li>
+</ol>
+<blockquote>
+<h2 id="初步代码"><a href="#初步代码" class="headerlink" title="初步代码"></a>初步代码</h2></blockquote>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
+<li>存款10000元，存1年，年利率3%：</li>
+</ul>
+<p><img src="【C++基础】005执行结果1.png" alt="005执行结果1"></p>
+<ul>
+<li>存款10000元，存3年，年利率4%：</li>
+</ul>
+<p><img src="【C++基础】005执行结果2.png" alt="005执行结果2"></p>
+<blockquote>
+<h2 id="问题来了"><a href="#问题来了" class="headerlink" title="问题来了"></a>问题来了</h2></blockquote>
+<p>我们无法多次计算，每次计算都需要重新运行程序，非常麻烦。</p>
+<h3 id="改良思路"><a href="#改良思路" class="headerlink" title="改良思路"></a>改良思路</h3><ul>
+<li><p>一次运行，多次运行；</p>
+</li>
+<li><p>使用循环：</p>
+</li>
+</ul>
+<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (&lt;条件&gt;)&#123;</span><br><span class="line"></span><br><span class="line">​	&lt;循环体(一段程序)&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;其他语句&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3> <div id="flowchart-0" class="flow-chart"></div>
+
+<h3 id="本题的循环条件可以设置为：momey-gt-0"><a href="#本题的循环条件可以设置为：momey-gt-0" class="headerlink" title="本题的循环条件可以设置为：momey&gt;0"></a><strong>本题的循环条件可以设置为：momey&gt;0</strong></h3><blockquote>
+<h2 id="改进代码"><a href="#改进代码" class="headerlink" title="改进代码"></a>改进代码</h2></blockquote>
+<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    <span class="keyword">while</span> (money&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//再输入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】005执行结果3.png" alt="005执行结果3"></p>
+<h3 id="过程分析"><a href="#过程分析" class="headerlink" title="过程分析"></a>过程分析</h3> <div id="flowchart-1" class="flow-chart"></div>
+
+<blockquote>
+<h2 id="新的问题"><a href="#新的问题" class="headerlink" title="新的问题"></a>新的问题</h2></blockquote>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><ul>
+<li>程序运行，屏幕上闪光标，意义不明确。</li>
+<li>程序输出，一个数字，不知道是什么意思，不直观。</li>
+</ul>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<li>输出提示信息。</li>
+<li>在输入数据前输出“请输入本金、存款年限和利息，用空格隔开”。</li>
+<li>在输出数据前显示“本息共XX”。</li>
+</ul>
+<blockquote>
+<p><strong>最终完成的代码</strong></p>
+</blockquote>
+<h3 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> money,years,rate,sum;<span class="comment">//变量声明</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入本金、存款年限和利息，用空格隔开"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//输入数据</span></span><br><span class="line">    <span class="keyword">while</span> (money&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum=money*<span class="built_in">pow</span>((<span class="number">1</span>+rate),years);<span class="comment">//计算，=赋值</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"本息共 "</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入本金、存款年限和利息，用空格隔开"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;money&gt;&gt;years&gt;&gt;rate;<span class="comment">//再输入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果-2"><a href="#执行结果-2" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】005执行结果4.png" alt="005执行结果4"></p>
+<blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></blockquote>
+<ol>
+<li><h4 id="函数的使用"><a href="#函数的使用" class="headerlink" title="函数的使用"></a>函数的使用</h4><ul>
+<li><p><strong>函数引用</strong></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>数学函数库中的其他函数</strong><br><strong>三角函数的角度单位均为弧度。</strong></p>
+<p><strong>函数名字母均为小写。</strong></p>
+<p><strong>自变量均为双精度实数，结果也是双精度实数。</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数学函数名</th>
+<th style="text-align:left">C++函数名</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">乘方</td>
+<td style="text-align:left">pow(x,y)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">正弦</td>
+<td style="text-align:left">sin(x)</td>
+<td style="text-align:left">x为弧度</td>
+</tr>
+<tr>
+<td style="text-align:left">余弦</td>
+<td style="text-align:left">cos(x)</td>
+<td style="text-align:left">x为弧度</td>
+</tr>
+<tr>
+<td style="text-align:left">正切</td>
+<td style="text-align:left">tan(x)</td>
+<td style="text-align:left">x为弧度</td>
+</tr>
+<tr>
+<td style="text-align:left">$e^x$</td>
+<td style="text-align:left">exp(x)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$log_ex$</td>
+<td style="text-align:left">log(x)</td>
+<td style="text-align:left">e为底</td>
+</tr>
+<tr>
+<td style="text-align:left">$log_{10}x$</td>
+<td style="text-align:left">log10(x)</td>
+<td style="text-align:left">10为底</td>
+</tr>
+<tr>
+<td style="text-align:left">平方根</td>
+<td style="text-align:left">sqrt(x)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">绝对值</td>
+<td style="text-align:left">fabs(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li><h4 id="循环，有条件地重复执行一段程序"><a href="#循环，有条件地重复执行一段程序" class="headerlink" title="循环，有条件地重复执行一段程序"></a>循环，有条件地重复执行一段程序</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (&lt;条件&gt;)&#123;</span><br><span class="line">​	&lt;循环体(一段程序)&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;其他语句&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="编程的好习惯"><a href="#编程的好习惯" class="headerlink" title="编程的好习惯"></a>编程的好习惯</h4><ul>
+<li>给用户提示<ul>
+<li>输入的数据是什么。</li>
+<li>输出的数据是什么。<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
+op=>operation: 处理
+cond=>condition: 条件
+sub1=>subroutine: 循环体
+io=>subroutine: 其他语句
+e=>end: 结束
+st->op->cond
+cond(yes)->sub1(left)->cond
+cond(no)->io->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">st=>start: 开始
+op=>operation: cin>>money>>years>>rate;
+cond=>condition: money>0
+sub1=>subroutine: sum=money*pow((1+rate),years);//计算，=赋值
+cout<<sum<<endl; 显示结果 cin>>money>>years>>rate;//再输入
+io=>subroutine: return 0;
+e=>end: 结束
+st->op->cond
+cond(yes)->sub1(left)->cond
+cond(no)->io->e</sum<<endl;></textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/【C++基础】004-加法计算器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/31/【C++基础】004-加法计算器/" class="post-title-link" itemprop="url">【C++基础】004-加法计算器</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-31 14:58:26" itemprop="dateCreated datePublished" datetime="2019-08-31T14:58:26+08:00">2019-08-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-13 12:29:44" itemprop="dateModified" datetime="2019-09-13T12:29:44+08:00">2019-09-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<h2 id="编写程序，计算2个整数的和"><a href="#编写程序，计算2个整数的和" class="headerlink" title="编写程序，计算2个整数的和"></a>编写程序，计算2个整数的和</h2></blockquote>
+<p><strong>最简单问题</strong></p>
+<ul>
+<li>计算4和3的和。</li>
+</ul>
+<p><strong>C++程序</strong></p>
+<ul>
+<li><p>cout&lt;&lt;4+3&lt;&lt;endl;</p>
+</li>
+<li><p>4,3是常量，整型常量</p>
+</li>
+</ul>
+<blockquote>
+<h2 id="最简单的计算代码"><a href="#最简单的计算代码" class="headerlink" title="最简单的计算代码"></a>最简单的计算代码</h2></blockquote>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算2个整数的和</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="number">4</span>+<span class="number">3</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】004执行结果1.png" alt="004执行结果1"></p>
+<blockquote>
+<h2 id="改进方法分析"><a href="#改进方法分析" class="headerlink" title="改进方法分析"></a>改进方法分析</h2></blockquote>
+<p>用户从键盘输入2个整数，计算他们的和并显示到屏幕上。</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><ul>
+<li>如何输入2个数字？</li>
+<li>如何表示2个数字？</li>
+</ul>
+<h3 id="数学上的方法"><a href="#数学上的方法" class="headerlink" title="数学上的方法"></a>数学上的方法</h3><ul>
+<li>c=a+b；a，b是自变量；c是因变量；</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">a</th>
+<th style="text-align:left">b</th>
+<th style="text-align:left">c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">a=4</td>
+<td style="text-align:left">b=3</td>
+<td style="text-align:left">c=a+b=7</td>
+</tr>
+<tr>
+<td style="text-align:left">a=2019</td>
+<td style="text-align:left">b=4</td>
+<td style="text-align:left">c=a+b=2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="C-解决方法"><a href="#C-解决方法" class="headerlink" title="C++解决方法"></a>C++解决方法</h3><ul>
+<li>程序设计中，用符号表示可变的数据，也叫变量；</li>
+<li>用a,b表示2个整数，c表示他们的和；</li>
+</ul>
+<h3 id="C-中使用符号表示数据，要先声明"><a href="#C-中使用符号表示数据，要先声明" class="headerlink" title="C++中使用符号表示数据，要先声明"></a>C++中使用符号表示数据，要先声明</h3><ul>
+<li>int a,b,c  //int是integer的缩写  声明语句</li>
+<li>int a;  //变量——存储单位</li>
+</ul>
+<font color="red">**声明语句可以有多条，每条语句声明一个或多个变量；**</font>
+
+<font color="red">**声明的多个变量间用逗号隔开；**</font>
+
+<font color="red">**一个变量只能声明一次；**</font>
+
+<h3 id="数据的输入，cin"><a href="#数据的输入，cin" class="headerlink" title="数据的输入，cin"></a>数据的输入，cin</h3><ul>
+<li>cin&gt;&gt;a;//输入a</li>
+<li>cin&gt;&gt;b;//输入b</li>
+</ul>
+<h3 id="上面两行可以替换为"><a href="#上面两行可以替换为" class="headerlink" title="上面两行可以替换为"></a>上面两行可以替换为</h3><ul>
+<li>cin&gt;&gt;a&gt;&gt;b;</li>
+</ul>
+<h3 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h3><ul>
+<li>c=a+b;//a+b表达式，=赋值运算，将a+b的结果存入c</li>
+</ul>
+<h3 id="输出，cout"><a href="#输出，cout" class="headerlink" title="输出，cout"></a>输出，cout</h3><ul>
+<li>cout&lt;&lt;c&lt;&lt;endl;//显示c代表的值</li>
+</ul>
+<blockquote>
+<h2 id="改进后的代码"><a href="#改进后的代码" class="headerlink" title="改进后的代码"></a>改进后的代码</h2></blockquote>
+<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算2个整数的和</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;<span class="comment">//说明分别用a,b,c表示整数</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;<span class="comment">//输入a,b的值</span></span><br><span class="line">	c=a+b;<span class="comment">//计算a,b的和</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//显示结果c的值</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】004执行结果2.png" alt="004执行结果2"></p>
+<blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></blockquote>
+<ol>
+<li><h3 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h3><ul>
+<li><p>int a,b,c;//声明整型变量；</p>
+</li>
+<li><p>double da,db,dc;//声明双精度变量；</p>
+</li>
+<li><p>C++中一个符号只能说明一次，而且先声明，后使用；</p>
+</li>
+</ul>
+</li>
+<li><h3 id="输入cin"><a href="#输入cin" class="headerlink" title="输入cin"></a>输入cin</h3><ul>
+<li>cin&gt;&gt;a&gt;&gt;b;</li>
+</ul>
+</li>
+<li><h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><ul>
+<li>加法用“+”号</li>
+<li>减法 -，乘法 *，除法 /，求余 %；</li>
+</ul>
+</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/【C++基础】003-生日贺卡改良/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/31/【C++基础】003-生日贺卡改良/" class="post-title-link" itemprop="url">【C++基础】003-生日贺卡改良</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-31 14:24:14" itemprop="dateCreated datePublished" datetime="2019-08-31T14:24:14+08:00">2019-08-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-13 12:29:47" itemprop="dateModified" datetime="2019-09-13T12:29:47+08:00">2019-09-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<h2 id="改良程序的一些要求"><a href="#改良程序的一些要求" class="headerlink" title="改良程序的一些要求"></a>改良程序的一些要求</h2></blockquote>
+<ol>
+<li><p>输入收卡人的名字；</p>
+</li>
+<li><p>输入送卡人的名字；</p>
+</li>
+<li><p>名字是一串字母或汉字，程序中成为字符串；</p>
+</li>
+<li><p>C++，字符串可以这样表示：</p>
+</li>
+<li><p>char s[50]；//s是字符数组   声明语句</p>
+<ul>
+<li><p><strong>声明方法</strong></p>
+<p>Char &lt;字符串名&gt;[&lt;字符串最大长度&gt;]；//char-character</p>
+<p>例：</p>
+<p>char name1[50]；</p>
+<p>char name1[50]；</p>
+<p>或：</p>
+<p>char name1[50],name1[50];</p>
+</li>
+<li><p><strong>输入，cin</strong></p>
+<p>cin&gt;&gt; &lt;字符数组名&gt;;</p>
+<p>例：</p>
+<p>cin&gt;&gt;name1;</p>
+<p>cin&gt;&gt;name2;</p>
+<p>或：</p>
+<p>cin&gt;&gt;name1&gt;&gt;name2;</p>
+</li>
+<li><p><strong>输出，cout</strong></p>
+<p>cout&lt;&lt; &lt;字符数组名&gt;;</p>
+<p>cout&lt;&lt;name1;</p>
+<p>cout&lt;&lt;name2;</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<h2 id="常规的代码写法"><a href="#常规的代码写法" class="headerlink" title="常规的代码写法"></a>常规的代码写法</h2></blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">usingnamespacestd;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	charname1[<span class="number">50</span>],name2[<span class="number">50</span>];<span class="comment">//声明语句，name1和name2字符数组</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;name1&gt;&gt;name2;<span class="comment">//输入字符串，先声明再使用</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"#######################################################"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;name1&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Happy birthday to you!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"         sincerely    yours   "</span>&lt;&lt;name2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"#######################################################"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	return0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】003执行结果1.png" alt="003执行结果1"></p>
+<blockquote>
+<h2 id="当输入带有空格的名字时"><a href="#当输入带有空格的名字时" class="headerlink" title="当输入带有空格的名字时"></a>当输入带有空格的名字时</h2></blockquote>
+<h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】003执行结果2.png" alt="003执行结果2"></p>
+<h3 id="错误的原因在于"><a href="#错误的原因在于" class="headerlink" title="错误的原因在于"></a>错误的原因在于</h3><ul>
+<li><p>cin，以空格、<tab>键、&lt;回车键&gt;作为分隔符；</tab></p>
+</li>
+<li><p>当遇到了以上符号，就认为一项数据的输入结束了；</p>
+</li>
+<li><p>cin&gt;&gt;name1&gt;&gt;name2;</p>
+<p>其中“zhang”赋值给了name1，“san”赋值给了name2；</p>
+</li>
+</ul>
+<blockquote>
+<h2 id="改进后的代码"><a href="#改进后的代码" class="headerlink" title="改进后的代码"></a>改进后的代码</h2></blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">usingnamespacestd;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> name1[<span class="number">50</span>],name2[<span class="number">50</span>];<span class="comment">//声明语句，name1和name2字符数组</span></span><br><span class="line">	<span class="comment">//cin&gt;&gt;name1&gt;&gt;name2;//输入字符串，先声明再使用</span></span><br><span class="line">	<span class="built_in">cin</span>.getline(name1,<span class="number">50</span>);</span><br><span class="line">	<span class="built_in">cin</span>.getline(name2,<span class="number">50</span>);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"#######################################################"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;name1&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Happy birthday to you!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"      sincerely yours "</span>&lt;&lt;name2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"#######################################################"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	return0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果-2"><a href="#执行结果-2" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】003执行结果3.png" alt="003执行结果3"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/【C++基础】002-生日贺卡/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/31/【C++基础】002-生日贺卡/" class="post-title-link" itemprop="url">【C++基础】002-生日贺卡</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-31 14:02:09" itemprop="dateCreated datePublished" datetime="2019-08-31T14:02:09+08:00">2019-08-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-13 12:29:50" itemprop="dateModified" datetime="2019-09-13T12:29:50+08:00">2019-09-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<h2 id="编写程序，显示如下形式的生日贺卡"><a href="#编写程序，显示如下形式的生日贺卡" class="headerlink" title="编写程序，显示如下形式的生日贺卡"></a>编写程序，显示如下形式的生日贺卡</h2></blockquote>
+<p>##################################################</p>
+<p>Wang</p>
+<p>Happy Birthday To You!</p>
+<p>sincerely yours Zhang</p>
+<p>##################################################</p>
+<blockquote>
+<h2 id="第一种方案"><a href="#第一种方案" class="headerlink" title="第一种方案"></a>第一种方案</h2></blockquote>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"############################################################"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Wang"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Happy Birthday To You!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"                  sincerely yours Zhang"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"############################################################"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】002执行结果.png" alt="002执行结果"></p>
+<blockquote>
+<h2 id="第二种方案"><a href="#第二种方案" class="headerlink" title="第二种方案"></a>第二种方案</h2></blockquote>
+<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        s = s + <span class="string">'#'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Wang"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Happy Birthday To You!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"                  sincerely yours Zhang"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】002执行结果.png" alt="002执行结果"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/【C++基础】001-HelloWorld/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/31/【C++基础】001-HelloWorld/" class="post-title-link" itemprop="url">【C++基础】001-HelloWorld</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-31 11:13:49" itemprop="dateCreated datePublished" datetime="2019-08-31T11:13:49+08:00">2019-08-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-13 12:29:53" itemprop="dateModified" datetime="2019-09-13T12:29:53+08:00">2019-09-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<h2 id="编程环境软件推荐"><a href="#编程环境软件推荐" class="headerlink" title="编程环境软件推荐"></a>编程环境软件推荐</h2></blockquote>
+<h3 id="Visual-Studio"><a href="#Visual-Studio" class="headerlink" title="Visual Studio"></a>Visual Studio</h3><p>微软开发的号称宇宙第一开发环境的Visual Studio，功能强大。</p>
+<p><img src="【C++基础】VisualStudio.png" alt="VisualStudio"></p>
+<p>Visual Studio下载地址：<a href="https://visualstudio.microsoft.com/zh-hans/free-developer-offers/" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h3><p>微软推出的一款跨平台编辑器，有丰富的插件库，支持绝大多数编程语言，逐渐成为最主流的编辑器。</p>
+<p><img src="【C++基础】VS%20Code.png" alt="VS Code"></p>
+<p>下载地址：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="JetBrains-Clion"><a href="#JetBrains-Clion" class="headerlink" title="JetBrains Clion"></a>JetBrains Clion</h3><p>JetBrains公司推出的C/C++跨平台集成开发环境，功能强大，专注开发，JetBrains开发必属精品，适合专业开发使用。</p>
+<p><img src="【C++基础】Clion.png" alt="Clion"></p>
+<p>下载地址：<a href="http://www.jetbrains.com/clion/" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="Eclipse-For-C"><a href="#Eclipse-For-C" class="headerlink" title="Eclipse For C++"></a>Eclipse For C++</h3><p>老牌跨平台集成开发环境，丰富的插件和简洁的开发界面。</p>
+<p><img src="【C++基础】Eclipse.png" alt="Eclipse"></p>
+<p>下载地址：<a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="DEV-C"><a href="#DEV-C" class="headerlink" title="DEV C++"></a>DEV C++</h3><p>老牌C++集成开发环境，小巧强大。</p>
+<p><img src="【C++基础】DEV-C++.png" alt="DEV-C++"></p>
+<p>DEV-C++下载地址：<a href="https://bloodshed-dev-c.en.softonic.com/" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="Code-Blocks"><a href="#Code-Blocks" class="headerlink" title="Code::Blocks"></a>Code::Blocks</h3><p>老牌跨平台集成开发环境，界面清爽，适合学习使用，专业开发也可以胜任。</p>
+<p><img src="【C++基础】Code%20Blocks.png" alt="Code Blocks"></p>
+<p>下载地址：<a href="http://www.codeblocks.org/downloads" target="_blank" rel="noopener">传送门</a></p>
+<blockquote>
+<h2 id="第一个C-程序"><a href="#第一个C-程序" class="headerlink" title="第一个C++程序"></a>第一个C++程序</h2></blockquote>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><p><img src="【C++基础】001执行结果.png" alt="001执行结果"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vico.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vico.</span>
+</div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人来过
+</span>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
 </body>
 </html>
-<!-- 加载主题脚本文件 -->
-<script src="/scripts/utone.js"></script>
-
-<script type="text/javascript">
-  window.onload = function() {
-    scroll.init()
-    siteSearch.init()
-  }
-</script>

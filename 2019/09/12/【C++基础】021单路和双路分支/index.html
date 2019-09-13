@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="1. 单路分支伪代码   1234if (表达式)&amp;#123;    语句序列;&amp;#125; 流程图  2. 双路分支伪代码   123456if (表达式))&amp;#123;   语句序列1;&amp;#125;else&amp;#123;   语句序列2;&amp;#125; 流程图  3. 注意 表示条件的表达式要能判断真假，如a&amp;gt;0,a%2==0; 当语句序列仅包含一条语句时，可以省略花括号;  4. 【例】比">
+<meta name="keywords" content="C++,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C++基础】021单路和双路分支">
+<meta property="og:url" content="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/index.html">
+<meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="1. 单路分支伪代码   1234if (表达式)&amp;#123;    语句序列;&amp;#125; 流程图  2. 双路分支伪代码   123456if (表达式))&amp;#123;   语句序列1;&amp;#125;else&amp;#123;   语句序列2;&amp;#125; 流程图  3. 注意 表示条件的表达式要能判断真假，如a&amp;gt;0,a%2==0; 当语句序列仅包含一条语句时，可以省略花括号;  4. 【例】比">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/【C++基础】021执行结果1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/【C++基础】021执行结果2.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/【C++基础】021执行结果3.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/【C++基础】021执行结果4.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/【C++基础】021执行结果5.png">
+<meta property="og:updated_time" content="2019-09-13T04:58:09.306Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【C++基础】021单路和双路分支">
+<meta name="twitter:description" content="1. 单路分支伪代码   1234if (表达式)&amp;#123;    语句序列;&amp;#125; 流程图  2. 双路分支伪代码   123456if (表达式))&amp;#123;   语句序列1;&amp;#125;else&amp;#123;   语句序列2;&amp;#125; 流程图  3. 注意 表示条件的表达式要能判断真假，如a&amp;gt;0,a%2==0; 当语句序列仅包含一条语句时，可以省略花括号;  4. 【例】比">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/【C++基础】021执行结果1.png">
+  <link rel="canonical" href="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>【C++基础】021单路和双路分支 | 南烛的学习小栈</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">南烛的学习小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/【C++基础】021单路和双路分支/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【C++基础】021单路和双路分支
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-12 18:56:31" itemprop="dateCreated datePublished" datetime="2019-09-12T18:56:31+08:00">2019-09-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-13 12:58:09" itemprop="dateModified" datetime="2019-09-13T12:58:09+08:00">2019-09-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1-单路分支"><a href="#1-单路分支" class="headerlink" title="1. 单路分支"></a>1. 单路分支</h3><h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4>   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (表达式)</span><br><span class="line">&#123;</span><br><span class="line">    语句序列;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><div id="flowchart-0" class="flow-chart"></div>
+
+<h3 id="2-双路分支"><a href="#2-双路分支" class="headerlink" title="2. 双路分支"></a>2. 双路分支</h3><h4 id="伪代码-1"><a href="#伪代码-1" class="headerlink" title="伪代码"></a>伪代码</h4>   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (表达式))</span><br><span class="line">&#123;</span><br><span class="line">   语句序列<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">   语句序列<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h4><div id="flowchart-1" class="flow-chart"></div>
+
+<h3 id="3-注意"><a href="#3-注意" class="headerlink" title="3. 注意"></a>3. 注意</h3><ul>
+<li>表示条件的表达式要能判断真假，如a&gt;0,a%2==0;</li>
+<li>当语句序列仅包含一条语句时，可以省略花括号;</li>
+</ul>
+<h3 id="4-【例】比较2个数的大小"><a href="#4-【例】比较2个数的大小" class="headerlink" title="4. 【例】比较2个数的大小"></a>4. 【例】比较2个数的大小</h3><p><strong>编写程序，找出并输出所输入的2个实数中的较大数。</strong></p>
+<ol>
+<li><p><strong>示例代码1</strong></p>
+   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b, max;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    max = a;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b)</span><br><span class="line">        max = b;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行结果1</strong><br> <img src="【C++基础】021执行结果1.png" alt="021结构图"></p>
+</li>
+<li><p><strong>示例代码2</strong></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b, max;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b)</span><br><span class="line">        max = b;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        max = a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行结果2</strong><br> <img src="【C++基础】021执行结果2.png" alt="021结构图"></p>
+</li>
+<li><p><strong>本例学到</strong></p>
+<ul>
+<li>单路分支语句</li>
+<li>双路分支语句</li>
+<li>关系表达式作为条件的使用方法</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-分支嵌套"><a href="#5-分支嵌套" class="headerlink" title="5 分支嵌套"></a>5 <strong>分支嵌套</strong></h3><h4 id="a-说明"><a href="#a-说明" class="headerlink" title="a.说明"></a>a.说明</h4><ul>
+<li><strong>else总是与它上面最近的if配对；</strong></li>
+<li><strong>如果if与else的数目不一样，可以加花括号来确定配对关系；</strong><br>如：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (表达式<span class="number">1</span>)</span><br><span class="line">    &#123; <span class="keyword">if</span> (表达式<span class="number">2</span>) 语句<span class="number">1</span>&#125;</span><br><span class="line"><span class="keyword">else</span> 语句<span class="number">2</span> (内嵌 <span class="keyword">if</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="b-通常情况"><a href="#b-通常情况" class="headerlink" title="b.通常情况"></a>b.通常情况</h4><h5 id="伪代码-2"><a href="#伪代码-2" class="headerlink" title="伪代码"></a>伪代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (表达式<span class="number">1</span>) 语句<span class="number">1</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (表达式<span class="number">2</span>) 语句<span class="number">2</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (表达式<span class="number">2</span>) 语句<span class="number">3</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (表达式<span class="number">2</span>) 语句<span class="number">4</span></span><br><span class="line"><span class="keyword">else</span> 语句<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h5 id="流程图-2"><a href="#流程图-2" class="headerlink" title="流程图"></a>流程图</h5><div id="flowchart-2" class="flow-chart"></div>
+
+<h4 id="c-【例】比较3个数的大小"><a href="#c-【例】比较3个数的大小" class="headerlink" title="c.【例】比较3个数的大小"></a>c.【例】比较3个数的大小</h4><p><strong>编写程序，找出并输出所输入三个实数中的最大数</strong></p>
+<h5 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h5><ul>
+<li>程序流程<div id="flowchart-3" class="flow-chart"></div></li>
+<li><p>示例代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b, c, max;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a &gt; c)</span><br><span class="line">            max = a;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            max = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (b &lt; c)</span><br><span class="line">            max = c;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">           max = b;</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行结果<br><img src="【C++基础】021执行结果3.png" alt="021结构图"></p>
+</li>
+</ul>
+<h5 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h5><ul>
+<li>程序流程</li>
+</ul>
+<div id="flowchart-4" class="flow-chart"></div>
+
+<ul>
+<li><p>示例代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b, c, max;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    max = a;</span><br><span class="line">    <span class="keyword">if</span> (!(a &gt; b &amp;&amp; a &gt; c))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (b &gt; c)</span><br><span class="line">            max = b;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            max = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行结果<br><img src="【C++基础】021执行结果4.png" alt="021结构图"></p>
+</li>
+</ul>
+<h5 id="方案3"><a href="#方案3" class="headerlink" title="方案3"></a>方案3</h5><ul>
+<li>程序流程<div id="flowchart-5" class="flow-chart"></div></li>
+<li><p>示例代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b, c, max;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    max = a;</span><br><span class="line">    <span class="keyword">if</span> (max &lt; b)</span><br><span class="line">    max = b;</span><br><span class="line">    <span class="keyword">if</span> (max &lt; c)</span><br><span class="line">        max = c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行结果<br><img src="【C++基础】021执行结果5.png" alt="021结构图"><br><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 程序开始
+e=>end: 程序结束
+cond=>condition: 条件？
+sub1=>operation: 语句序列1
+sub2=>operation: 语句序列2
+st->cond
+cond(yes)->sub1->e
+cond(no)->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">st=>start: 程序开始
+e=>end: 程序结束
+cond=>condition: 条件？
+sub1=>operation: 语句序列1
+sub2=>operation: 语句序列2
+st->cond
+cond(yes)->sub1->e
+cond(no)->sub2->e</textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script><textarea id="flowchart-2-code" style="display: none">s=>start: 开始
+c1=>condition: 表达式1
+c2=>condition: 表达式2
+c3=>condition: 表达式3
+c4=>condition: 表达式4
+o1=>operation: 语句1
+o2=>operation: 语句2
+o3=>operation: 语句3
+o4=>operation: 语句4
+o5=>operation: 语句5
+e=>end: 结束;
+s->c1(yes)->o1->e
+c1(no)->c2
+c2(yes)->o2->e
+c2(no)->c3
+c3(yes)->o3->e
+c3(no)->c4
+c4(yes)->o4->e
+c4(no)->o5->e</textarea><textarea id="flowchart-2-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-2-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-2-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-2", options);</script><textarea id="flowchart-3-code" style="display: none"> c1=>condition: a > b
+c2=>condition: a > c
+c3=>condition: b < c
+o1=>operation: max = a
+o2=>operation: max = b
+o3=>operation: max = c
+o4=>operation: max = c
+c1(yes,right)->c2(yes,right)->o1
+c1(no,bottom)->c3(yes,right)->o3
+c3(no,bottom)->o2
+c2(no,bottom)->o4</textarea><textarea id="flowchart-3-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-3-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-3-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-3", options);</script><textarea id="flowchart-4-code" style="display: none">o1=>operation: max = a
+o2=>operation: max = b
+o3=>operation: max = c
+o4=>operation: max = 输出max
+c1=>condition: !(a>b && a>c)
+c2=>condition: b > c
+o1->c1(yes,bottom)->c2
+c1(no,left)->o4
+c2(yes,right)->o2
+c2(no,bottom)->o3
+o3->o4
+o2->o4</textarea><textarea id="flowchart-4-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-4-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-4-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-4", options);</script><textarea id="flowchart-5-code" style="display: none">o1=>operation: max = a
+o2=>operation: max = b
+o3=>operation: max = c
+o4=>operation: 输出max
+c1=>condition: max < b
+c2=>condition: max < c
+o1->c1(yes,right)->o2
+c1(no,bottom)->c2(yes,right)->o3
+c2(no,bottom)->o4
+o2->o4
+o3->o4</textarea><textarea id="flowchart-5-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-5-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-5-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-5", options);</script></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Vico. 微信支付">
+        <p>微信支付</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Vico. 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/C/" rel="tag"># C++</a>
+            
+              <a href="/tags/编程/" rel="tag"># 编程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/10/【C++基础】020程序流程控制/" rel="next" title="【C++基础】020程序流程控制">
+                  <i class="fa fa-chevron-left"></i> 【C++基础】020程序流程控制
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjYwNy8yMzExNw=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-单路分支"><span class="nav-text">1. 单路分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪代码"><span class="nav-text">伪代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#流程图"><span class="nav-text">流程图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-双路分支"><span class="nav-text">2. 双路分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪代码-1"><span class="nav-text">伪代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#流程图-1"><span class="nav-text">流程图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-注意"><span class="nav-text">3. 注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-【例】比较2个数的大小"><span class="nav-text">4. 【例】比较2个数的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-分支嵌套"><span class="nav-text">5 分支嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-说明"><span class="nav-text">a.说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-通常情况"><span class="nav-text">b.通常情况</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#伪代码-2"><span class="nav-text">伪代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#流程图-2"><span class="nav-text">流程图</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-【例】比较3个数的大小"><span class="nav-text">c.【例】比较3个数的大小</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方案1"><span class="nav-text">方案1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方案2"><span class="nav-text">方案2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方案3"><span class="nav-text">方案3</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vico.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vico.</span>
+</div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人来过
+</span>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>
