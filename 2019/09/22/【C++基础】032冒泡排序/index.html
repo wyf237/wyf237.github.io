@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="冒泡排序。【实例名称】用户从键盘输入N，然后输入N个实数，使用冒泡排序方法对这N个元素排序，输出排序后的数据。【运行结果】89 8 7 6 5 4 3 22 3 4 5 6 7 8 9【冒泡描述】 ①两辆比较相邻元素A(I)和A(I+1)(I=1,2,…N-1)，如果A(I)&amp;gt;A(I+1)，则交换A(I)和A(I+1)的位置； ②对剩下的N-1个元素，再两两进行比较，按相同的规则交换它们的位">
+<meta name="keywords" content="C++,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C++基础】032冒泡排序">
+<meta property="og:url" content="http://yoursite.com/2019/09/22/【C++基础】032冒泡排序/index.html">
+<meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="冒泡排序。【实例名称】用户从键盘输入N，然后输入N个实数，使用冒泡排序方法对这N个元素排序，输出排序后的数据。【运行结果】89 8 7 6 5 4 3 22 3 4 5 6 7 8 9【冒泡描述】 ①两辆比较相邻元素A(I)和A(I+1)(I=1,2,…N-1)，如果A(I)&amp;gt;A(I+1)，则交换A(I)和A(I+1)的位置； ②对剩下的N-1个元素，再两两进行比较，按相同的规则交换它们的位">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/【C++基础】032冒泡排序/【C++基础】032冒泡排序1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/【C++基础】032冒泡排序/【C++基础】032执行结果1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/22/【C++基础】032冒泡排序/【C++基础】032执行结果2.png">
+<meta property="og:updated_time" content="2019-09-22T14:35:38.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【C++基础】032冒泡排序">
+<meta name="twitter:description" content="冒泡排序。【实例名称】用户从键盘输入N，然后输入N个实数，使用冒泡排序方法对这N个元素排序，输出排序后的数据。【运行结果】89 8 7 6 5 4 3 22 3 4 5 6 7 8 9【冒泡描述】 ①两辆比较相邻元素A(I)和A(I+1)(I=1,2,…N-1)，如果A(I)&amp;gt;A(I+1)，则交换A(I)和A(I+1)的位置； ②对剩下的N-1个元素，再两两进行比较，按相同的规则交换它们的位">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/22/【C++基础】032冒泡排序/【C++基础】032冒泡排序1.png">
+  <link rel="canonical" href="http://yoursite.com/2019/09/22/【C++基础】032冒泡排序/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>【C++基础】032冒泡排序 | 南烛的学习小栈</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">南烛的学习小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/【C++基础】032冒泡排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【C++基础】032冒泡排序
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-22 21:12:04 / 修改时间：22:35:38" itemprop="dateCreated datePublished" datetime="2019-09-22T21:12:04+08:00">2019-09-22</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <a id="more"></a><p>冒泡排序。</p><h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p>用户从键盘输入N，然后输入N个实数，使用冒泡排序方法对这N个元素排序，输出排序后的数据。</p><h3 id="【运行结果】"><a href="#【运行结果】" class="headerlink" title="【运行结果】"></a>【运行结果】</h3><p><font color="blue">8</font></p><p><font color="blue">9 8 7 6 5 4 3 2</font><br>2 3 4 5 6 7 8 9</p><h3 id="【冒泡描述】"><a href="#【冒泡描述】" class="headerlink" title="【冒泡描述】"></a>【冒泡描述】</h3><ul>
+<li>①两辆比较相邻元素A(I)和A(I+1)(I=1,2,…N-1)，如果A(I)&gt;A(I+1)，则交换A(I)和A(I+1)的位置；</li>
+<li>②对剩下的N-1个元素，再两两进行比较，按相同的规则交换它们的位置，经过N-2次比较，将最大值交换到A(N-1)的位置；</li>
+<li>③如法炮制，经过N-1趟的“冒泡处理”，每趟进行N-i次的比较，全部数列有序；<br><img src="【C++基础】032冒泡排序1.png" alt="032执行结果"></li>
+</ul><a id="more"></a>
+
+
+
+
+
+<h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><blockquote>
+<p>设有N个元素，用数组a[i]表示，i=0，…，N</p>
+</blockquote>
+<ul>
+<li>①输入N；</li>
+<li>②输入a[i]，i=0，…，N-1；</li>
+<li>③对i=0，…，n-2</li>
+<li>④&emsp;对j=0，…，n-2-i</li>
+<li>⑤&emsp;&emsp;若a[j]&gt;a[j+1]，则交换它们的值。</li>
+<li>⑥对i=0，…，N-1，输出a[i]</li>
+</ul>
+<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="comment">//----------输入数据----------</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//----------数据排序----------</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; N - <span class="number">1</span> - i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp;</span><br><span class="line">                tmp = a[j];</span><br><span class="line">                a[j] = a[j + <span class="number">1</span>];</span><br><span class="line">                a[j + <span class="number">1</span>] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//----------输出数据----------</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【执行结果】"><a href="#【执行结果】" class="headerlink" title="【执行结果】"></a>【执行结果】</h3><p><img src="【C++基础】032执行结果1.png" alt="032执行结果"></p>
+<h3 id="【程序分析】"><a href="#【程序分析】" class="headerlink" title="【程序分析】"></a>【程序分析】</h3><ul>
+<li>①注意程序中带短划线的三段注释，基本体现了本程序的三块内容，输入、处理和输出。</li>
+<li>②排序的程序主要有2个循环。外层循环控制N-1趟，内层循环控制一趟的若干次比较，第一趟需要N-1次比较，第二次需要N-2次比较，第N-1次需要N-(N-1)=1次比较。</li>
+<li>③元素存放在数组中，数组的大小在定义时要求是常量表达式。不能先输入N，再定义数组double A[N]，这是不正确的。</li>
+</ul>
+<h3 id="【思路扩展】"><a href="#【思路扩展】" class="headerlink" title="【思路扩展】"></a>【思路扩展】</h3><ul>
+<li>①修改程序，用户不再先输入元素个数，而是在输入数据时以9999为结束符，如输入：<br> 20 13 01 30 23 52 15 34 <font color="red">99999</font><br> 结果为：<br> 1 13 15 20 23 30 34 52</li>
+<li>②当元素较多时，在一行中输入所有元素是不显示的。虽然系统会自动换行，但不整齐，请修改程序，<font color="red">使每行输出5个元素<font>。</font></font></li>
+</ul>
+<h4 id="【示例代码】-1"><a href="#【示例代码】-1" class="headerlink" title="【示例代码】"></a>【示例代码】</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, N = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//----------输入数据----------</span></span><br><span class="line">    <span class="keyword">while</span> (a[N - <span class="number">1</span>] != <span class="number">99999</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[N];</span><br><span class="line">        N++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//----------数据排序----------</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N - <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; N - <span class="number">2</span> - i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp;</span><br><span class="line">                tmp = a[j];</span><br><span class="line">                a[j] = a[j + <span class="number">1</span>];</span><br><span class="line">                a[j + <span class="number">1</span>] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//----------输出数据----------</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">        <span class="keyword">if</span> ((i+<span class="number">1</span>) % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="【执行结果】-1"><a href="#【执行结果】-1" class="headerlink" title="【执行结果】"></a>【执行结果】</h4><p><img src="【C++基础】032执行结果2.png" alt="032执行结果"></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Vico. 微信支付">
+        <p>微信支付</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Vico. 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/C/" rel="tag"># C++</a>
+            
+              <a href="/tags/编程/" rel="tag"># 编程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/22/【C++基础】031枚举/" rel="next" title="【C++基础】031枚举">
+                  <i class="fa fa-chevron-left"></i> 【C++基础】031枚举
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjYwNy8yMzExNw=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【实例名称】"><span class="nav-text">【实例名称】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【运行结果】"><span class="nav-text">【运行结果】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【冒泡描述】"><span class="nav-text">【冒泡描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【算法描述】"><span class="nav-text">【算法描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【示例代码】"><span class="nav-text">【示例代码】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【执行结果】"><span class="nav-text">【执行结果】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【程序分析】"><span class="nav-text">【程序分析】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【思路扩展】"><span class="nav-text">【思路扩展】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【示例代码】-1"><span class="nav-text">【示例代码】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【执行结果】-1"><span class="nav-text">【执行结果】</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vico.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vico.</span>
+</div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人来过
+</span>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>
