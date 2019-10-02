@@ -63,10 +63,12 @@
 <meta property="og:site_name" content="南烛的学习小栈">
 <meta property="og:description" content="简介：矩阵乘法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-30T09:05:37.568Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/30/【C++基础】035矩阵乘法/【C++基础】035执行结果1.png">
+<meta property="og:updated_time" content="2019-10-02T04:49:32.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】035矩阵乘法">
 <meta name="twitter:description" content="简介：矩阵乘法">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/30/【C++基础】035矩阵乘法/【C++基础】035执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/09/30/【C++基础】035矩阵乘法/">
 
 
@@ -257,11 +259,19 @@
                 
               
 
-              <time title="创建时间：2019-09-30 16:54:29 / 修改时间：17:05:37" itemprop="dateCreated datePublished" datetime="2019-09-30T16:54:29+08:00">2019-09-30</time>
+              <time title="创建时间：2019-09-30 16:54:29" itemprop="dateCreated datePublished" datetime="2019-09-30T16:54:29+08:00">2019-09-30</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-02 12:49:32" itemprop="dateModified" datetime="2019-10-02T12:49:32+08:00">2019-10-02</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -292,8 +302,10 @@
         <p>简介：矩阵乘法<br><a id="more"></a></p>
 <h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p><strong>矩阵乘法</strong><br>用户输入$A_{M×N}A_{N×K}$两个矩阵元素，计算它们的乘积并输出。其中M,N,K也由用户输入，它们均不超过20。</p>
 <h3 id="【问题分析】"><a href="#【问题分析】" class="headerlink" title="【问题分析】"></a>【问题分析】</h3><p>输入矩阵的元素只要根据行数、列数，使用循环即可。设C是矩阵的乘积，则矩阵乘法的运算公式是：</p>
-<script type="math/tex; mode=display">c_{ij}=\sum_{k=0}^{N} a_{ik}×b_{kj},        i=1,\dots,M,j=1,\dots,K</script><h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><p>$对i=0，…，M-1$<br>&emsp;$对j=0，…，K-1$<br>&emsp;&emsp;$C[I][J]=0$<br>&emsp;&emsp;$对K=0，…，N-1$<br>&emsp;&emsp;&emsp;$C[i][j]=C[i][j]+A[i][k]*B[k][j]$</p>
-<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3>
+<script type="math/tex; mode=display">c_{ij}=\sum_{k=0}^{N} a_{ik}×b_{kj},        i=1,\dots,M,j=1,\dots,K</script><h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><p>$对i=0，…，M-1$<br>&emsp;$对j=0，…，K-1$<br>&emsp;&emsp;$C[i][j]=0$<br>&emsp;&emsp;$对k=0，…，N-1$<br>&emsp;&emsp;&emsp;$C[i][j]=C[i][j]+A[i][k]*B[k][j]$</p>
+<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> M = <span class="number">20</span>, N = <span class="number">20</span>, K = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">double</span> A[M][N], B[N][K], C[M][K];</span><br><span class="line">    <span class="keyword">int</span> M1, N1, N2, K1; <span class="comment">//矩阵的实际维数</span></span><br><span class="line">    <span class="keyword">int</span> i, j, k;        <span class="comment">//循环变量</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入第一个矩阵的维数MN"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; M1 &gt;&gt; N1; <span class="comment">//输入第一个矩阵的行数和列数</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请按行输入第一个矩阵的元素"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; M1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; N1; j++)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; A[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入第二个矩阵的维数NK"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N2 &gt;&gt; K1;</span><br><span class="line">    <span class="keyword">while</span> (N2 != N1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"第二个矩阵的行数应等于第一个矩阵的列数"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; N2 &gt;&gt; K1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请按行输入第二个矩阵的元素"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; K1; j++)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; B[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; A[0][0] &lt;&lt; A[0][1] &lt;&lt; A[0][2] &lt;&lt; A[1][0] &lt;&lt; A[1][1] &lt;&lt; A[1][2] &lt;&lt; endl;</span></span><br><span class="line">    <span class="comment">// cout &lt;&lt; B[0][0] &lt;&lt; B[0][1] &lt;&lt; B[1][0] &lt;&lt; B[1][1] &lt;&lt; B[2][0] &lt;&lt; B[2][1] &lt;&lt; endl;</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; M1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; K1; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            C[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; N1; k++)</span><br><span class="line">                C[i][j] = C[i][j] + A[i][k] * B[k][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; M1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; K1; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; C[i][j] &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【执行结果】"><a href="#【执行结果】" class="headerlink" title="【执行结果】"></a>【执行结果】</h3><p><img src="【C++基础】035执行结果1.png" alt="035执行结果"></p>
+
     </div>
 
     
@@ -407,7 +419,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【实例名称】"><span class="nav-text">【实例名称】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【问题分析】"><span class="nav-text">【问题分析】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【算法描述】"><span class="nav-text">【算法描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【示例代码】"><span class="nav-text">【示例代码】</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【实例名称】"><span class="nav-text">【实例名称】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【问题分析】"><span class="nav-text">【问题分析】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【算法描述】"><span class="nav-text">【算法描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【示例代码】"><span class="nav-text">【示例代码】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【执行结果】"><span class="nav-text">【执行结果】</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
