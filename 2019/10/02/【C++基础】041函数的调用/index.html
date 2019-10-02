@@ -63,10 +63,12 @@
 <meta property="og:site_name" content="南烛的学习小栈">
 <meta property="og:description" content="简介：函数的调用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-02T07:17:03.088Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/02/【C++基础】041函数的调用/【C++基础】041调用过程1.png">
+<meta property="og:updated_time" content="2019-10-02T10:19:28.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】041函数的调用">
 <meta name="twitter:description" content="简介：函数的调用。">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/02/【C++基础】041函数的调用/【C++基础】041调用过程1.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/02/【C++基础】041函数的调用/">
 
 
@@ -257,7 +259,7 @@
                 
               
 
-              <time title="创建时间：2019-10-02 15:16:24 / 修改时间：15:17:03" itemprop="dateCreated datePublished" datetime="2019-10-02T15:16:24+08:00">2019-10-02</time>
+              <time title="创建时间：2019-10-02 15:16:24 / 修改时间：18:19:28" itemprop="dateCreated datePublished" datetime="2019-10-02T15:16:24+08:00">2019-10-02</time>
             </span>
           
             
@@ -289,7 +291,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>简介：函数的调用。<br><a id="more"></a></p>
+        <p>简介：函数的调用。</p>
+<a id="more"></a>
+<h3 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h3><p>函数定义后，并不能自动执行，必须通过函数调用来实现函数的功能。<br>函数调用，即控制执行某个函数。<br>C++中，主函数可以调用其他子函数，而其他函数之间也可以互相调用。</p>
+<h3 id="函数调用的格式"><a href="#函数调用的格式" class="headerlink" title="函数调用的格式"></a>函数调用的格式</h3><p><strong>函数调用的一般格式：</strong><br>&lt;函数名&gt; (&lt;实际参数表&gt;&gt;)//有参调用<br>或<br>&lt;函数名&gt; ()//无参调用</p>
+<p><strong>其中：</strong></p>
+<ul>
+<li>&lt;函数名&gt;为要使用的函数的名字。</li>
+<li>&lt;实际参数表&gt;是以逗号分隔的实参列表，必须放在一对圆括号中。</li>
+<li>&lt;实参表&gt;与&lt;形参表&gt;中参数的个数、类型和次序应保持一致。</li>
+<li>当调用无参函数时，函数名后的圆括号不能省略。</li>
+</ul>
+<h3 id="实参的几种形式"><a href="#实参的几种形式" class="headerlink" title="实参的几种形式"></a>实参的几种形式</h3><ol>
+<li>形参为简单类型变量，对应的实参可以是：常量，变量及表达式。</li>
+<li>形参为数组，对应的实参为数组（名）。</li>
+<li>形参为结构类型，对应的实参为结构类型变量。</li>
+</ol>
+<p>如：调用已知三边求三角形面积的函数Area。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Area</span><span class="params">(<span class="keyword">double</span>, <span class="keyword">double</span>, <span class="keyword">double</span>)</span></span>;<span class="comment">//函数声明</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt;Area(<span class="number">4.0</span>,<span class="number">5.0</span>,<span class="number">6.0</span>)&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//常量作为实参</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt;Area(a,b,c)&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//变量作为实参</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt;Area(a+<span class="number">1</span>,b+<span class="number">1</span>,c+<span class="number">2</span>)&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//表达式作为实参</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="函数调用的形式"><a href="#函数调用的形式" class="headerlink" title="函数调用的形式"></a>函数调用的形式</h3><ol>
+<li><strong>函数调用作为一个独立的语句（用于无返回值的函数）</strong><br><strong>调用的形式为：</strong><br>函数名(实参表); <font color="red">或</font>  函数名();<br><strong>如：调用print_char函数（用户定义的无返回值函数）</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print_char(<span class="string">'*'</span>,<span class="number">6</span>);   <span class="comment">//连续显示6个“\*”字符。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>如：调用函数Area，计算一个三角形的面积</strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Area(<span class="number">3.0</span>,<span class="number">4.0</span>,<span class="number">5.0</span>);  <span class="comment">///该函数调用是无实际意义的，该函数有返回值</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><strong>函数调用出现在表达式中（适用于有返回值的函数）</strong><br><strong>如：函数max()求两个数的最大值，函数原型如下</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">max</span><span class="params">(<span class="keyword">float</span> x,<span class="keyword">float</span> y)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>该函数有返回值，调用时应出现在表达式中。<br><strong>例</strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c=max(a,b);<span class="comment">//函数调用出现在赋值运算符右边的表达式中</span></span><br><span class="line">d=max(c,max(a,b));<span class="comment">//函数调用同时出现在实参表达式中</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;max(a,b)&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//输出一个函数值</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><strong>函数的嵌套调用</strong><br>函数的嵌套调用食指在调用一个函数的过程中，被调用的函数又调用了另一个函数。<br><strong>由main()函数调用函数f()，函数f()中又对g()进行调用，这就是函数的嵌套调用。</strong><br><img src="【C++基础】041调用过程1.png" alt="041调用过程"></li>
+</ol>
 
     </div>
 
@@ -350,6 +381,10 @@
 
             <div class="post-nav-prev post-nav-item">
               
+                <a href="/2019/10/02/【C++基础】042参数的传递形式/" rel="prev" title="【C++基础】042参数的传递形式">
+                  【C++基础】042参数的传递形式 <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
@@ -404,6 +439,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的调用"><span class="nav-text">函数的调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数调用的格式"><span class="nav-text">函数调用的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实参的几种形式"><span class="nav-text">实参的几种形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数调用的形式"><span class="nav-text">函数调用的形式</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -417,7 +454,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
