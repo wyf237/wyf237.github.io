@@ -55,21 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="简介：函数的声明。">
+  <meta name="description" content="简介：函数的调用。">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【C++基础】040函数的声明">
-<meta property="og:url" content="http://yoursite.com/2019/10/02/【C++基础】040函数的声明/index.html">
+<meta property="og:title" content="【C++基础】041函数的调用">
+<meta property="og:url" content="http://yoursite.com/2019/10/02/【C++基础】041函数的调用/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="简介：函数的声明。">
+<meta property="og:description" content="简介：函数的调用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/10/02/【C++基础】040函数的声明/【C++基础】040执行结果1.png">
-<meta property="og:updated_time" content="2019-10-02T07:13:30.538Z">
+<meta property="og:updated_time" content="2019-10-02T07:17:03.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【C++基础】040函数的声明">
-<meta name="twitter:description" content="简介：函数的声明。">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/02/【C++基础】040函数的声明/【C++基础】040执行结果1.png">
-  <link rel="canonical" href="http://yoursite.com/2019/10/02/【C++基础】040函数的声明/">
+<meta name="twitter:title" content="【C++基础】041函数的调用">
+<meta name="twitter:description" content="简介：函数的调用。">
+  <link rel="canonical" href="http://yoursite.com/2019/10/02/【C++基础】041函数的调用/">
 
 
 <script id="page-configurations">
@@ -83,7 +81,7 @@
   };
 </script>
 
-  <title>【C++基础】040函数的声明 | 南烛的学习小栈</title>
+  <title>【C++基础】041函数的调用 | 南烛的学习小栈</title>
   
 
 
@@ -231,7 +229,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/02/【C++基础】040函数的声明/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/02/【C++基础】041函数的调用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vico.">
@@ -243,7 +241,7 @@
       <meta itemprop="name" content="南烛的学习小栈">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">【C++基础】040函数的声明
+        <h1 class="post-title" itemprop="name headline">【C++基础】041函数的调用
 
           
         </h1>
@@ -259,7 +257,7 @@
                 
               
 
-              <time title="创建时间：2019-10-02 14:51:58 / 修改时间：15:13:30" itemprop="dateCreated datePublished" datetime="2019-10-02T14:51:58+08:00">2019-10-02</time>
+              <time title="创建时间：2019-10-02 15:16:24 / 修改时间：15:17:03" itemprop="dateCreated datePublished" datetime="2019-10-02T15:16:24+08:00">2019-10-02</time>
             </span>
           
             
@@ -291,23 +289,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>简介：函数的声明。<br><a id="more"></a></p>
-<h3 id="函数的声明"><a href="#函数的声明" class="headerlink" title="函数的声明"></a>函数的声明</h3><ul>
-<li><strong>C++中，程序编译的单位是源程序文件（即源文件），一个由多个函数构成的程序可以组织存放在一个或多个源文件中。</strong></li>
-<li><strong>在源文件中，函数之间的排列顺序没有固定的要求，但要满足“先定义后使用”的原则。</strong></li>
-<li><strong>对于标准库函数的使用，在程序开头使用#include命令将所需的头文件包含进来即可。</strong></li>
-<li><strong>对于自定义的函数，要么在调用之前定义，要么在调用之前作函数声明</strong>。</li>
-<li><p><strong>函数的声明是指在函数被调用之前对函数的类型、名称以及参数等信息所作的说明。函数声明格式如下：</strong><br>类型名 函数名 （类型1 形参1，类型2 形参2，……）；<br>或<br>类型名 函数名（类型1，类型2，……）；//可省略形参名称</p>
-<p>在形式上就是在函数定义的首部后加分号（；）构成。<br>函数声明说明了函数所采用的形式，称为 <strong>函数原型</strong>。</p>
-</li>
-</ul>
-<h3 id="分析找错"><a href="#分析找错" class="headerlink" title="分析找错"></a>分析找错</h3><h4 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, b, c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入三个边长"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"面积为:"</span> &lt;&lt; Area(a, b, c) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Area</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> p, s;</span><br><span class="line">    p = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">    s = <span class="built_in">sqrt</span>(p * (p - a) * (p - b) * (p - c));</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><font color="red">错误1：error: ‘Area’ was not declared in this scope</font><br>这里为函数Area未声明，因为Area函数需在main()函数中声明</li>
-<li><font color="red">错误2：error: ‘sqrt’ was not declared in this scope</font><br>这里为函数sqrt未声明，未引用标准库cmath</li>
-</ul>
-<p><strong>修改后为：</strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">Area</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> c)</span></span>;</span><br><span class="line">    <span class="keyword">double</span> a, b, c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入三个边长"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"面积为:"</span> &lt;&lt; Area(a, b, c) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Area</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> p, s;</span><br><span class="line">    p = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">    s = <span class="built_in">sqrt</span>(p * (p - a) * (p - b) * (p - c));</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h4><p><img src="【C++基础】040执行结果1.png" alt="040执行结果"></p>
+        <p>简介：函数的调用。<br><a id="more"></a></p>
 
     </div>
 
@@ -358,8 +340,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/02/【C++基础】039函数的定义/" rel="next" title="【C++基础】039函数的定义">
-                  <i class="fa fa-chevron-left"></i> 【C++基础】039函数的定义
+                <a href="/2019/10/02/【C++基础】040函数的声明/" rel="next" title="【C++基础】040函数的声明">
+                  <i class="fa fa-chevron-left"></i> 【C++基础】040函数的声明
                 </a>
               
             </div>
@@ -367,10 +349,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/02/【C++基础】041函数的调用/" rel="prev" title="【C++基础】041函数的调用">
-                  【C++基础】041函数的调用 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -426,8 +404,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的声明"><span class="nav-text">函数的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析找错"><span class="nav-text">分析找错</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下"><span class="nav-text">代码如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行结果"><span class="nav-text">执行结果</span></a></li></ol></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
