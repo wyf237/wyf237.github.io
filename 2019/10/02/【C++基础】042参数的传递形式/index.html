@@ -63,10 +63,14 @@
 <meta property="og:site_name" content="南烛的学习小栈">
 <meta property="og:description" content="简介：参数的传递方式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-02T10:20:57.732Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/02/【C++基础】042参数的传递形式/【C++基础】042执行结果1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/02/【C++基础】042参数的传递形式/【C++基础】042调用过程1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/02/【C++基础】042参数的传递形式/【C++基础】042执行结果2.png">
+<meta property="og:updated_time" content="2019-10-03T02:41:25.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】042参数的传递形式">
 <meta name="twitter:description" content="简介：参数的传递方式">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/02/【C++基础】042参数的传递形式/【C++基础】042执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/02/【C++基础】042参数的传递形式/">
 
 
@@ -257,11 +261,19 @@
                 
               
 
-              <time title="创建时间：2019-10-02 18:20:32 / 修改时间：18:20:57" itemprop="dateCreated datePublished" datetime="2019-10-02T18:20:32+08:00">2019-10-02</time>
+              <time title="创建时间：2019-10-02 18:20:32" itemprop="dateCreated datePublished" datetime="2019-10-02T18:20:32+08:00">2019-10-02</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-03 10:41:25" itemprop="dateModified" datetime="2019-10-03T10:41:25+08:00">2019-10-03</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -290,6 +302,44 @@
 
       
         <p>简介：参数的传递方式<br><a id="more"></a></p>
+<h3 id="三种传递方式"><a href="#三种传递方式" class="headerlink" title="三种传递方式"></a>三种传递方式</h3><ol>
+<li>值传递</li>
+<li>引用传递</li>
+<li>指针传递</li>
+</ol>
+<h3 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h3><p><strong>调用时，将实参的值传递给对应的形参，这就是值传递。</strong><br>由于形参有自己独立的存储空间，又作为函数的局部变量使用，因此在函数中对形参值的任何修改都不会改变实参变量的值。<br><strong>好处</strong><br>减少函数之间的数据依赖，增强了函数自身的独立性。<br><strong>注意</strong></p>
+<font color="red">函数的形参声明为简单类型或结构类型变量，实参与形参将采用值方式传递。</font>
+
+<h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><p><strong>验证在值传递过程中，形参的改变对实参有无影响</strong></p>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    tmp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Befpre exchange: a="</span> &lt;&lt; a &lt;&lt; <span class="string">"b="</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    swap(a, b);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"After exchange:  a="</span> &lt;&lt; a &lt;&lt; <span class="string">"b="</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h5><p><img src="【C++基础】042执行结果1.png" alt="042执行结果"></p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>在值传递过程中，改变形参的值，并不会改变实参的值。</p>
+<h4 id="值传递过程描述"><a href="#值传递过程描述" class="headerlink" title="值传递过程描述"></a>值传递过程描述</h4><p>调用前实参a，b有自己的存储空间，并有初值<br>调用函数时，为形参x，y分配存储空间，并接收实参的值。<br><img src="【C++基础】042调用过程1.png" alt="042调用过程"></p>
+<h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p><strong>引用是一种特殊的变量，它被认为是一个变量的别名。</strong><br>引用定义的格式如下：</p>
+<p><font color="blue">&lt;数据类型&gt; &amp; &lt;引用名&gt;=&lt;目标变量名&gt;;</font><br>其中：<font color="red">&amp;</font>为引用（变量）的标志符号，&lt;引用名&gt;是一个标识符。<br>&lt;数据类型&gt;为&lt;目标变量&gt;的类型。</p>
+<p>例如：int a,&amp;b=a;<br>该例说明了a是一个整型变量，b是一个引用整型变量a的引用，即b是a变量的一个别名。这时，使用a与使用b是等价的。</p>
+<h4 id="对引用的说明"><a href="#对引用的说明" class="headerlink" title="对引用的说明"></a>对引用的说明</h4><ul>
+<li>定一个引用，其实是为目标变量起一个表名。引用并不分配独立的内存空间，它与目标变量共用其内存空间。</li>
+<li>定义一个引用（变量）时，如果该引用不是用作函数的参数或返回值，则必须提供该引用的初值（即必须提供引用的目标变量名）。</li>
+<li>使用引用与使用目标变量的效果是相同的。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> a=<span class="number">2</span>,&amp;b=a;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;&amp;a&lt;&lt;<span class="string">"  "</span>&lt;&lt;&amp;b&lt;&lt;<span class="built_in">endl</span>; <span class="comment">//输出变量的地址</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">"  "</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>; <span class="comment">//输出变量的值</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="引用传递-1"><a href="#引用传递-1" class="headerlink" title="引用传递"></a>引用传递</h4><p>为实现引用传递，这时函数的形参应定义为应用类型变量，而对应的实参应为变量名，该变量将作为引用的目标变量名。<br>函数调用时，作为形参的引用变量并不分配新的内存控件，它将作为实参变量的别名与其共用内存。</p>
+<ul>
+<li>使用引用参数，可以直接操作实参变量，从而能够实现通过修改形参的值而达到修改对应实参值的目的</li>
+<li>通过设置多个引用，可以从函数中带回多个结果值。</li>
+</ul>
+<p><strong>说明：</strong><br>引用作为函数形参，其引用的目标变量默认为调用该函数时对应的实参变量名，所以，在定义函数时，对于引用类型参数不必提供引用的初值。</p>
+<p><strong>例</strong></p>
+<ol>
+<li><p><strong>该函数为值传递，形参变化不影响实参变化。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> tmp;</span><br><span class="line">  tmp=x;</span><br><span class="line">  x=y;</span><br><span class="line">  y=tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>通过引用参数传递，修改引用参数达到修改实参值的目的。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;x,<span class="keyword">int</span> &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> tmp;</span><br><span class="line">  tmp=x;</span><br><span class="line">  x=y;</span><br><span class="line">  y=tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;, <span class="string">"Befpre exchange:a="</span> &lt;&lt; a &lt;&lt; <span class="string">"b="</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    swap(a, b);  <span class="comment">//引用a，b，实际上就是交换a，b的值</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"After exchange:  a = "</span> &lt;&lt; a &lt;&lt; <span class="string">"b="</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>结果为</strong><br><img src="【C++基础】042执行结果2.png" alt="042执行结果"></p>
 
     </div>
 
@@ -350,6 +400,10 @@
 
             <div class="post-nav-prev post-nav-item">
               
+                <a href="/2019/10/03/【C++基础】043为形参指定默认值/" rel="prev" title="【C++基础】043为形参指定默认值">
+                  【C++基础】043为形参指定默认值 <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
@@ -404,6 +458,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种传递方式"><span class="nav-text">三种传递方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值传递"><span class="nav-text">值传递</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例"><span class="nav-text">例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行结果"><span class="nav-text">执行结果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-text">结论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#值传递过程描述"><span class="nav-text">值传递过程描述</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用传递"><span class="nav-text">引用传递</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引用"><span class="nav-text">引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对引用的说明"><span class="nav-text">对引用的说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用传递-1"><span class="nav-text">引用传递</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -417,7 +473,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
