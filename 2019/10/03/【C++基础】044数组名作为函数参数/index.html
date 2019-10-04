@@ -63,10 +63,14 @@
 <meta property="og:site_name" content="南烛的学习小栈">
 <meta property="og:description" content="简介：数组名作为函数参数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-03T04:30:11.400Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/03/【C++基础】044数组名作为函数参数/【C++基础】044执行结果1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/03/【C++基础】044数组名作为函数参数/【C++基础】044执行结果2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/03/【C++基础】044数组名作为函数参数/【C++基础】044执行结果3.png">
+<meta property="og:updated_time" content="2019-10-04T02:42:57.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】044数组名作为函数参数">
 <meta name="twitter:description" content="简介：数组名作为函数参数。">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/03/【C++基础】044数组名作为函数参数/【C++基础】044执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/03/【C++基础】044数组名作为函数参数/">
 
 
@@ -257,11 +261,19 @@
                 
               
 
-              <time title="创建时间：2019-10-03 12:29:33 / 修改时间：12:30:11" itemprop="dateCreated datePublished" datetime="2019-10-03T12:29:33+08:00">2019-10-03</time>
+              <time title="创建时间：2019-10-03 12:29:33" itemprop="dateCreated datePublished" datetime="2019-10-03T12:29:33+08:00">2019-10-03</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-04 10:42:57" itemprop="dateModified" datetime="2019-10-04T10:42:57+08:00">2019-10-04</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -290,6 +302,62 @@
 
       
         <p>简介：数组名作为函数参数。<br><a id="more"></a></p>
+<h3 id="数组名作参数"><a href="#数组名作参数" class="headerlink" title="数组名作参数"></a>数组名作参数</h3><ul>
+<li>数组元素作实参，对应的形参为变量，一次传递一个元素，采用值传递。</li>
+<li>数组名作实参，对应的形参为一个数组，一次传递整个数组。</li>
+<li>数组作实参，其参数传递可以理解为形参数组与实参数组共用同一数组空间（即共用实参数组空间）。因此，<font color="red">在函数中，使用形参数组就是在使用实参数组，改变形参数组元素的值，就是在改变实参数组的值</font>，这一点与引用传递非常相似。</li>
+</ul>
+<h3 id="一维数组的传递"><a href="#一维数组的传递" class="headerlink" title="一维数组的传递"></a>一维数组的传递</h3><ul>
+<li>一维数组作为形参的声明格式：<br>&lt;类型&gt; &lt;数组名&gt; []<br>其中，[]中可以省了数组的长度值。（可认为形参与实参数组长度相同）</li>
+<li>对应的实参应为<font color="red">同类型的一维数组名。</font>（仅用数组名）</li>
+<li>说明：为了使函数知道需要处理的数组元素的个数，通常给函数再传递一个表示元素个数的整型数。</li>
+<li><p><strong>例如：</strong> 一维数组名作为函数的参数。编写函数，计算一个整型数组中从第m个元素（m从0开始）开始的n个元素之和。<br><strong>函数设计</strong><br>函数原型：<code>int fun(int b[],int m,int n);</code><br>功能：计算数组b中从第m个元素开始的第n个元素之和。<br><strong>主函数设计</strong><br>定义并初始化一个整型数组a。<br>测试1：<code>fun(a,0,10);//求从第0个元素开始的10 个元素之和</code><br>测试2：<code>fun(a,3,5);//求从第3个元素开始的5个元素之和</code><br><strong>函数代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> b[], <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, s = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = m; i &lt; m + n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        s = s + b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>主函数代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> b[], <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; fun(a, <span class="number">0</span>, <span class="number">10</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; fun(a, <span class="number">3</span>, <span class="number">5</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>执行结果</strong><br><img src="【C++基础】044执行结果1.png" alt="044执行结果"></p>
+</li>
+<li><p><strong>例如：</strong> 编写一个函数sort，对n个元素的一维整型数组b进行从小到大排序</p>
+<ul>
+<li><p>函数定义如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> b[],<span class="keyword">int</span> n)</span><span class="comment">//b为一维数组，n为元素的个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">//选用一种排序方法对n个元素的b数组排序</span></span><br><span class="line">  <span class="comment">//对b数组排序，实际就是对实参数组排序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>主函数中的函数调用语句：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sort(a,<span class="number">10</span>);</span><br><span class="line"><span class="comment">//调用sort函数，对10个元素的整型数组a进行排序</span></span><br><span class="line"><span class="comment">//函数调用后，并输出排序结果，即输出a数组中各个元素值。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">6</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> b[], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">    sort(a, <span class="number">6</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> b[], <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n - <span class="number">1</span> - i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (b[j] &gt; b[j + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp;</span><br><span class="line">                temp = b[j];</span><br><span class="line">                b[j] = b[j + <span class="number">1</span>];</span><br><span class="line">                b[j + <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行结果<br><img src="【C++基础】044执行结果2.png" alt="044执行结果"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="二维数组的传递"><a href="#二维数组的传递" class="headerlink" title="二维数组的传递"></a>二维数组的传递</h3><ul>
+<li><p>二维数组作形参的声明格式<br>&lt;类型&gt; &lt;数组名&gt;[][&lt;列数&gt;]<br>其中：&lt;列数&gt;为场数，不能省略，行数可缺省。</p>
+</li>
+<li><p>调用时的实参应为同类型的二维数组名。</p>
+</li>
+<li><p><strong>例如：</strong> 二维数组名作为参数。编写一个函数，将N阶方阵转置。（N&lt;10）</p>
+<ul>
+<li><p><strong>函数设计</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transmat</span><span class="params">(<span class="keyword">int</span> a[][<span class="number">10</span>],<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="comment">//对a数组中前n行n列矩阵元素转置</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>主函数设计</strong></p>
+<ul>
+<li>定义一个10行10列的大数组x，元素类型为整型；键盘输入一个整数n（n&lt;10）；键盘输入一个n*n的方阵数据并存放到数组的前n行n列元素中。</li>
+<li>函数调用语句为transmat(x,n);</li>
+<li>按n行n列输出转置矩阵。</li>
+</ul>
+</li>
+<li><p><strong>示例代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x[<span class="number">10</span>][<span class="number">10</span>], n;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">transmat</span><span class="params">(<span class="keyword">int</span> a[][<span class="number">10</span>], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入n(n&lt;10)："</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入"</span> &lt;&lt; n &lt;&lt; <span class="string">"行"</span> &lt;&lt; n &lt;&lt; <span class="string">"列元素："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x[i][j];</span><br><span class="line">    transmat(x, <span class="number">10</span>); <span class="comment">//调用</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"转置矩阵结果如下："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; x[i][j] &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transmat</span><span class="params">(<span class="keyword">int</span> a[][<span class="number">10</span>], <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            t = a[i][j];</span><br><span class="line">            a[i][j] = a[j][i];</span><br><span class="line">            a[j][i] = t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行结果</strong><br><img src="【C++基础】044执行结果3.png" alt="044执行结果"></p>
+</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -350,6 +418,10 @@
 
             <div class="post-nav-prev post-nav-item">
               
+                <a href="/2019/10/04/【C++基础】结构体变量作函数参数/" rel="prev" title="【C++基础】结构体变量作函数参数">
+                  【C++基础】结构体变量作函数参数 <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
@@ -404,6 +476,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组名作参数"><span class="nav-text">数组名作参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一维数组的传递"><span class="nav-text">一维数组的传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组的传递"><span class="nav-text">二维数组的传递</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -417,7 +491,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
