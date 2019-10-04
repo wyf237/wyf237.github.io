@@ -63,10 +63,12 @@
 <meta property="og:site_name" content="南烛的学习小栈">
 <meta property="og:description" content="简介：秦九韶算法求多项式的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-04T06:05:59.794Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/【C++基础】048秦九韶算法求多项式的值/【C++基础】048执行结果1.png">
+<meta property="og:updated_time" content="2019-10-04T06:37:02.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】048秦九韶算法求多项式的值">
 <meta name="twitter:description" content="简介：秦九韶算法求多项式的值">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/04/【C++基础】048秦九韶算法求多项式的值/【C++基础】048执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/04/【C++基础】048秦九韶算法求多项式的值/">
 
 
@@ -257,7 +259,7 @@
                 
               
 
-              <time title="创建时间：2019-10-04 14:05:31 / 修改时间：14:05:59" itemprop="dateCreated datePublished" datetime="2019-10-04T14:05:31+08:00">2019-10-04</time>
+              <time title="创建时间：2019-10-04 14:05:31 / 修改时间：14:37:02" itemprop="dateCreated datePublished" datetime="2019-10-04T14:05:31+08:00">2019-10-04</time>
             </span>
           
             
@@ -290,6 +292,20 @@
 
       
         <p>简介：秦九韶算法求多项式的值<br><a id="more"></a></p>
+<h3 id="【程序分析】"><a href="#【程序分析】" class="headerlink" title="【程序分析】"></a>【程序分析】</h3><p><strong><font color="blue">求解</font></strong>：$f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$<br><strong><font color="blue">改写</font></strong>：$f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$=(a_nx^{n-1}+a_{n-1}x^{n-2}\dots+a_2x+a_1)x+a_0$<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$=((a_nx^{n-2}+a_{n-1}x^{n-3}\dots+a_3x+a_2)x+a_1)x+a_0$<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$=((\dots(a_nx+a_{n-1})x+a_{n-2})x+\dots+a_1)x+a_0$<br><strong><font color="blue">&emsp;令</font></strong>：$y=a_n$<br><strong><font color="blue">迭代</font></strong>：$y=yx+a_{n-1}→y=yx+a_{n-2}→\dots→y_n=y_{n-1}x+a_0$</p>
+<p><strong><font color="red">例如</font></strong>：$y=9x^4+9.3x^3++6.8x^2+3.5x-1$<br><strong><font color="red">变为</font></strong>：$y=(((9<em>x+9.3)</em>x+6.8)<em>x+3.5)</em>x+(-1)$<br><strong><font color="red">&emsp;令</font></strong>：$y=9$<br><strong><font color="blue">迭代</font></strong>：$y=y<em>x+9.3$<br>&emsp;&emsp;&emsp;$y=y</em>x+9.3$<br>&emsp;&emsp;&emsp;$y=y<em>x+6.8$<br>&emsp;&emsp;&emsp;$y=y</em>x+3.5$<br>&emsp;&emsp;&emsp;$y=y<em>x+(-1)$<br><strong><font color="blue">数组</font></strong>：<br>| a[4] | a[3] | a[2] | a[1] | a[0] |<br>| —— | —— | —— | —— | —— |<br>| 9    | 9.3  | 6.8  | 3.5  | -1   |<br><strong><font color="blue">循环</font></strong>：<br>$(i从4到0，步长-1)y=y</em>x+a[i]$</p>
+<h3 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h3><ol>
+<li>输入项数n；<br>输入自变量x</li>
+<li>定义累加和变量y，初值y=0<br>定义循环变量i，初值i=n-1</li>
+<li>输入当前项系数a</li>
+<li>y=a+x*y</li>
+<li>i=i-1</li>
+<li>判断i≥0？是则转向3</li>
+<li>输出y</li>
+<li>算法结束</li>
+</ol>
+<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">qinJS</span><span class="params">(<span class="keyword">double</span> aa[], <span class="keyword">int</span> nn, <span class="keyword">double</span> xx)</span></span>;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">double</span> a[<span class="number">1000</span>], x, y;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"项数?"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"x=?"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"第"</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">"项的系数？"</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    y = qinJS(a, n, x);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"当x="</span> &lt;&lt; x &lt;&lt; <span class="string">"时，f(x)="</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">qinJS</span><span class="params">(<span class="keyword">double</span> aa[], <span class="keyword">int</span> nn, <span class="keyword">double</span> xx)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nn - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"第"</span> &lt;&lt; nn - i &lt;&lt; <span class="string">"次循环："</span> &lt;&lt; aa[i] &lt;&lt; <span class="string">"+"</span> &lt;&lt; xx &lt;&lt; <span class="string">"*"</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        y = aa[i] + xx * y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【执行结果】"><a href="#【执行结果】" class="headerlink" title="【执行结果】"></a>【执行结果】</h3><p><img src="【C++基础】048执行结果1.png" alt="048执行结果"></p>
 
     </div>
 
@@ -404,6 +420,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【程序分析】"><span class="nav-text">【程序分析】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【算法分析】"><span class="nav-text">【算法分析】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【示例代码】"><span class="nav-text">【示例代码】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【执行结果】"><span class="nav-text">【执行结果】</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
