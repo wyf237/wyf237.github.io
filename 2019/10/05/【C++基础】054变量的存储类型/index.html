@@ -63,10 +63,13 @@
 <meta property="og:site_name" content="南烛的学习小栈">
 <meta property="og:description" content="简介：变量的存储类型。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-05T05:29:48.783Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/05/【C++基础】054变量的存储类型/【C++基础】054存储类型1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/05/【C++基础】054变量的存储类型/【C++基础】054执行结果1.png">
+<meta property="og:updated_time" content="2019-10-05T06:48:59.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】054变量的存储类型">
 <meta name="twitter:description" content="简介：变量的存储类型。">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/05/【C++基础】054变量的存储类型/【C++基础】054存储类型1.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/05/【C++基础】054变量的存储类型/">
 
 
@@ -257,7 +260,7 @@
                 
               
 
-              <time title="创建时间：2019-10-05 12:44:17 / 修改时间：13:29:48" itemprop="dateCreated datePublished" datetime="2019-10-05T12:44:17+08:00">2019-10-05</time>
+              <time title="创建时间：2019-10-05 12:44:17 / 修改时间：14:48:59" itemprop="dateCreated datePublished" datetime="2019-10-05T12:44:17+08:00">2019-10-05</time>
             </span>
           
             
@@ -290,7 +293,34 @@
 
       
         <p>简介：变量的存储类型。<br><a id="more"></a></p>
-<h3 id="变量的存储类型"><a href="#变量的存储类型" class="headerlink" title="变量的存储类型"></a>变量的存储类型</h3>
+<h3 id="变量的存储类型"><a href="#变量的存储类型" class="headerlink" title="变量的存储类型"></a>变量的存储类型</h3><p><strong>不同的变量所分配的存储区域也不同，这就是变量的存储类型。</strong></p>
+<ol>
+<li><strong>C++程序运行时使用的内存区域</strong><br> <img src="【C++基础】054存储类型1.png" alt="054存储类型"></li>
+<li><p><strong>变量的存储类型</strong><br> 变量的存储类型是在内存中存储的方式，根据变量的存储类型，可以知道变量的作用域和生存期。这里，介绍4个存储类型，分别是auto（自动型），register（寄存器类），static（静态类）和extern（外部类）。<br> 在C++中定一个变量的完整形式是：</p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;存储类型&gt;  &lt;数据类型&gt;  &lt;变量名&gt;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>自动变量</strong>——用auto修饰（默认的定义方式）<br>如：定义一个局部变量i。<br><code>auto int i;</code>与<code>int i;</code>是相同的。<br><strong>说明：</strong> 自动变量在其定义块（函数或符合语句）开始执行时分配空间，在块执行结束时释放空间。所以自动变量的生命周期开始于块的执行，终止于块的结束。</li>
+<li><strong>寄存器变量</strong>——用register修饰<br>将尽可能存放在CPU的寄存器中，以提高程序的运行效率<br><strong>注意：</strong> 仅局部变量和形参可作为寄存器变量。</li>
+<li><p><strong>静态变量</strong>——用static修饰</p>
+<ul>
+<li>静态变量分配在全局数据区中，定义时系统将提供默认的初始值。</li>
+<li>静态变量在编译时分配存储控件，在整个程序执行结束后释放存储空间。所以静态变量具有全局生命周期。</li>
+<li>根据声明的位置不同，静态变量又分为 <strong>静态局部变量</strong> 和 <strong>静态全局变量</strong> 。</li>
+<li>静态局部变量是在“块”中定义的静态变量。它具有局部作用域，却有全局声明周期。在“块”执行结束后，该静态局部变量并不释放（其值依旧存在），以便下次调用时可继续使用。</li>
+<li><p>全局变量可以在其他源文件中使用。如果在全局变量前加上static修饰符，则成为静态全局变量。静态全局变量只能在本文件中使用。<br> <strong>例如：函数调用计数器。使用静态局部变量统计某个函数被调用的次数。</strong></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> n=<span class="number">0</span>;<span class="comment">//局部静态变量</span></span><br><span class="line">  n++;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">"本函数被调用了"</span>&lt;&lt;n&lt;&lt;<span class="string">"次"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">3</span>;i++)</span><br><span class="line">     fun();</span><br><span class="line">  fun();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <img src="【C++基础】054执行结果1.png" alt="054执行结果"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>外部变量</strong>——用extern修饰<br>如果一个源文件中定义的全局变量要在其他源文件中使用，则在使用前应该用extern进行声明，表示该全局变量不是在本文件中定义的。<br><strong>例如：在1.cpp中定义全局变量</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> Dismension=<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>如果在2.cpp文件中使用，这时，应在2.cpp文件中声明如下</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> Dimension;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+
     </div>
 
     
@@ -349,6 +379,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/05/【C++基础】055递归求解Fibonacci数列/" rel="prev" title="【C++基础】055递归求解Fibonacci数列">
+                  【C++基础】055递归求解Fibonacci数列 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -419,7 +453,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
