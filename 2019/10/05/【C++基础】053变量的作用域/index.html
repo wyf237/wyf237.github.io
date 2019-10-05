@@ -55,15 +55,20 @@
   };
 </script>
 
-  <meta name="keywords" content="C++,编程">
+  <meta name="description" content="简介：变量的作用域。">
+<meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】053变量的作用域">
 <meta property="og:url" content="http://yoursite.com/2019/10/05/【C++基础】053变量的作用域/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="简介：变量的作用域。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-05T04:44:52.349Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/05/【C++基础】053变量的作用域/【C++基础】053执行结果1.png">
+<meta property="og:updated_time" content="2019-10-05T05:29:14.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】053变量的作用域">
+<meta name="twitter:description" content="简介：变量的作用域。">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/05/【C++基础】053变量的作用域/【C++基础】053执行结果1.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/05/【C++基础】053变量的作用域/">
 
 
@@ -254,7 +259,7 @@
                 
               
 
-              <time title="创建时间：2019-10-05 12:44:00 / 修改时间：12:44:52" itemprop="dateCreated datePublished" datetime="2019-10-05T12:44:00+08:00">2019-10-05</time>
+              <time title="创建时间：2019-10-05 12:44:00 / 修改时间：13:29:14" itemprop="dateCreated datePublished" datetime="2019-10-05T12:44:00+08:00">2019-10-05</time>
             </span>
           
             
@@ -286,7 +291,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>简介：变量的作用域。<br><a id="more"></a></p>
+<h3 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h3><ul>
+<li>变量的作用域是指变量的使用范围。</li>
+<li>根据变量的使用范围不同，C++中的变量被分为局部变量和全局变量。</li>
+</ul>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><ul>
+<li>在一个函数内或复合语句内定义的变量称为局部变量（函数的形参也属于局部变量）。</li>
+<li>局部变量只允许在其定义的函数或复合语句中使用，离开所在的函数或复合语句后该局部变量将不能使用。</li>
+<li><p><strong>例如：</strong> 主函数中定义的变量，也不能在其他函数中使用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++&gt;)</span><br><span class="line">      sum+=i;<span class="comment">//这里的用法是错误的</span></span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">  sum=f(<span class="number">10</span>);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>例如：</strong> 复合语句中定义的变量，也只能在该复合语句中使用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">3</span>;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">  i++;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    i+=j*<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">", "</span>&lt;&lt;j&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">", "</span>&lt;&lt;j&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="【C++基础】053执行结果1.png" alt="053执行结果"></p>
+</li>
+<li><p><strong>例如：</strong> for语句中控制变量的作用域。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span></span><br><span class="line"><span class="function"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">34</span>, <span class="number">56</span>, <span class="number">23</span>, <span class="number">41</span>, <span class="number">33</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">        <span class="keyword">if</span> (x == a[i])</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">5</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"已找到，下标为："</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"未找到！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>说明：</strong><br>局部变量是在执行该函数或复合语句时自动建立，当该函数或复合语句执行完毕后将自动释放。所以在不同的函数或复合语句中定义同门的局部变量，也不会相互干扰。<strong>局部变量也成为自动类型变量。</strong></p>
+</li>
+</ul>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><ul>
+<li>全局变量说明于所有函数之外，可以为所有函数共同使用。</li>
+<li>全局变量可以在各个函数之间建立数据的传输通道。</li>
+<li><p><strong>例如：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">3</span>,b=<span class="number">5</span>;<span class="comment">//定义2个全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a&gt;b?a:b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> a=<span class="number">8</span>;<span class="comment">//变量同名时，局部变量优先于全局变量，需使用全局变量时加“::”双冒号</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;max(a,b)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>几点说明</strong></p>
+<ol>
+<li><p>全局变量的作用范围是从定义点到整个源程序的结束。在定义点之前，如果其他函数要引用全局变量，可以在该函数中使用extern关键字对全局变量进行声明。<br><strong>例如：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">F1()</span><br><span class="line">&#123;</span><br><span class="line">  使用全局变量a,b</span><br><span class="line">&#125;</span><br><span class="line">F()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">2</span>,b=<span class="number">5</span>;<span class="comment">//全局变量定义</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用全局变量，可以增加函数间的直接联系，减少函数定义时的参数。</p>
+</li>
+<li>由于全局变量在整个程序运行中始终占用内存，这样，使用全局变量将降低程序的通用性、可靠性和移植性，这是全局变量的负面作用。</li>
+</ol>
+</li>
+</ul>
+
     </div>
 
     
@@ -404,6 +447,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的作用域"><span class="nav-text">变量的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量"><span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量"><span class="nav-text">全局变量</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
