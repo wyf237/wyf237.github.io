@@ -64,7 +64,8 @@
 <meta property="og:description" content="简介：变量与指针。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/10/08/【C++基础】059变量与指针/【C++基础】059变量与指针1.png">
-<meta property="og:updated_time" content="2019-10-08T04:23:02.882Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/08/【C++基础】059变量与指针/【C++基础】059变量与指针2.png">
+<meta property="og:updated_time" content="2019-10-20T09:40:44.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】059变量与指针">
 <meta name="twitter:description" content="简介：变量与指针。">
@@ -270,11 +271,19 @@
                 
               
 
-              <time title="创建时间：2019-10-08 12:11:34 / 修改时间：12:23:02" itemprop="dateCreated datePublished" datetime="2019-10-08T12:11:34+08:00">2019-10-08</time>
+              <time title="创建时间：2019-10-08 12:11:34" itemprop="dateCreated datePublished" datetime="2019-10-08T12:11:34+08:00">2019-10-08</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-20 17:40:44" itemprop="dateModified" datetime="2019-10-20T17:40:44+08:00">2019-10-20</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -316,8 +325,39 @@
 <h3 id="定义指针变量"><a href="#定义指针变量" class="headerlink" title="定义指针变量"></a>定义指针变量</h3><ul>
 <li><strong>指针变量的定义格式：</strong><code>数据类型 *变量名</code></li>
 <li><strong>其中：</strong><br>  <strong>*</strong>——是指针类型变量的标志符号。<br>  <strong>变量名</strong>——为指针变量名（构成同标识符）。<br>  <strong>数据类型</strong>——为指针变量所指向变量的数据类型。<br>  <strong>数据类型 *</strong>——表示指针类型。</li>
-<li><strong>如：</strong> 定义一个指向字符类型的指针变量pch。  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *pch    <span class="comment">///pch是一个字符型指针变量</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>如：</strong> 定义一个指向字符类型的指针变量pch。</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *pch    <span class="comment">///pch是一个字符型指针变量</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>注意：</strong> 变量pch的数据类型为char *，而不是char</p>
+</li>
+<li><strong>说明：</strong> 定义一个指针变量，系统将为该指针变量分配一定大小的内存。</li>
 </ul>
+<h3 id="指针变量的初始化"><a href="#指针变量的初始化" class="headerlink" title="指针变量的初始化"></a>指针变量的初始化</h3><p><strong>在定义指针变量的同时为指针变量提供初值。</strong><br>如：<code>int a=5,*pta=&amp;a;</code><br>其中，a的初值为5，pta的初值为变量a的地址。<br>这时，pta与a的关联如下：<br><img src="【C++基础】059变量与指针2.png" alt="059变量与指针"></p>
+<h3 id="使用赋值语句赋值"><a href="#使用赋值语句赋值" class="headerlink" title="使用赋值语句赋值"></a>使用赋值语句赋值</h3><p>上述语句中：<code>int a=5,*pta=&amp;a;</code><br>与下面的语句的功能是等效的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,*pta;<span class="comment">//先定义变量</span></span><br><span class="line">a=<span class="number">5</span>;<span class="comment">//使用赋值语句提供初值</span></span><br><span class="line">pta=&amp;a;<span class="comment">//使用赋值语句提供初值</span></span><br></pre></td></tr></table></figure></p>
+<font color="red"> **提醒：** pta=&a，不可以写成\*pta=&a。因为，*pta并不表示指针变量pta，而表示pta所指向的变量a。指针变量与指针变量所指向的变量是2个完全不同的概念。</font>
+
+<h3 id="定义多个指针变量"><a href="#定义多个指针变量" class="headerlink" title="定义多个指针变量"></a>定义多个指针变量</h3><p>例如：<code>double *p1,*p2;</code><br>定义了2个双精度型的指针变量p1和p2，它们只能指向double型变量。<br>变量p1和p2的类型为：double<em><br><strong>注意：</strong>定义多个指针变量，每个指针变量前必须有</em>字符。</p>
+<h3 id="通过指针变量间接访问所指向的变量"><a href="#通过指针变量间接访问所指向的变量" class="headerlink" title="通过指针变量间接访问所指向的变量"></a>通过指针变量间接访问所指向的变量</h3><ul>
+<li><strong>指针类型中有2个特殊的单目运算符：&amp;和*。</strong><br>[1] &amp; 取地址运算符。<pre><code>`&amp;变量名`//获取变量的内存单元地址
+</code></pre>[2] * 指针运算符（也称为间接访问运算符）<pre><code>`*指针变量名` 或 `*指针常量`//表示该指针所指向的变量
+</code></pre>[3] 如果指针变量pta中存放着变量a的指针，则*pta表示pta所指向的变量即变量a。</li>
+<li><p><strong>例如1：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>,*pta=&amp;a;</span><br><span class="line">*pta=a+<span class="number">8</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">","</span>&lt;&lt;*pta&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<p>输出结果为13，13</p>
+</li>
+<li><p><strong>例如2：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,*p=&amp;a;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;&amp;a&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//a的地址  0x23fe4c</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//a的值     5</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;&amp;p&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//p的地址  0x23fe40</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;p&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//p的值     0x23fe4c</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;*p*&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//p所指向变量的值 5</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> *p与<em>(&amp;a)等价，即就是a。p是一个指针变量，而&amp;a是一个指针常量。<br><em>*注意：</em></em> 指针变量的值一定是“地址”；指针变量所指对象的值不移动是“地址”。</p>
+</li>
+</ul>
+<h3 id="使用指针变量时应注意"><a href="#使用指针变量时应注意" class="headerlink" title="使用指针变量时应注意"></a>使用指针变量时应注意</h3><ol>
+<li><p><strong>不要访问没有被初始化的指针变量。</strong><br>如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>*p;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;*p; <span class="comment">//这样使用指针是危险的</span></span><br></pre></td></tr></table></figure>
+<p>由于p变量未初始化，p中可能存在一个不确定的单元地址，这时的输入将会改变原存储单元的值，造成结果混乱。</p>
+</li>
+<li><p><strong>指针变量可以有空指针值，即该指针变量不指向任何变量。</strong><br>常用符号常量NULL表示空指针值，其实NULL代表的值是整数0.编译系统约定0号单元不存放有效数据。</p>
+</li>
+</ol>
 
     </div>
 
@@ -432,7 +472,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量与指针变量"><span class="nav-text">变量与指针变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用指针变量的步骤"><span class="nav-text">使用指针变量的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义指针变量"><span class="nav-text">定义指针变量</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量与指针变量"><span class="nav-text">变量与指针变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用指针变量的步骤"><span class="nav-text">使用指针变量的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义指针变量"><span class="nav-text">定义指针变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针变量的初始化"><span class="nav-text">指针变量的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用赋值语句赋值"><span class="nav-text">使用赋值语句赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义多个指针变量"><span class="nav-text">定义多个指针变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过指针变量间接访问所指向的变量"><span class="nav-text">通过指针变量间接访问所指向的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用指针变量时应注意"><span class="nav-text">使用指针变量时应注意</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
