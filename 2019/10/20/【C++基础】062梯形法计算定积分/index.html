@@ -55,19 +55,22 @@
   };
 </script>
 
-  <meta name="description" content="简介：三个数排序（指针）。">
+  <meta name="description" content="简介：梯形法计算定积分。">
 <meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【C++基础】三个数排序">
-<meta property="og:url" content="http://yoursite.com/2019/10/20/【C++基础】三个数排序/index.html">
+<meta property="og:title" content="【C++基础】061梯形法计算定积分">
+<meta property="og:url" content="http://yoursite.com/2019/10/20/【C++基础】062梯形法计算定积分/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
-<meta property="og:description" content="简介：三个数排序（指针）。">
+<meta property="og:description" content="简介：梯形法计算定积分。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T12:02:16.441Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/20/【C++基础】062梯形法计算定积分/【C++基础】062定积分1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/20/【C++基础】062梯形法计算定积分/【C++基础】062执行结果1.png">
+<meta property="og:updated_time" content="2019-10-20T14:01:00.868Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【C++基础】三个数排序">
-<meta name="twitter:description" content="简介：三个数排序（指针）。">
-  <link rel="canonical" href="http://yoursite.com/2019/10/20/【C++基础】三个数排序/">
+<meta name="twitter:title" content="【C++基础】061梯形法计算定积分">
+<meta name="twitter:description" content="简介：梯形法计算定积分。">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/20/【C++基础】062梯形法计算定积分/【C++基础】062定积分1.png">
+  <link rel="canonical" href="http://yoursite.com/2019/10/20/【C++基础】062梯形法计算定积分/">
 
 
 <script id="page-configurations">
@@ -81,7 +84,7 @@
   };
 </script>
 
-  <title>【C++基础】三个数排序 | 南烛的学习小栈</title>
+  <title>【C++基础】061梯形法计算定积分 | 南烛的学习小栈</title>
   
 
 
@@ -240,7 +243,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/20/【C++基础】三个数排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/20/【C++基础】062梯形法计算定积分/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vico.">
@@ -252,7 +255,7 @@
       <meta itemprop="name" content="南烛的学习小栈">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">【C++基础】三个数排序
+        <h1 class="post-title" itemprop="name headline">【C++基础】061梯形法计算定积分
 
           
         </h1>
@@ -268,7 +271,7 @@
                 
               
 
-              <time title="创建时间：2019-10-20 20:01:21 / 修改时间：20:02:16" itemprop="dateCreated datePublished" datetime="2019-10-20T20:01:21+08:00">2019-10-20</time>
+              <time title="创建时间：2019-10-20 20:51:08 / 修改时间：22:01:00" itemprop="dateCreated datePublished" datetime="2019-10-20T20:51:08+08:00">2019-10-20</time>
             </span>
           
             
@@ -300,8 +303,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>简介：三个数排序（指针）。<br><a id="more"></a></p>
-<h3 id="【实例名称】"><a href="#【实例名称】" class="headerlink" title="【实例名称】"></a>【实例名称】</h3><p>三个数排序</p>
+        <p>简介：梯形法计算定积分。<br><a id="more"></a></p>
+<h3 id="【算法描述】"><a href="#【算法描述】" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><p><strong>定积分：</strong><br>$\int_{a}^{b}f(x)dx$，曲边梯形面积</p>
+<p><strong>假设：</strong><br>[a,b]区间5等分成5个窄曲边梯形<br><img src="【C++基础】062定积分1.png" alt="062定积分"></p>
+<p><strong>梯形法：</strong><br>曲边梯形面积$≈$窄直边梯形面积之和</p>
+<script type="math/tex; mode=display">
+\dfrac{Δx}{2}(y_0+y_1)+\dfrac{Δx}{2}(y_1+y_2)+\dfrac{Δx}{2}(y_2+y_3)+\dfrac{Δx}{2}(y_3+y_4)+\dfrac{Δx}{2}(y_4+y_5)</script><p><strong>定积分：</strong></p>
+<script type="math/tex; mode=display">
+\int_{a}^{b}f(x)dx≈h\{\dfrac{1}{2}[f(a)+f(b)]+f(x_1)+f(x_2)+\dots++f(x_{n-1})\}</script><p>其中$h=\dfrac{b-a}{2}$</p>
+<h3 id="【功能描述】"><a href="#【功能描述】" class="headerlink" title="【功能描述】"></a>【功能描述】</h3><ol>
+<li>自定义函数：被积函数（如$sinx$）求值</li>
+<li>自定义函数integral：按梯形法公式，以区间端点及等分数为参数，调用被积函数求职的函数计算定积分<font color="red">特别是“指向函数的指针”作形参使该函数成为通用积分函数</font></li>
+<li>主函数：指定区间端点a、b及等分数n。调用integral函数计算并输出定积分的值</li>
+</ol>
+<h3 id="【算法描述】-1"><a href="#【算法描述】-1" class="headerlink" title="【算法描述】"></a>【算法描述】</h3><ol>
+<li>输入区间端点及等分数：a、b、n</li>
+<li>窄梯形高 h=(b-a)/n</li>
+<li>累加和赋初值sum=(f(a)+f(b))/2<br>累加和：所有窄梯形两底之和一半。<br>f(x)：被积函数</li>
+<li>i=1</li>
+<li>累加和sum=sum+f(a+i*h)</li>
+<li>判断i&lt;n?是则i++，转5</li>
+<li>所有窄梯形面积之和sum=sum*h</li>
+<li>输出定积分sum</li>
+</ol>
+<h3 id="【示例代码】"><a href="#【示例代码】" class="headerlink" title="【示例代码】"></a>【示例代码】</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">sinx</span><span class="params">(<span class="keyword">double</span> x)</span></span>;                                             <span class="comment">//计算sinx的值</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">e_sqrx</span><span class="params">(<span class="keyword">double</span> x)</span></span>;                                           <span class="comment">//计算e的-x*x次方的值</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">x_sqrx</span><span class="params">(<span class="keyword">double</span> x)</span></span>;                                           <span class="comment">//计算2*x/(1+x*x)</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">integral</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> (*fun)(<span class="keyword">double</span>), <span class="keyword">int</span> n)</span></span>; <span class="comment">//计算定积分</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> s = integral(<span class="number">0</span>, <span class="number">3.1415926</span> / <span class="number">2</span>, sinx, <span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"函数sin(x)在[0,π/2]区间的定积分="</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    s = integral(<span class="number">0</span>, <span class="number">1</span>, e_sqrx, <span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"函数e的(负x平方)次方在区间[0,1]的定积分="</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    s = integral(<span class="number">-1</span>, <span class="number">5</span>, x_sqrx, <span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"函数2*x/(1+x*x)在区间[-1,5]的定积分="</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">integral</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> (*fun)(<span class="keyword">double</span>), <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> h = (b - a) / n;</span><br><span class="line">    <span class="keyword">double</span> sum = ((*fun)(a) + (*fun)(b)) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">        sum += (*fun)(a + i * h);</span><br><span class="line">    sum *= h;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">sinx</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sin</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">e_sqrx</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">exp</span>(-x * x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">x_sqrx</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * x / (<span class="number">1</span> + x * x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【运行结果】"><a href="#【运行结果】" class="headerlink" title="【运行结果】"></a>【运行结果】</h3><p><img src="【C++基础】062执行结果1.png" alt="062执行结果"></p>
 
     </div>
 
@@ -352,8 +378,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/20/【C++基础】060函数与指针/" rel="next" title="【C++基础】060函数与指针">
-                  <i class="fa fa-chevron-left"></i> 【C++基础】060函数与指针
+                <a href="/2019/10/20/【C++基础】061三个数排序/" rel="next" title="【C++基础】061三个数排序">
+                  <i class="fa fa-chevron-left"></i> 【C++基础】061三个数排序
                 </a>
               
             </div>
@@ -416,7 +442,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【实例名称】"><span class="nav-text">【实例名称】</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【算法描述】"><span class="nav-text">【算法描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【功能描述】"><span class="nav-text">【功能描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【算法描述】-1"><span class="nav-text">【算法描述】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【示例代码】"><span class="nav-text">【示例代码】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【运行结果】"><span class="nav-text">【运行结果】</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -431,7 +457,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
