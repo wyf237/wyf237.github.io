@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="简介：数据的抽象与封装">
+<meta name="keywords" content="C++,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C++基础】069数据的抽象与封装">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/【C++基础】069数据的抽象与封装/index.html">
+<meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="简介：数据的抽象与封装">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-12T09:43:53.192Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【C++基础】069数据的抽象与封装">
+<meta name="twitter:description" content="简介：数据的抽象与封装">
+  <link rel="canonical" href="http://yoursite.com/2019/11/12/【C++基础】069数据的抽象与封装/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>【C++基础】069数据的抽象与封装 | 南烛的学习小栈</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">南烛的学习小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-c++基础">
+      
+    
+
+    <a href="/categories/C-基础/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>C++基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/【C++基础】069数据的抽象与封装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【C++基础】069数据的抽象与封装
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-12 17:23:29 / 修改时间：17:43:53" itemprop="dateCreated datePublished" datetime="2019-11-12T17:23:29+08:00">2019-11-12</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>简介：数据的抽象与封装<br><a id="more"></a></p>
+<h2 id="什么是实体"><a href="#什么是实体" class="headerlink" title="什么是实体"></a>什么是实体</h2><p>可观世界存在的某个事物</p>
+<h2 id="如何描述实体"><a href="#如何描述实体" class="headerlink" title="如何描述实体"></a>如何描述实体</h2><p>拍视频、写文章</p>
+<h2 id="如何抽象描述实体"><a href="#如何抽象描述实体" class="headerlink" title="如何抽象描述实体"></a>如何抽象描述实体</h2><p>从实体中抽取出若干特性和功能，来表示实体</p>
+<ol>
+<li>移除细节看主干</li>
+<li>不是借助具体形象反映现实，而是以抽象表达科学的真实</li>
+</ol>
+<h2 id="抽象描述电视机"><a href="#抽象描述电视机" class="headerlink" title="抽象描述电视机"></a>抽象描述电视机</h2><h3 id="电视机的特征"><a href="#电视机的特征" class="headerlink" title="电视机的特征"></a>电视机的特征</h3><ol>
+<li>型号</li>
+<li>尺寸</li>
+<li>材料</li>
+<li>价格</li>
+<li>……</li>
+</ol>
+<h3 id="电视机的功能"><a href="#电视机的功能" class="headerlink" title="电视机的功能"></a>电视机的功能</h3><ol>
+<li>播放影视</li>
+<li>选频道</li>
+<li>调节颜色</li>
+<li>调节音量</li>
+<li>……</li>
+</ol>
+<h2 id="抽象描述学生"><a href="#抽象描述学生" class="headerlink" title="抽象描述学生"></a>抽象描述学生</h2><h3 id="学生的特征"><a href="#学生的特征" class="headerlink" title="学生的特征"></a>学生的特征</h3><ol>
+<li>姓名</li>
+<li>性别</li>
+<li>年龄</li>
+<li>学号</li>
+<li>身高</li>
+<li>……</li>
+</ol>
+<h3 id="学生的功能"><a href="#学生的功能" class="headerlink" title="学生的功能"></a>学生的功能</h3><ol>
+<li>学习</li>
+<li>跑步</li>
+<li>听音</li>
+<li>说话</li>
+<li>书写</li>
+<li>……</li>
+</ol>
+<p><strong>抽象描述实体的结果不唯一！</strong><br><strong>无论怎么描述，都要尽可能抽象分析出主要特征与功能！</strong><br><strong>特征与功能密切相关、相互依赖，不能割裂！</strong></p>
+<h2 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h2><p><strong>对象食指被抽象描述的某个实体</strong>。</p>
+<ol>
+<li>一个对象包含了实体的特征和功能</li>
+<li>对象 = 实体的特征 + 实体的功能</li>
+<li>对象 = 数据 + 函数（特征即为数据，功能即为函数）</li>
+<li>将数据和函数当作一个<strong>统一体</strong>。</li>
+</ol>
+<h2 id="什么是类"><a href="#什么是类" class="headerlink" title="什么是类"></a>什么是类</h2><p><strong>具有相同特征和功能的对象集合。</strong></p>
+<ol>
+<li>所有红旗轿车→红旗轿车类。</li>
+<li>所有小孩子→小孩类</li>
+<li>所有公元日期→日期类</li>
+<li>所有整数集合→整数类</li>
+</ol>
+<p>对象是类的 <strong>一个实例</strong> 或 <strong>个体</strong> 或 <strong>元素</strong><br><code>int k;</code> k为整型变量，又称为整数对象。<br><code>struct date today;</code> today称为日期结构体变量，又称日期对象</p>
+<h2 id="将实体转为程序中的数据（类型）"><a href="#将实体转为程序中的数据（类型）" class="headerlink" title="将实体转为程序中的数据（类型）"></a>将实体转为程序中的数据（类型）</h2><p>C++中有4种基本数据类型：字符、整数、浮点、双精度浮点。</p>
+<p>当程序中涉及到的实体不能直接描述为基本数据类型时，只有描述成 <strong>新的数据（类型）</strong>。</p>
+<p>类是相同属性的对象集合，其中某个对象的特征和功能就是类的特征和功能。</p>
+<h2 id="类与结构体"><a href="#类与结构体" class="headerlink" title="类与结构体"></a>类与结构体</h2><p>将数据和函数当作一个统一体——类<br>类是对可观世界万物的抽象描述</p>
+<p>结构体是复合数据的统一体、</p>
+<h3 id="结构体与类的区别"><a href="#结构体与类的区别" class="headerlink" title="结构体与类的区别"></a>结构体与类的区别</h3><ol>
+<li>结构体只有数据成员，没有函数成员</li>
+<li>结构体又称为特殊的类</li>
+<li>现在的结构体重也可以包括函数成员</li>
+</ol>
+<p><strong>类的语法格式与结构体的语法格式非常相似</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Vico. 微信支付">
+        <p>微信支付</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Vico. 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/C/" rel="tag"># C++</a>
+            
+              <a href="/tags/编程/" rel="tag"># 编程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/11/12/【C++基础】068逆置数组元素/" rel="next" title="【C++基础】068逆置数组元素">
+                  <i class="fa fa-chevron-left"></i> 【C++基础】068逆置数组元素
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/11/12/【C++基础】070类的定义/" rel="prev" title="【C++基础】070类的定义">
+                  【C++基础】070类的定义 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjYwNy8yMzExNw=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是实体"><span class="nav-text">什么是实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何描述实体"><span class="nav-text">如何描述实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何抽象描述实体"><span class="nav-text">如何抽象描述实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象描述电视机"><span class="nav-text">抽象描述电视机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电视机的特征"><span class="nav-text">电视机的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电视机的功能"><span class="nav-text">电视机的功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象描述学生"><span class="nav-text">抽象描述学生</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#学生的特征"><span class="nav-text">学生的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学生的功能"><span class="nav-text">学生的功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是对象"><span class="nav-text">什么是对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是类"><span class="nav-text">什么是类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将实体转为程序中的数据（类型）"><span class="nav-text">将实体转为程序中的数据（类型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类与结构体"><span class="nav-text">类与结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构体与类的区别"><span class="nav-text">结构体与类的区别</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vico.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vico.</span>
+</div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人来过
+</span>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>

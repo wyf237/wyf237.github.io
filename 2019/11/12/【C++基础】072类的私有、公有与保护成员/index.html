@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="简介：类的私有、公有与保护成员">
+<meta name="keywords" content="C++,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C++基础】072类的私有、公有与保护成员">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/【C++基础】072类的私有、公有与保护成员/index.html">
+<meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="简介：类的私有、公有与保护成员">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-12T13:42:30.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【C++基础】072类的私有、公有与保护成员">
+<meta name="twitter:description" content="简介：类的私有、公有与保护成员">
+  <link rel="canonical" href="http://yoursite.com/2019/11/12/【C++基础】072类的私有、公有与保护成员/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>【C++基础】072类的私有、公有与保护成员 | 南烛的学习小栈</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">南烛的学习小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-c++基础">
+      
+    
+
+    <a href="/categories/C-基础/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>C++基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/【C++基础】072类的私有、公有与保护成员/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vico.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南烛的学习小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【C++基础】072类的私有、公有与保护成员
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-12 17:24:54 / 修改时间：21:42:30" itemprop="dateCreated datePublished" datetime="2019-11-12T17:24:54+08:00">2019-11-12</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-基础/" itemprop="url" rel="index"><span itemprop="name">C++基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>简介：类的私有、公有与保护成员<br><a id="more"></a></p>
+<h2 id="公有、私有、保护的定义"><a href="#公有、私有、保护的定义" class="headerlink" title="公有、私有、保护的定义"></a>公有、私有、保护的定义</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="keyword">int</span> age;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">  <span class="keyword">float</span> price;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>在public:后定义的数据成员和函数都称为公有成员</strong><br>字符数组name和函数min()都是公有成员</p>
+</li>
+<li><p><strong>在private:后定义的数据成员和函数成员都称作为私有成员</strong><br>整数变量age和函数max()都是私有成员</p>
+</li>
+<li><p><strong>在protected:后定义的数据成员和函数成员都称为保护成员</strong><br>浮点变量price和函数abs()都是保护成员</p>
+</li>
+</ol>
+<h3 id="公有成员"><a href="#公有成员" class="headerlink" title="公有成员"></a>公有成员</h3><p>外接（类外）能够直接访问的成员，通过“.”运算符</p>
+<ol>
+<li>一般函数成员被定义为公有成员</li>
+<li>通过调用公有函数成员实施规定的操作</li>
+<li>外接与类之间起着接口的作用</li>
+</ol>
+<h3 id="私有成员"><a href="#私有成员" class="headerlink" title="私有成员"></a>私有成员</h3><p>外界（类外）不能直接访问该成员</p>
+<ol>
+<li>一般数据成员被定义为私有成员</li>
+<li>使得成员被封装隐藏起来，外界不能随便修改对象的私有数据成员</li>
+<li>只有通过类中公有函数对数据进行修改，达到提高数据安全性的目的</li>
+</ol>
+<h3 id="保护成员"><a href="#保护成员" class="headerlink" title="保护成员"></a>保护成员</h3><p>外界（类外）部分区域能够访问该成员</p>
+<ol>
+<li>某些数据或函数成员在类外被有限制地访问</li>
+<li>私有是对外界完全粉笔的，公有是完全开放的，保护是介于二者之间</li>
+<li><p><strong>例如：</strong> 下面有2个类的定义，一个是时间类，一个是日期类</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//时间类</span></span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">time</span></span></span><br><span class="line"><span class="class">   &#123;</span></span><br><span class="line">     <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">int</span> hour,minute;</span><br><span class="line">     <span class="keyword">protected</span>:</span><br><span class="line">      <span class="keyword">int</span> second;</span><br><span class="line">      ……</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//日期类</span></span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">date</span>:</span><span class="keyword">public</span> time</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">int</span> year,month,day;</span><br><span class="line">     <span class="keyword">public</span>:</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">show_date_time</span><span class="params">()</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;year&lt;&lt;<span class="string">'-'</span>&lt;&lt;month&lt;&lt;<span class="string">'-'</span>&lt;&lt;day&lt;&lt;<span class="string">'\t'</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;hour&lt;&lt;<span class="string">'-'</span>&lt;&lt;minute&lt;&lt;<span class="string">'-'</span>&lt;&lt;second&lt;&lt;<span class="string">'\t'</span>;</span><br><span class="line">        <span class="comment">//hour和minute不可访问，second可以访问</span></span><br><span class="line">      &#125;</span><br><span class="line">      ……</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">## 分数类的抽象描述</span><br><span class="line"><span class="number">1.</span> **数据成员：分子与分母**</span><br><span class="line">   都是整型变量：<span class="keyword">int</span> a,b;</span><br><span class="line">   分子、分母定义成公有、私有、保护成员，理论上都可以</span><br><span class="line">   但仔细分析，分母不可为<span class="number">0</span>，应该定义为私有成员，以便数据安全控制</span><br><span class="line">   分子是任意整数没，但不希望外界任意读写，所以定义为保护成员</span><br><span class="line"><span class="number">2.</span> **函数成员：设置数据、输出分数、分数相加、求最大公因数**</span><br><span class="line">   ```cpp</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> aa,<span class="keyword">int</span> bb)</span></span>;<span class="comment">//设置分子分母</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;<span class="comment">//显示分数</span></span><br><span class="line">   <span class="function">Fraction <span class="title">add</span><span class="params">(Fraction u)</span></span>;<span class="comment">//加一个分数</span></span><br><span class="line">   <span class="function"><span class="keyword">int</span> <span class="title">divisor</span><span class="params">(<span class="keyword">int</span> p,<span class="keyword">int</span> q)</span></span>;<span class="comment">//求最大公约数</span></span><br></pre></td></tr></table></figure>
+<p>前三个函数应该定义为公有成员，最后一个函数可以任意定义，这里定义为私有成员</p>
+</li>
+</ol>
+<h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fraction</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">int</span> a;                     <span class="comment">//分子可以定义为保护成员</span></span><br><span class="line">                               <span class="comment">//private:</span></span><br><span class="line">    <span class="keyword">int</span> b;                     <span class="comment">//分母应该定义为私有成员，因为要防止分母为0</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">divisor</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span></span>; <span class="comment">//求最大公约数</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> aa, <span class="keyword">int</span> bb)</span></span>; <span class="comment">//设置分子分母</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;              <span class="comment">//显示分数</span></span><br><span class="line">    <span class="function">Fraction <span class="title">add</span><span class="params">(Fraction u)</span></span>; <span class="comment">//加一个数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//设置函数</span></span><br><span class="line"><span class="keyword">void</span> Fraction::<span class="built_in">set</span>(<span class="keyword">int</span> aa, <span class="keyword">int</span> bb)</span><br><span class="line">&#123;</span><br><span class="line">    a = aa;</span><br><span class="line">    <span class="keyword">if</span> (bb != <span class="number">0</span>) <span class="comment">//分母有效性检验</span></span><br><span class="line">        b = bb;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        a = <span class="number">0</span>;</span><br><span class="line">        b = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//显示分数</span></span><br><span class="line"><span class="keyword">void</span> Fraction::show()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">"/"</span> &lt;&lt; b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> Fraction::divisor(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> r;</span><br><span class="line">    <span class="keyword">if</span> (p &lt; q)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = p;</span><br><span class="line">        p = q;</span><br><span class="line">        q = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    r = p % q;</span><br><span class="line">    <span class="keyword">while</span> (r != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = q;</span><br><span class="line">        q = r;</span><br><span class="line">        r = p % q;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//分数相加，本类对象加u</span></span><br><span class="line">Fraction Fraction::add(Fraction u)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    Fraction v;</span><br><span class="line"></span><br><span class="line">    v.a = a * u.b + b * u.a; <span class="comment">//分子</span></span><br><span class="line">    v.b = b * u.b;           <span class="comment">//分母</span></span><br><span class="line">    tmp = divisor(v.a, v.b); <span class="comment">//计算分子、分母的公约数</span></span><br><span class="line">    v.a = v.a / tmp;         <span class="comment">//约去公约数</span></span><br><span class="line">    v.b = v.b / tmp;         <span class="comment">//约去公约数</span></span><br><span class="line">    <span class="keyword">return</span> v;                <span class="comment">//返回结果</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Real</span> :</span> <span class="keyword">public</span> Fraction</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show_real</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">'/'</span> &lt;&lt; b &lt;&lt; <span class="string">'='</span> &lt;&lt; a / (<span class="keyword">double</span>)b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Real f1, f2, f3; <span class="comment">//声明类的三个对象</span></span><br><span class="line">    <span class="keyword">int</span> a, b, c, d;  <span class="comment">//两个分数的分子和分母</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"\n请分别输入2个分数的分子和分母，分母为0时退出\n"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b; <span class="comment">//输入分数1的分子和分母</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; c &gt;&gt; d; <span class="comment">//输入分数2的分子和分母</span></span><br><span class="line">    f1.<span class="built_in">set</span>(a, b);  <span class="comment">//设置分数1</span></span><br><span class="line">    f2.<span class="built_in">set</span>(c, d);  <span class="comment">//设置分数2</span></span><br><span class="line"></span><br><span class="line">    f1.show_real(); <span class="comment">//显示实数1</span></span><br><span class="line">    f2.show_real(); <span class="comment">//显示实数2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Vico. 微信支付">
+        <p>微信支付</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Vico. 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/C/" rel="tag"># C++</a>
+            
+              <a href="/tags/编程/" rel="tag"># 编程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/11/12/【C++基础】071对象的声明与使用/" rel="next" title="【C++基础】071对象的声明与使用">
+                  <i class="fa fa-chevron-left"></i> 【C++基础】071对象的声明与使用
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjYwNy8yMzExNw=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#公有、私有、保护的定义"><span class="nav-text">公有、私有、保护的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#公有成员"><span class="nav-text">公有成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私有成员"><span class="nav-text">私有成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保护成员"><span class="nav-text">保护成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例代码"><span class="nav-text">实例代码</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vico.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vico.</span>
+</div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人来过
+</span>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>
