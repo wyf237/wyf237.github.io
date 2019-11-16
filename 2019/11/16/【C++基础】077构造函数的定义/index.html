@@ -55,15 +55,18 @@
   };
 </script>
 
-  <meta name="keywords" content="C++,编程">
+  <meta name="description" content="简介：构造函数的定义">
+<meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】077构造函数的定义">
 <meta property="og:url" content="http://yoursite.com/2019/11/16/【C++基础】077构造函数的定义/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="简介：构造函数的定义">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-16T07:58:02.415Z">
+<meta property="og:updated_time" content="2019-11-16T11:33:19.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】077构造函数的定义">
+<meta name="twitter:description" content="简介：构造函数的定义">
   <link rel="canonical" href="http://yoursite.com/2019/11/16/【C++基础】077构造函数的定义/">
 
 
@@ -265,7 +268,7 @@
                 
               
 
-              <time title="创建时间：2019-11-16 15:54:06 / 修改时间：15:58:02" itemprop="dateCreated datePublished" datetime="2019-11-16T15:54:06+08:00">2019-11-16</time>
+              <time title="创建时间：2019-11-16 15:54:06 / 修改时间：19:33:19" itemprop="dateCreated datePublished" datetime="2019-11-16T15:54:06+08:00">2019-11-16</time>
             </span>
           
             
@@ -297,7 +300,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>简介：构造函数的定义<br><a id="more"></a></p>
+<h2 id="OOP的封装"><a href="#OOP的封装" class="headerlink" title="OOP的封装"></a>OOP的封装</h2><ol>
+<li><strong>在类的定义中不难看出对实体数据的封装</strong><ul>
+<li>将数据成员和函数成员集成封装在“类体”重</li>
+<li>数据成员私有化，外界不能随便读写</li>
+<li>函数成员公有化，外界可以调用（运行）</li>
+<li>用类去生命各种对象，程序对对象进行相关处理</li>
+<li>核心是将实体设计成“统一体”去进行各种处理</li>
+</ul>
+</li>
+<li><strong>C++还提供了许多封装的方法</strong><ul>
+<li>构造方法</li>
+<li>析构方法</li>
+</ul>
+</li>
+</ol>
+<h2 id="已设计出的类的共性"><a href="#已设计出的类的共性" class="headerlink" title="已设计出的类的共性"></a>已设计出的类的共性</h2><ol>
+<li>数据成员都是私有化成员，外界不能直接访问</li>
+<li>都有一个成员函数，用来设置数据成员</li>
+<li>该函数可以在需要时调用，达到随时修改数据成员的目的</li>
+<li>数据成员值读出必须通过相关成员函数</li>
+</ol>
+<h2 id="构造函数的定义"><a href="#构造函数的定义" class="headerlink" title="构造函数的定义"></a>构造函数的定义</h2><ol>
+<li>在声明一个对象后，紧接着要给对象初始化</li>
+<li>对象初始化实质上就是对所有数据成员赋值</li>
+<li>如果对象中某个数据成员未赋值，则该数据成员的值不确定，那么该对象的值不完整</li>
+<li>构造函数（Constructor）用于创建一个对象，提供了初始化该对象的一种简便手段</li>
+<li>注意，在前面所有类的定义中都有一个成员函数完成初始化数据成员的功能，这个函数就可以挡成构造函数</li>
+<li><p>构造函数的语法格式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;类名&gt;(&lt;参数表&gt;)</span><br><span class="line">&#123;</span><br><span class="line">  &lt;函数体&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项：</p>
+<ul>
+<li><strong>构造函数的函数名必须与类名相同</strong></li>
+<li>构造函数没有返回值</li>
+<li>构造函数是将对象中所有数据成员进行初始化，一般由一系列赋值语句构成</li>
+<li>由系统在声明对象时自动调用</li>
+</ul>
+</li>
+</ol>
+<h2 id="在日期类中增加构造函数"><a href="#在日期类中增加构造函数" class="headerlink" title="在日期类中增加构造函数"></a>在日期类中增加构造函数</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> year, month, day;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Date(<span class="keyword">int</span> y=<span class="number">1900</span>,<span class="keyword">int</span> m=<span class="number">1</span>,<span class="keyword">int</span> d=<span class="number">1</span>)</span><br><span class="line">    &#123;<span class="comment">//构造函数</span></span><br><span class="line">      year=y;</span><br><span class="line">      month=m;</span><br><span class="line">      day=d;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;         <span class="comment">//设置年月日数据</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print_ymd</span><span class="params">()</span></span>;                 <span class="comment">//显示年月日</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print_mdy</span><span class="params">()</span></span>;                 <span class="comment">//显示月日年</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="构造函数测试"><a href="#构造函数测试" class="headerlink" title="构造函数测试"></a>构造函数测试</h2><h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> year, month, day;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Date(<span class="keyword">int</span> y = <span class="number">1900</span>, <span class="keyword">int</span> m = <span class="number">1</span>, <span class="keyword">int</span> d = <span class="number">1</span>)</span><br><span class="line">    &#123; <span class="comment">//构造函数</span></span><br><span class="line">        year = y;</span><br><span class="line">        month = m;</span><br><span class="line">        day = d;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>; <span class="comment">//设置年月日数据</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print_ymd</span><span class="params">()</span></span>;         <span class="comment">//显示年月日</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print_mdy</span><span class="params">()</span></span>;         <span class="comment">//显示月日年</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> Date::init(<span class="keyword">int</span> yy, <span class="keyword">int</span> mm, <span class="keyword">int</span> dd)</span><br><span class="line">&#123;</span><br><span class="line">    month = (mm &gt;= <span class="number">1</span> &amp;&amp; mm &lt;= <span class="number">12</span>) ? mm : <span class="number">1</span>;</span><br><span class="line">    year = (yy &gt;= <span class="number">1900</span> &amp;&amp; yy &lt;= <span class="number">9999</span>) ? yy : <span class="number">1900</span>;</span><br><span class="line">    day = (dd &gt;= <span class="number">1</span> &amp;&amp; dd &lt;= <span class="number">31</span>) ? dd : <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> Date::print_ymd()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; year &lt;&lt; <span class="string">"-"</span> &lt;&lt; month &lt;&lt; <span class="string">"-"</span> &lt;&lt; day &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Date::print_mdy()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; month &lt;&lt; <span class="string">"-"</span> &lt;&lt; day &lt;&lt; <span class="string">"-"</span> &lt;&lt; year &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Date date1;              <span class="comment">//创建一个日期类对象，并初始化</span></span><br><span class="line">    date1.print_ymd();       <span class="comment">//显示未初始化数据的情况</span></span><br><span class="line">    date1.init(<span class="number">2008</span>, <span class="number">3</span>, <span class="number">28</span>); <span class="comment">//初始化数据成员</span></span><br><span class="line">    date1.print_ymd();       <span class="comment">//按年月日显示日期</span></span><br><span class="line"></span><br><span class="line">    <span class="function">Date <span class="title">date2</span><span class="params">(<span class="number">2019</span>, <span class="number">12</span>, <span class="number">11</span>)</span></span>;</span><br><span class="line">    date2.print_mdy();</span><br><span class="line">    date2.init(<span class="number">2016</span>, <span class="number">5</span>, <span class="number">11</span>); <span class="comment">//初始化数据成员</span></span><br><span class="line">    date2.print_ymd();       <span class="comment">//按月日年显示日期</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1900-1-1</span><br><span class="line">2008-3-28</span><br><span class="line">12-11-2019</span><br><span class="line">2016-5-11</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -415,6 +460,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OOP的封装"><span class="nav-text">OOP的封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已设计出的类的共性"><span class="nav-text">已设计出的类的共性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数的定义"><span class="nav-text">构造函数的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在日期类中增加构造函数"><span class="nav-text">在日期类中增加构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数测试"><span class="nav-text">构造函数测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试代码"><span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-text">运行结果</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

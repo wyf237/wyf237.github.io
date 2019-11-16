@@ -55,15 +55,18 @@
   };
 </script>
 
-  <meta name="keywords" content="C++,编程">
+  <meta name="description" content="简介：重载构造函数">
+<meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】078重载构造函数">
 <meta property="og:url" content="http://yoursite.com/2019/11/16/【C++基础】078重载构造函数/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="简介：重载构造函数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-16T07:57:47.665Z">
+<meta property="og:updated_time" content="2019-11-16T11:53:12.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】078重载构造函数">
+<meta name="twitter:description" content="简介：重载构造函数">
   <link rel="canonical" href="http://yoursite.com/2019/11/16/【C++基础】078重载构造函数/">
 
 
@@ -265,7 +268,7 @@
                 
               
 
-              <time title="创建时间：2019-11-16 15:54:34 / 修改时间：15:57:47" itemprop="dateCreated datePublished" datetime="2019-11-16T15:54:34+08:00">2019-11-16</time>
+              <time title="创建时间：2019-11-16 15:54:34 / 修改时间：19:53:12" itemprop="dateCreated datePublished" datetime="2019-11-16T15:54:34+08:00">2019-11-16</time>
             </span>
           
             
@@ -297,7 +300,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>简介：重载构造函数<br><a id="more"></a></p>
+<h2 id="构造函数回顾"><a href="#构造函数回顾" class="headerlink" title="构造函数回顾"></a>构造函数回顾</h2><ol>
+<li><strong>什么是函数重载</strong><br>若干个不相同的函数允许共用一个函数名称</li>
+<li><strong>下面3个排序函数共用一个函数名称</strong><ul>
+<li><code>void sort(int a[],int n);</code>，采用冒泡排序方法</li>
+<li><code>void sort(float a[],int n);</code>，采用快速排序方法</li>
+<li><code>void sort(double a[],int n);</code>，采用选择排序方法</li>
+</ul>
+</li>
+<li><strong>调用运行时根据实际参数确定哪一个函数运行</strong></li>
+</ol>
+<h2 id="重载构造函数"><a href="#重载构造函数" class="headerlink" title="重载构造函数"></a>重载构造函数</h2><ol>
+<li><strong>一个类中允许定义多个构造函数</strong></li>
+<li><strong>将日期类再增加一个构造函数</strong><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">   Date()</span><br><span class="line">   &#123;</span><br><span class="line">     Year=<span class="number">1900</span>;</span><br><span class="line">     Month=<span class="number">1</span>;</span><br><span class="line">     Dat=<span class="number">1</span>;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="number">3.</span> **在声明对象时自动选择执行某个构造函数**</span><br><span class="line"></span><br><span class="line">## 数据成员初始化的<span class="number">4</span>种方法</span><br><span class="line"><span class="number">1.</span> **在构造函数的函数体中进行初始化**</span><br><span class="line">   `Date(Date &amp;d)&#123;year=d.year;month=d.month;day=d.day&#125;`</span><br><span class="line"><span class="number">2.</span> **在构造函数的头部初始化**</span><br><span class="line">   `类名::构造函数名(参数表):变量<span class="number">1</span>(初值<span class="number">1</span>),变量<span class="number">2</span>(初值<span class="number">2</span>),……变量n(初值n)&#123;……&#125;`</span><br><span class="line">   例如：`Date::Date():year(<span class="number">1900</span>),month(<span class="number">1</span>),day(<span class="number">1</span>)&#123;&#125;`</span><br><span class="line"><span class="number">3.</span> **混合初始化：前两种方式结合**</span><br><span class="line">   例如：`Date::Date(<span class="keyword">int</span> y,<span class="keyword">int</span> m,<span class="keyword">int</span> d):year(y),month(m)&#123; day=d; &#125;`</span><br><span class="line"><span class="number">4.</span> **使用默认参数初始化**</span><br><span class="line">   ```cpp</span><br><span class="line">   Date(<span class="keyword">char</span> yy[],<span class="keyword">int</span> mm = <span class="number">1</span>,<span class="keyword">int</span> dd = <span class="number">1</span>)</span><br><span class="line">   &#123;</span><br><span class="line">     year = atoi(yy);</span><br><span class="line">     month = mm;</span><br><span class="line">     day = dd;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
     </div>
 
     
@@ -415,6 +433,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数回顾"><span class="nav-text">构造函数回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载构造函数"><span class="nav-text">重载构造函数</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
