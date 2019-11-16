@@ -55,15 +55,18 @@
   };
 </script>
 
-  <meta name="keywords" content="C++,编程">
+  <meta name="description" content="简介：汽车类的设计">
+<meta name="keywords" content="C++,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++基础】075汽车类的设计">
 <meta property="og:url" content="http://yoursite.com/2019/11/13/【C++基础】075汽车类的设计/index.html">
 <meta property="og:site_name" content="南烛的学习小栈">
+<meta property="og:description" content="简介：汽车类的设计">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T14:25:26.415Z">
+<meta property="og:updated_time" content="2019-11-16T06:28:58.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++基础】075汽车类的设计">
+<meta name="twitter:description" content="简介：汽车类的设计">
   <link rel="canonical" href="http://yoursite.com/2019/11/13/【C++基础】075汽车类的设计/">
 
 
@@ -265,11 +268,19 @@
                 
               
 
-              <time title="创建时间：2019-11-13 22:24:43 / 修改时间：22:25:26" itemprop="dateCreated datePublished" datetime="2019-11-13T22:24:43+08:00">2019-11-13</time>
+              <time title="创建时间：2019-11-13 22:24:43" itemprop="dateCreated datePublished" datetime="2019-11-13T22:24:43+08:00">2019-11-13</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-16 14:28:58" itemprop="dateModified" datetime="2019-11-16T14:28:58+08:00">2019-11-16</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -297,7 +308,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>简介：汽车类的设计<br><a id="more"></a></p>
+<h2 id="汽车的抽象描述"><a href="#汽车的抽象描述" class="headerlink" title="汽车的抽象描述"></a>汽车的抽象描述</h2><p>汽车类的特征和功能——分析抽象汽车个体的特征和功能</p>
+<ul>
+<li>特征：型号、颜色、价格、出厂日期、载客量、载重量……</li>
+<li>功能：运动、鸣笛、倒车、播放音乐、恒温、定位……</li>
+</ul>
+<h2 id="汽车类的定义"><a href="#汽车类的定义" class="headerlink" title="汽车类的定义"></a>汽车类的定义</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mmsystem.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">automobile</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">char</span> type[<span class="number">20</span>];      <span class="comment">//汽车型号</span></span><br><span class="line">    <span class="keyword">char</span> color[<span class="number">20</span>];     <span class="comment">//汽车颜色</span></span><br><span class="line">    <span class="keyword">float</span> price;        <span class="comment">//价格</span></span><br><span class="line">    <span class="keyword">int</span> carry_weight;   <span class="comment">//载重量</span></span><br><span class="line">    <span class="keyword">int</span> carry_customer; <span class="comment">//载客量</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set_data</span><span class="params">(<span class="keyword">char</span> *t, <span class="keyword">char</span> *c, <span class="keyword">float</span> pri, <span class="keyword">int</span> cw, <span class="keyword">int</span> cc)</span></span>; <span class="comment">//初始化或修改数据成员</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">movecar</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> k)</span></span>;                                 <span class="comment">//汽车水平运动k部</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">horming</span><span class="params">(<span class="keyword">int</span> num)</span></span>;                                      <span class="comment">//汽车鸣笛</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">downcar</span><span class="params">(<span class="keyword">int</span> l)</span></span>;                                        <span class="comment">//汽车垂直向下运动</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">play_mp3</span><span class="params">(<span class="keyword">char</span> *ps)</span></span>;                                    <span class="comment">//播放歌曲</span></span><br><span class="line">    <span class="function"><span class="keyword">char</span> *<span class="title">show_type</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> type; &#125;                          <span class="comment">//取出汽车型号</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> automobile::set_data(<span class="keyword">char</span> *t, <span class="keyword">char</span> *c, <span class="keyword">float</span> pri, <span class="keyword">int</span> cw, <span class="keyword">int</span> cc)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">strcpy</span>(type, t);</span><br><span class="line">    <span class="built_in">strcpy</span>(color, c);</span><br><span class="line">    price = pri;</span><br><span class="line">    carry_weight = cw;</span><br><span class="line">    carry_customer = cc;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> automobile::movecar(<span class="keyword">int</span> l, <span class="keyword">int</span> k)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"\n"</span></span><br><span class="line">         &lt;&lt; type &lt;&lt; <span class="string">"水平直线运动："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="string">"o_o"</span>;</span><br><span class="line">        Sleep(<span class="number">1000</span> / k);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"\b\b\b"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> automobile::downcar(<span class="keyword">int</span> l)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"\n"</span></span><br><span class="line">         &lt;&lt; type &lt;&lt; <span class="string">"垂直下降运动："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"o_o"</span>;</span><br><span class="line">        Sleep(<span class="number">500</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"\b\b\b"</span></span><br><span class="line">             &lt;&lt; <span class="string">"   "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> automobile::horming(<span class="keyword">int</span> num)</span><br><span class="line">&#123; <span class="comment">//鸣笛</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; type;</span><br><span class="line">        cout &lt;&lt; '\007' &lt;&lt; " di..." &lt;&lt; endl;</span><br><span class="line">        Sleep(<span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//以下注释部分函数，无法正常运行，待解决</span></span><br><span class="line"><span class="comment">//void automobile::play_mp3(char *ps)</span></span><br><span class="line"><span class="comment">//&#123; //播放音乐</span></span><br><span class="line"><span class="comment">//    char str[100] = "play";</span></span><br><span class="line"><span class="comment">//    strcat(str, ps);</span></span><br><span class="line"><span class="comment">//    cout &lt;&lt; str;</span></span><br><span class="line"><span class="comment">//    mciSendStringA(str, NULL, 0, NULL);</span></span><br><span class="line"><span class="comment">//    char a;</span></span><br><span class="line"><span class="comment">//    cin &gt;&gt; a; //输入任意字符结束播放</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    automobile nison;</span><br><span class="line">    <span class="keyword">char</span> tp[] = <span class="string">"yyida"</span>;</span><br><span class="line">    <span class="keyword">char</span> ys[] = <span class="string">"white"</span>;</span><br><span class="line">    nison.set_data(tp, ys, <span class="number">200000</span>, <span class="number">5</span>, <span class="number">3</span>);</span><br><span class="line">    nison.horming(<span class="number">5</span>);</span><br><span class="line">    nison.movecar(<span class="number">10</span>, <span class="number">3</span>);</span><br><span class="line">    nison.downcar(<span class="number">8</span>);</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="comment">//    char mp[] = "?C:\\Users\\wyf23\\Desktop\\1.mp3";</span></span><br><span class="line">    <span class="comment">//    nison.play_mp3(mp);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -357,8 +374,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/11/13/【C++基础】076圆类的设计/" rel="prev" title="【C++基础】076圆类的设计">
-                  【C++基础】076圆类的设计 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/11/13/【C++基础】076学生信息类/" rel="prev" title="【C++基础】076学生信息类">
+                  【C++基础】076学生信息类 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -415,6 +432,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#汽车的抽象描述"><span class="nav-text">汽车的抽象描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汽车类的定义"><span class="nav-text">汽车类的定义</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -428,7 +447,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">89</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
